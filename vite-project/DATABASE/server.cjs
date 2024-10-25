@@ -68,7 +68,7 @@ app.listen(PORT, () => {
   console.log(
     "---------------------------------------------------------------------"
   );
-  console.log(`Server Desplegado Here: ${chalk.blue("http://localhost:3000")}`);
+  console.log(`Server Desplegado Here: ${chalk.blue("http://localhost:3000/datos")}`);
   console.log(
     "---------------------------------------------------------------------"
   );
