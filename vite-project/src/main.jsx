@@ -1,5 +1,4 @@
 import { createRoot } from 'react-dom/client'
-import { FetchingData } from "./components/DataListGrid/dataList.jsx"
 import React from 'react';
 import './main.css'
 import 'bulma/css/bulma.css';

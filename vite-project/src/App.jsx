@@ -1,25 +1,33 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { FormularioPage } from "./pages/formulario";
-import { NotFound } from "./pages/404";
-import { Home } from "./pages/Home/";
-import { FetchingData } from "./components/DataListGrid/dataList";
-import {DataTablePage} from "./pages/DataList";
+import React, { Suspense } from "react";
+import { lazy } from "react";
+import LoadingComponente from "./components/Loading/Loading"
 
-{
-  /*Aqui se mantienen las rutas de toda la aplicacion*/
-}
+
+// import NotFoundPage from "./pages/404"
+
+
+
+const HomePage = lazy(()=> import("./pages/404"))
+const FormularioPage = lazy(()=> import("./pages/Formulario"))
+const NotFoundPage = lazy(()=> import("./pages/404"))
+const DataListV2Page = lazy(()=> import("./pages/DataList"))
+const DataListV1Component = lazy(()=> import("./components/DataListGrid/DataListGrid"))
+
 
 export function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="formulario"element={<FormularioPage></FormularioPage>}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-        <Route path="datosv2" element={<DataTablePage></DataTablePage>}></Route>
-        <Route path="datos" element={<FetchingData/>}></Route>
-      </Routes>
+    <Suspense fallback={<LoadingComponente></LoadingComponente>}>
+        <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage/>}></Route>
+          <Route path="form" element={<FormularioPage/>}></Route>
+          <Route path="*" element={<NotFoundPage/>}></Route>
+          <Route path="datosv1" element={<DataListV1Component></DataListV1Component>}></Route>
+          <Route path="datosv2" element={<DataListV2Page/>}></Route>
+        </Routes>
     </BrowserRouter>
+    </Suspense>
+    
   );
 }

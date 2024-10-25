@@ -5,10 +5,13 @@ import { Footer } from "../components/Footer/Footer"
 
 
 
-export const FormularioPage = () =>{
+const FormularioPage = () =>{
     return (
         <div className="hero">
             <Formulario></Formulario>
         </div>
     )
 }
+
+
+export default FormularioPage;

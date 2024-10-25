@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "../components/Navbar/Navbar";
 
 
-export const Home = () => {
+const HomePage = () => {
     return (
         <>
             <Navbar></Navbar>
@@ -13,3 +13,5 @@ export const Home = () => {
 
     )
 }
+
+export default HomePage;

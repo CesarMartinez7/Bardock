@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-export function FetchingData() {
+function FetchingData() {
   const [datos, setDatos] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3000/datos")
@@ -23,3 +23,5 @@ export function FetchingData() {
     </div>
   );
 }
+
+export default FetchingData;

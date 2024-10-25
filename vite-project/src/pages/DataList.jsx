@@ -1,10 +1,12 @@
 import {DataTableQuery} from "../components/DataListTable/DataListTable"
 
 
-export const DataTablePage = () => {
+const DataTablePage = () => {
     return (
         <div className="hero">
             <DataTableQuery></DataTableQuery>
         </div>
     )
 }
+
+export default DataTablePage;
