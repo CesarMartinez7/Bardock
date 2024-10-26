@@ -1,7 +1,9 @@
 import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-community/styles/ag-grid.css"; 
 import "ag-grid-community/styles/ag-theme-alpine.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
 import { useEffect, useState } from 'react';
+
 
 
 
@@ -27,7 +29,7 @@ export const DataTableQuery  = () => {
 
     return (
         <div className="container">
-            <div className="ag-theme-alpine" style={{ height: 500, }} >
+            <div className="ag-theme-alpine-dark" style={{ height: 500, }} >
                 <AgGridReact rowData={rowData} columnDefs={colDefs} pagination={true}/>
             </div>
         </div>
