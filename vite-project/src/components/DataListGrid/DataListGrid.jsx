@@ -1,16 +1,23 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function FetchingData() {
   const [datos, setDatos] = useState([]);
+
   useEffect(() => {
-    fetch("http://localhost:3000/datos")
-      .then((respuesta) => respuesta.json())
-      .then((data) => {
+    // Definir una función async para manejar la llamada a la API
+    const obtenerDatos = async () => {
+      try {
+        const respuesta = await fetch("http://localhost:3000/datos");
+        const data = await respuesta.json();
         setDatos(data);
-        console.table(data)
-      });
+      } catch (error) {
+        console.error("Error al obtener los datos:", error);
+      }
+    };
+
+    obtenerDatos();
   }, []);
+
   return (
     <div className="grid">
       {datos.map((dataClean, index) => (
@@ -25,3 +32,4 @@ function FetchingData() {
 }
 
 export default FetchingData;
+

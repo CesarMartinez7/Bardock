@@ -13,15 +13,15 @@ const limitWidth = {
 const Formulario = () => {
   return (
     <div
-      class="p-6 has-shadow box has-background-black-bis"
+      class="p-6 has-shadow box "
       id="formulario" style={limitWidth}
     >
       <div class="field is-warning is-rounded">
-        <h1 class="title has-text-centered has-text-white-bis">¡Bienvenido!</h1>
-        <label class="label has-text-white">Nombre</label>
+        <h1 class="title has-text-centered">¡Bienvenido!</h1>
+        <label class="label">Nombre</label>
         <div class="control">
           <input
-            class="input has-background-black-bis has-text-white"
+            class="input"
             type="text"
             placeholder="Juan Pérez"
             id="nombre"
@@ -30,11 +30,11 @@ const Formulario = () => {
         </div>
       </div>
 
-      <div class="field  has-text-white ">
-        <label class="label  has-text-white">Email</label>
+      <div class="field  ">
+        <label class="label ">Email</label>
         <div class="control">
           <input
-            class="input has-background-black-bis has-text-white"
+            class="input "
             type="text"
             placeholder="juan.perez@example.com"
             id="correo"
@@ -51,7 +51,7 @@ const Formulario = () => {
         <label class="label">Contraseña</label>
         <div class="control">
           <input
-            class="input has-background-black-bis"
+            class="input"
             type="email"
             placeholder="Jp2024!Segura"
             id="contraseña"

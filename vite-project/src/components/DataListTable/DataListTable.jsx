@@ -16,11 +16,13 @@ export const DataTableQuery  = () => {
         {field:"fecha_garantia",filter:true,floatingFilter:true},
     ])
     const BREAKPOINT = "http://localhost:3000/datos"
-    useEffect(async()=>{
-        const respuesta = await fetch(BREAKPOINT)
-        const data = await respuesta.json()
-        setRowData(data)
-        console.table(data)
+    useEffect(()=>{
+        const Fetching = async () =>{
+            const respuesta = await fetch(BREAKPOINT)
+            const data = await respuesta.json()
+            setRowData(data)
+        }
+        Fetching()
     },[])
 
     return (
