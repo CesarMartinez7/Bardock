@@ -9,7 +9,7 @@
 
 
 :root{
-    padding: 0.5vh 4vw 0.5vh 4vw;
+    padding: 0.5vh 3vw 0.5vh 3vw;
 }
 
 
@@ -27,4 +27,11 @@
     background-color: rgb(104, 104, 104);
 }
 
+.icon-women{
+    transition: transform 500ms ;
+}
 
+
+.icon-women:hover{
+    transform: scale(1.1);
+}

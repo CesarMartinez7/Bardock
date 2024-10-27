@@ -25,8 +25,8 @@ export const DataTableQuery = () => {
 
     const [rowData, setRowData] = useState([]);
     const [colDefs, setColDefs] = useState([
-        {field: "descripcion_activo", filter: true, floatingFilter: true, flex: 2, editable: true },
-        {field: "id_articulo", filter: true, floatingFilter: true },
+        {field: "descripcion_activo", filter: true, floatingFilter: true, flex: 2, editable: true,width:20},
+        {field: "id_articulo", filter: true, floatingFilter: true,rowGroup: true, hide: true  },
         {field: "id_activo", filter: true, floatingFilter: true },
         {field: "codigo", filter: true, floatingFilter: true },
         {field: "fecha_compra", filter: true, floatingFilter: true },
