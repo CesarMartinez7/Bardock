@@ -13,15 +13,15 @@ const limitWidth = {
 const Formulario = () => {
   return (
     <div
-      class="p-6 has-shadow box "
+      className="p-6 has-shadow box "
       id="formulario" style={limitWidth}
     >
-      <div class="field is-warning is-rounded">
-        <h1 class="title has-text-centered">¡Bienvenido!</h1>
-        <label class="label">Nombre</label>
-        <div class="control">
+      <div className="field is-warning is-rounded">
+        <h1 className="title has-text-centered">¡Bienvenido!</h1>
+        <label className="label">Nombre</label>
+        <div className="control">
           <input
-            class="input"
+            className="input"
             type="text"
             placeholder="Juan Pérez"
             id="nombre"
@@ -30,11 +30,11 @@ const Formulario = () => {
         </div>
       </div>
 
-      <div class="field  ">
-        <label class="label ">Email</label>
-        <div class="control">
+      <div className="field  ">
+        <label className="label ">Email</label>
+        <div className="control">
           <input
-            class="input "
+            className="input "
             type="text"
             placeholder="juan.perez@example.com"
             id="correo"
@@ -42,32 +42,32 @@ const Formulario = () => {
           />
           
         </div>
-        <p class="help is-success" id="email-veri">
+        <p className="help is-success" id="email-veri">
           Este email esta disponible
         </p>
       </div>
 
-      <div class="field">
-        <label class="label">Contraseña</label>
-        <div class="control">
+      <div className="field">
+        <label className="label">Contraseña</label>
+        <div className="control">
           <input
-            class="input"
+            className="input"
             type="email"
             placeholder="Jp2024!Segura"
             id="contraseña"
             required
           />  
         </div>
-        <p class="help is-danger">Esta contraseña es invalida</p>
+        <p className="help is-danger">Esta contraseña es invalida</p>
       </div>
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link" id="submit" type="submit">
+      <div className="field is-grouped">
+        <div className="control">
+          <button className="button is-link" id="submit" type="submit">
             Enviar
           </button>
         </div>
-        <div class="control">
-          <button class="button is-link is-light">Cancelar</button>
+        <div className="control">
+          <button className="button is-link is-light">Cancelar</button>
         </div>
       </div>
     </div>

@@ -4,19 +4,14 @@
     position: absolute;
     transform: translate(-50%,-50%);
     z-index: 20;
+    overflow: visible;
 }
 
 
 :root{
-    padding: 0.5vh 2vw 0.5vh 2vw;
+    padding: 0.5vh 4vw 0.5vh 4vw;
 }
 
-#root{
-    display: grid;
-    min-height: 100dvh;
-    grid-template-rows: 
-    auto 1fr auto;
-}
 
 
 @media(prefers-color-scheme:dark){
@@ -28,9 +23,8 @@
     }
 }
 
-
-
-
 ::selection{
     background-color: rgb(104, 104, 104);
 }
+
+

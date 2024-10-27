@@ -14,7 +14,6 @@ function FetchingData() {
         console.error("Error al obtener los datos:", error);
       }
     };
-
     obtenerDatos();
   }, []);
 

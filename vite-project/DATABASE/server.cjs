@@ -41,8 +41,19 @@ app.get("/datos",(req,resp)=>{
   });
 });
 
+app.get("/pruebas",(req,resp)=>{
+  console.log(req.body)
+  resp.send("En Get")
+})
+
+app.post("/pruebas",(req,resp)=>{
+  console.log(req.body)
+  resp.send("En pos")
+})
+
 app.post("/datos",(req,resp)=>{
-  resp.end("En post en datos")
+  console.log(req.body)
+  resp.end()
 })
 
 

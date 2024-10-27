@@ -22,7 +22,7 @@ export function App() {
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar></Navbar>}>
-            <Route index element={<HomePage></HomePage>}></Route>
+            <Route index element={<HomePage ></HomePage>}></Route>
             <Route path="form" element={<FormularioPage/>}></Route>
             <Route path="datosv1" element={<DataListV1Component></DataListV1Component>}></Route>
             <Route path="datosv2" element={<DataListV2Page/>}></Route>
