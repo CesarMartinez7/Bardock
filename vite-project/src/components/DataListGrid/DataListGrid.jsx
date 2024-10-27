@@ -7,7 +7,7 @@ function FetchingData() {
     // Definir una función async para manejar la llamada a la API
     const obtenerDatos = async () => {
       try {
-        const respuesta = await fetch("http://localhost:3000/datos");
+        const respuesta = await fetch("http://localhost:5174/datos");
         const data = await respuesta.json();
         setDatos(data);
       } catch (error) {
@@ -22,7 +22,9 @@ function FetchingData() {
     <div className="grid">
       {datos.map((dataClean, index) => (
         <div className="cell box" key={index}>
-          <h1 className="title">{dataClean.descripcion_activo.toUpperCase()}</h1>
+          <h1 className="title">
+            {dataClean.descripcion_activo.toUpperCase()}
+          </h1>
           <p>{dataClean.periodicidad_mantenimiento}</p>
           <p>{dataClean.fecha_compra}</p>
         </div>
@@ -32,4 +34,3 @@ function FetchingData() {
 }
 
 export default FetchingData;
-

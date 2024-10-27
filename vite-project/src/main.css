@@ -15,18 +15,22 @@
     display: grid;
     min-height: 100dvh;
     grid-template-rows: 
-    auto 2fr auto;
-}
-
-.ag-theme-quartz {
-    /* Changes the color of the grid text */
-      --ag-foreground-color: rgb(14, 68, 145);
-      /* Changes the color of the grid background */
-      --ag-background-color: rgb(241, 247, 255);
-      /* Changes the header color of the top row */
-      --ag-header-background-color: rgb(228, 237, 250);
-      /* Changes the hover color of the row*/
-      --ag-row-hover-color: rgb(216, 226, 255);
+    auto 1fr auto;
 }
 
 
+@media(prefers-color-scheme:dark){
+    :root {
+        --bulma-primary-h: 104deg;
+        --bulma-primary-s: 94%;
+        --bulma-scheme-h: 2142;
+        --bulma-scheme-s: 4%;
+    }
+}
+
+
+
+
+::selection{
+    background-color: rgb(104, 104, 104);
+}

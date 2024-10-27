@@ -54,7 +54,7 @@ export const Navbar = () => {
           <a className="button is-link">
             <strong>Sign up</strong>
           </a>
-          <a className="button is-light">
+          <a className="button has-text-link-light ">
           <Link to="/form">Registro</Link>
           </a>
         </div>

@@ -41,6 +41,25 @@ app.get("/datos",(req,resp)=>{
   });
 });
 
+app.post("/datos",(req,resp)=>{
+  resp.end("En post en datos")
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -49,8 +68,6 @@ app.get("/login", (req, res) => {
   res.render("login.hbs");
 });
 
-
-
 app.post("/login", (req, resp) => {
   let contraseña = req.body.password;
   let email = req.body.email;
@@ -58,39 +75,18 @@ app.post("/login", (req, resp) => {
   resp.render("startSesion.hbs");
 });
 
-const PORT = 3000;
+const PORT = 5174;
 app.listen(PORT, () => {
   console.log(
     chalk.green(
-      `Servidor corriendo con exito en el Puerto: ${chalk.blue(3000)}`
+      `Servidor corriendo con exito en el Puerto: ${chalk.blue(PORT)}`
     )
   );
   console.log(
     "---------------------------------------------------------------------"
   );
-  console.log(`Server Desplegado Here: ${chalk.blue("http://localhost:3000/datos")}`);
+  console.log(`Server Desplegado Here: ${chalk.blue(`http://localhost:${PORT}/datos`)}`);
   console.log(
     "---------------------------------------------------------------------"
   );
 });
-
-// // INSERT DATA
-// const sql = "insert into productos(Nombre,Categoria,Dimension) values (?,?,?)";
-// const data = ['Mesa Cakaguate','MOBILIARIO','400x400'];
-// conec.execute(sql,data,(error,resultado,fields)=>{
-//     if(error){
-//         throw error
-//     }
-//     console.log(resultado)
-//     console.log(fields)
-// })
-
-// // QUERY
-
-// const sqlQuery = "SELECT * FROM productos"
-// conec.query(sqlQuery,(error,data,field)=>{
-//     if (error){throw error};
-//     console.log(data)
-//     console.log(field)
-
-// })
