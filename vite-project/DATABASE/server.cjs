@@ -86,7 +86,7 @@ app.post("/login", (req, resp) => {
   resp.render("startSesion.hbs");
 });
 
-const PORT = 5174;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(
     chalk.green(

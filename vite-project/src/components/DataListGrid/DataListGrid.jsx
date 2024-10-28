@@ -7,7 +7,7 @@ function FetchingData() {
     // Definir una función async para manejar la llamada a la API
     const obtenerDatos = async () => {
       try {
-        const respuesta = await fetch("http://localhost:5174/datos");
+        const respuesta = await fetch("http://localhost:3000/datos");
         const data = await respuesta.json();
         setDatos(data);
       } catch (error) {

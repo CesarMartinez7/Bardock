@@ -33,8 +33,8 @@ export const Navbar = () => {
               </a>
 
               <div className="navbar-dropdown">
-                <Link to="/datosv1" className="navbar-item">Datos Preview V1</Link>
-                <Link to="/datosv2" className="navbar-item">Datos Preview V2</Link>
+                <Link to="datosv1" className="navbar-item">Datos Preview V1</Link>
+                <Link to="datosv2" className="navbar-item">Datos Preview V2</Link>
                 <a className="navbar-item">
                   Contact
                 </a>
@@ -49,7 +49,7 @@ export const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                  <Link to="/form" className="button is-link">Registro</Link>
+                  <Link to="form" className="button is-link">Registro</Link>
               </div>
             </div>
           </div>
@@ -65,7 +65,6 @@ export const Navbar = () => {
 const toto = () => {
   const navBurgerIcon = document.querySelector(".navbar-burger")
   const navBurgerMenu = document.querySelector(".navbar-menu")
-  console.log(navBurgerMenu)
   navBurgerIcon.classList.toggle("is-active")
   navBurgerMenu.classList.toggle("is-active")
 
