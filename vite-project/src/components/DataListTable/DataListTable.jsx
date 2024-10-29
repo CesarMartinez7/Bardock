@@ -26,7 +26,7 @@ export const DataTableQuery = () => {
     setTimeout(() => {
       const grid = document.getElementById("grid");
       window.print();
-    });
+    },1000);
   };
 
   const [rowData, setRowData] = useState([]);
