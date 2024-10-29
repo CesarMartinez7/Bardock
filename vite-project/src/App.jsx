@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import LoadingComponente from "./components/Loading/Loading";
 import { Navbar } from "./components/Navbar/Navbar";
+import { Footer } from "./components/Footer/Footer";
 
 const HomePage = lazy(() => import("./pages/Home"));
 const FormularioPage = lazy(() => import("./pages/Formulario"));

@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { DataTableQuery } from "../components/DataListTable/DataListTable";
 import { Link, Outlet } from "react-router-dom";
+import {Footer} from "../components/Footer/Footer"
 import { FaBug, FaFileCode, FaTable, FaPrint } from "react-icons/fa";
 
 export const DropButton = () => {
@@ -62,6 +63,7 @@ const DataTablePage = () => {
     <TableNameContext.Provider value={nameTable}>
       <DropButton></DropButton>
       <DataTableQuery></DataTableQuery>
+      <Footer></Footer>
     </TableNameContext.Provider>
   );
 };

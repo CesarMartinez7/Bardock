@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node DATABASE/server.cjs"
   },
   "dependencies": {
     "ag-grid-react": "^32.3.0",
