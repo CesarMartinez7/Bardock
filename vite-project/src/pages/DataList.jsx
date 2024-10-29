@@ -1,6 +1,8 @@
 import { createContext, useState } from "react";
 import { DataTableQuery } from "../components/DataListTable/DataListTable";
 import { Link, Outlet } from "react-router-dom";
+import { FaBug ,FaFileCode,FaTable,FaPrint} from "react-icons/fa";
+
 
 export const TableNameContext = createContext();
 
@@ -26,44 +28,27 @@ const DataTablePage = () => {
     }
     return (
         <TableNameContext.Provider value={nameTable}>
-            {/* <section className="hero">
-                <form
-                    method="POST"
-                    className="container mb-3"
-                    onSubmit={handleSubmitData}
-                >
-                    <div className="field container">
-                        <label className="label">Nombre Table Query</label>
-                        <div className="control">
-                            <input className="input" type="text" onChange={hableChangeInput}/>
-                        </div>
-                        <div className="buttons mt-3">
-                            <button type="submit" className="is-link is-light button">
-                                Enviar
-                            </button>
-                        </div>
+            <div className="buttons container ">
+                <div class="dropdown" id="dropdown" onClick={changeActive}>
+                    <div class="dropdown-trigger">
+                        <button class=" button is-info is-dark" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <span>Tables</span>
+                            <span class="icon is-small">
+                                <FaTable></FaTable>
+                            </span>
+                        </button>
                     </div>
-                </form>
-            </section> */}
-            <div class="dropdown" id="dropdown" onClick={changeActive}>
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Tables</span>
-                        <span class="icon is-small">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content">
-                        <Link className="dropdown-item" >Acta_Asignacion</Link>
-                        <Link className="dropdown-item">Activo</Link>   
-                        <Link className="dropdown-item">Articulos</Link>   
-                        <Link className="dropdown-item">Bodega</Link>   
-                        <Link className="dropdown-item">Categoria Articulo</Link>   
-                        <Link className="dropdown-item">Centro Costo</Link>   
-                        <Link className="dropdown-item">Perfil</Link>   
-                        <Link className="dropdown-item">Stock</Link>   
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <Link className="dropdown-item">Acta_Asignacion</Link>
+                            <Link className="dropdown-item">Activo</Link>
+                            <Link className="dropdown-item">Articulos</Link>
+                            <Link className="dropdown-item">Bodega</Link>
+                            <Link className="dropdown-item">Categoria Articulo</Link>
+                            <Link className="dropdown-item">Centro Costo</Link>
+                            <Link className="dropdown-item">Perfil</Link>
+                            <Link className="dropdown-item">Stock</Link>
+                        </div>
                     </div>
                 </div>
             </div>

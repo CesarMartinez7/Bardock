@@ -15,8 +15,6 @@ export const DataTableQuery = () => {
     const prefersDarkScheme = window.matchMedia(
       "(prefers-color-scheme: light)"
     ).matches;
-    console.log(prefersDarkScheme);
-
     if (prefersDarkScheme) {
       console.log("El usuario prefiere un esquema oscuro.");
     } else {
@@ -77,16 +75,16 @@ export const DataTableQuery = () => {
     <div className="container">
       <div
         className={themeGrid ? "ag-theme-alpine" : "ag-theme-quartz-dark"}
-        style={{ height: 500 }}
+        style={{ height: 600 }}
         id="grid"
       >
         <AgGridReact ref={gridRef} rowData={rowData} columnDefs={colDefs} />
       </div>
       <div className="buttons mt-4">
-        <button onClick={onExportClick} className="button is-link is-light">
+        <button onClick={onExportClick} className="button is-primary is-outlined ">
           Exportar a CSV
         </button>
-        <button onClick={onPrint} className="button">
+        <button onClick={onPrint} className="button is-info is-inverted">
           Imprimir
         </button>
       </div>
