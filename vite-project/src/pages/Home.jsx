@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <>
       <section className="columns section is-desktop">
-        <div className="column is-flex-direction-column is-justify-content-center is-align-content-center p-5">
+        <div className="column is-flex-direction-column is-justify-content-center is-align-content-center p-3">
           <h1 className="title">Hello Tu,👋</h1>
           <p className="content ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae culpa voluptates sunt fugit aliquam assumenda iure alias sint accusantium laboriosam. Magni aliquid dolores quia natus eaque. Quo corporis, ea commodi odio repellat perferendis tenetur culpa autem unde suscipit nostrum maxime molestiae provident explicabo quisquam dolores fuga? Vitae fugiat non voluptatibus molestiae, minus, possimus quasi reiciendis nisi voluptatem praesentium id eaque!</p>
         </div>

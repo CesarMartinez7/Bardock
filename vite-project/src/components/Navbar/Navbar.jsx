@@ -67,7 +67,7 @@ export const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to="form" className="button is-link is-rounded">
+                <Link to="form" className="button is-link" style={{background:"#6C63FF"}}>
                   Registro
                 </Link>
               </div>

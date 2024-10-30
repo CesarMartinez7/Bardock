@@ -1,8 +1,14 @@
 import React from "react";
+import { NotFound } from "../assets/Logos";
 
 const NotFoundPage = () => {
-  return <h1 className="title">Not Found</h1>;
-};
+  return (
+    <div className="container has-text-centered">
+      <NotFound></NotFound>
+      <h1 className="subtitle is-size-3">Not Found</h1>
+      <p className="content"></p>
+    </div>
+  )
+}
 
-
-export default NotFoundPage
+export default NotFoundPage;

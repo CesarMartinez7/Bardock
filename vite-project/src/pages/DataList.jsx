@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import { DataTableQuery } from "../components/DataListTable/DataListTable";
 import { Link, Outlet } from "react-router-dom";
 import {Footer} from "../components/Footer/Footer"
@@ -7,27 +7,27 @@ import BarChart from "../components/Charts/Bar";
 
 
 export const DropButton = () => {
+  const useRefdropDown = useRef(null);
   const changeActive = () => {
-    const dropDown = document.getElementById("dropdown");
-    dropDown.classList.toggle("is-active");
+    useRefdropDown.current.classList.toggle("is-active");
   };
   return (
-    <div className="buttons container">
-      <div class="dropdown" id="dropdown" onClick={changeActive}>
-        <div class="dropdown-trigger">
+    <div className="buttons ">
+      <div className="dropdown" id="dropdown" ref={useRefdropDown} onClick={changeActive}>
+        <div className="dropdown-trigger">
           <button
-            class=" button is-info is-dark"
+            className="button is-info is-inverted "
             aria-haspopup="true"
             aria-controls="dropdown-menu"
           >
             <span>Tables</span>
-            <span class="icon is-small">
+            <span className="icon is-small">
               <FaTable></FaTable>
             </span>
           </button>
         </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
+        <div className="dropdown-menu" id="dropdown-menu" role="menu">
+          <div className="dropdown-content">
             <Link className="dropdown-item">Acta_Asignacion</Link>
             <Link className="dropdown-item">Activo</Link>
             <Link className="dropdown-item">Articulos</Link>
@@ -63,7 +63,6 @@ const DataTablePage = () => {
 
   return (
     <TableNameContext.Provider value={nameTable}>
-      <DropButton></DropButton>
       <DataTableQuery/>
       <BarChart dataKey="avaluo" ejeX="descripcion_activo"></BarChart>
       <Footer></Footer>
