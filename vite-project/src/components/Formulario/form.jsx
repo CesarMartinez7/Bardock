@@ -42,9 +42,7 @@ const Formulario = () => {
           />
           
         </div>
-        <p className="help is-success" id="email-veri">
-          Este email esta disponible
-        </p>
+        
       </div>
 
       <div className="field">
@@ -58,7 +56,7 @@ const Formulario = () => {
             required
           />  
         </div>
-        <p className="help is-danger">Esta contraseña es invalida</p>
+        {/* <p className="help is-danger">Esta contraseña es invalida</p> */}
       </div>
       <div className="field is-grouped">
         <div className="control">

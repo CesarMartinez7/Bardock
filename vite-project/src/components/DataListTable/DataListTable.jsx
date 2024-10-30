@@ -62,7 +62,7 @@ export const DataTableQuery = () => {
     <div className="container mb-6">
       <section className="section columns is-desktop mb-5">
         <div className="column is-align-content-center">
-          <h1 className="title">Soon<h2>you can see you data here</h2></h1>
+          <h1 className="title">Soon<h2>you can see your data here</h2></h1>
           <p className="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sequi ducimus at ipsa optio quia aliquid voluptate magnam obcaecati, saepe nobis quis maxime. Fugiat deleniti perferendis sit distinctio facilis maxime..</p>
         </div>
         <div className="column has-text-centered is-align-content-center">

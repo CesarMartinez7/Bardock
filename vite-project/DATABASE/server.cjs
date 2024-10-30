@@ -3,7 +3,6 @@ const cors = require("cors");
 const mysql = require("mysql2");
 const bodyparser = require("body-parser");
 const chalk = require("chalk");
-const emoji = require("node-emoji");
 
 const app = express();
 

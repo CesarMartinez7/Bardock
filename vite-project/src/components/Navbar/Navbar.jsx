@@ -51,11 +51,11 @@ export const Navbar = () => {
               <a className="navbar-link">More</a>
 
               <div className="navbar-dropdown">
+                <Link to="datosv2" className="navbar-item">
+                  Data v2
+                </Link>
                 <Link to="datosv1" className="navbar-item">
                   Datos Preview V1
-                </Link>
-                <Link to="datosv2" className="navbar-item">
-                  Datos Preview V2
                 </Link>
                 <a className="navbar-item">Contact</a>
                 <hr className="navbar-divider" />
@@ -67,7 +67,7 @@ export const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to="form" className="button is-link" style={{background:"#6C63FF"}}>
+                <Link to="registrer" className="button is-link" style={{ background: "#6C63FF" }}>
                   Registro
                 </Link>
               </div>
