@@ -24,28 +24,15 @@ export const DataTableQuery = () => {
 
   const onPrint = () => {
     setTimeout(() => {
-      const grid = document.getElementById("grid");
+      const gridRef = document.getElementById("grid");
       window.print();
-    },1000);
+    }, 1000);
   };
 
   const [rowData, setRowData] = useState([]);
   const [colDefs, setColDefs] = useState([
-    {
-      field: "descripcion_activo",
-      filter: true,
-      floatingFilter: true,
-      flex: 2,
-      editable: true,
-      width: 20,
-    },
-    {
-      field: "id_articulo",
-      filter: true,
-      floatingFilter: true,
-      rowGroup: true,
-      hide: true,
-    },
+    {field: "descripcion_activo",filter: true,floatingFilter: true,flex: 2,editable: true,width: 20,},
+    {field: "id_articulo",filter: true,floatingFilter: true,rowGroup: true,hide: true,},
     { field: "id_activo", filter: true, floatingFilter: true },
     { field: "codigo", filter: true, floatingFilter: true },
     { field: "fecha_compra", filter: true, floatingFilter: true },
@@ -70,12 +57,11 @@ export const DataTableQuery = () => {
   const [themeGrid, setThemeGrid] = useState(
     window.matchMedia("(prefers-color-scheme: light)").matches
   );
-  const [theme, setTheme] = useState(themeGrid);
   return (
-    <div className="container">
+    <div className="container mb-6">
       <div
         className={themeGrid ? "ag-theme-alpine" : "ag-theme-quartz-dark"}
-        style={{ height: 600 }}
+        style={{ height: 500 }}
         id="grid"
       >
         <AgGridReact ref={gridRef} rowData={rowData} columnDefs={colDefs} />

@@ -2,7 +2,9 @@ import { createContext, useState } from "react";
 import { DataTableQuery } from "../components/DataListTable/DataListTable";
 import { Link, Outlet } from "react-router-dom";
 import {Footer} from "../components/Footer/Footer"
-import { FaBug, FaFileCode, FaTable, FaPrint } from "react-icons/fa";
+import {FaTable} from "react-icons/fa";
+import BarChart from "../components/Charts/Bar";
+
 
 export const DropButton = () => {
   const changeActive = () => {
@@ -62,7 +64,8 @@ const DataTablePage = () => {
   return (
     <TableNameContext.Provider value={nameTable}>
       <DropButton></DropButton>
-      <DataTableQuery></DataTableQuery>
+      <DataTableQuery/>
+      <BarChart dataKey="avaluo" ejeX="descripcion_activo"></BarChart>
       <Footer></Footer>
     </TableNameContext.Provider>
   );
