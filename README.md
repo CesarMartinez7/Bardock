@@ -46,8 +46,9 @@ Para ejecutar el servidor primero tienes que que correr el comando
 __npm run build__ or __yarn run build__ dentro del proyecto. Despues ya podras ejecutar el servidor **server.cjs**
 
 
->[!IMPORTANT] ASEGURATE DE CONFIGURAR TU BASE DE DATOS EN LOCAL, COMO LA CONTRASEÑA Y EL USUARIO. Igual con la nueva tabla usuarioroot que tendra informacion de los usuarios que tienen acesso a poder modificar y crear productos.
-    
+> [!TIP]
+> ASEGURATE DE CONFIGURAR TU BASE DE DATOS EN LOCAL, COMO LA CONTRASEÑA Y EL USUARIO. Igual con la nueva tabla usuarioroot que tendra informacion de los usuarios que tienen acesso a poder modificar y crear productos.
+
 El puerto por default es el que se le asigne en PORT o __3000__ pero puedes cambiarlo o reasignarlo cuando quieras.
 
 El Frontend y el backend ahora corren el un mismo servidor, esto hace que los dos se ejecuten al mismo tiempo y hace innecesario el LANZADOR.py q solo lanza los dos en diferentes puertos
