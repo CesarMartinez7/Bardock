@@ -14,6 +14,7 @@ const Documentacion = () => {
             <div className="container is-flex is-flex-grow-1 is-align-items-center is-justify-content-center">
             <GatoIcon width={300} height={300}></GatoIcon>
             </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas provident possimus perspiciatis, aut veritatis ipsam recusandae magni optio eaque nesciunt quaerat ratione fugit hic numquam vitae placeat quo ab delectus saepe ducimus officiis asperiores. Porro rerum veritatis odit quae omnis?</p>
             <Footer></Footer>
         </section>
     
