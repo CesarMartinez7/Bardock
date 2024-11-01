@@ -7,6 +7,32 @@ import "ag-grid-enterprise";
 import { Data } from "../../assets/Logos.jsx"; // Asegúrate de que estas importaciones sean correctas
 import { FaSearch } from "react-icons/fa";
 
+
+
+const TableOpcion = () => {
+  return (
+    <section className="section">
+      <h1 className="subtitle is-size-4">Tablas Disponibles</h1>
+      <div className="grid">
+        <div className="cell box subtitle is-size-6 has-text-centered">Acta_Asignacion</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">Activo</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">Articulo</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">Bodega</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">Categoria_Articulo</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">Centro_costo</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">detalle_acta_inventario</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">orden_inventario</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">perfil</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">stock</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">tipo_Documento</div>
+        <div className="cell box subtitle is-size-6 has-text-centered">Usuario</div>
+      </div>
+    </section>
+
+  )
+}
+
+
 const Section = () => {
   const styles = {
     backgroundColor: "#6C63FF",
@@ -19,7 +45,7 @@ const Section = () => {
   const handleClickBars = () => {
     window.scrollTo({ behavior: "smooth", top: 1284 });
   };
-  
+
   return (
     <section className="section columns is-desktop mb-5">
       <div className="column is-align-content-center">
@@ -51,26 +77,29 @@ const Section = () => {
   );
 };
 
-const Input = ({ onSearch }) => { // CAMBIO: Agregada la prop onSearch
+const Input = ({ onSearch }) => { 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Previene el comportamiento predeterminado
-    const table = e.target.elements.table.value; // CAMBIO: Obtiene el valor del input
-    console.log(table); // CAMBIO: Imprime el valor del input
-    onSearch(table); // CAMBIO: Llama a la función onSearch con el valor
+    e.preventDefault();
+    const table = e.target.elements.table.value; 
+    console.log(table); 
+    onSearch(table); 
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <label className="label">Tablas</label>
-        <input type="text" className="input" name="table" />
-        <div className="buttons mt-3 mb-4">
-          <button className="button is-success is-dark" type="submit">
+    <div className="container box is-shadowless is-flex is-justify-content-center">
+      <form onSubmit={handleSubmit} className="field">
+        <div className=" columns">
+          <div className="column">
+            <input type="text" className="input is-link" name="table"  placeholder="Busca tu tabla..."/>
+          </div>
+          <div className="column">
+          <button className="button is-primary is-outlined" type="submit">
             <span className="icon">
               <FaSearch />
             </span>
             <span>Buscar</span>
           </button>
+          </div>
         </div>
       </form>
     </div>
@@ -80,20 +109,30 @@ const Input = ({ onSearch }) => { // CAMBIO: Agregada la prop onSearch
 export const DataTableQuery = () => {
   const gridRef = useRef();
   const [rowData, setRowData] = useState([]);
-  const [colDefs, setColDefs] = useState([
-    {field: "id_articulo",filter: true,floatingFilter: true,flex: 2,editable: true},
-    {field: "id_categoria",filter: true,floatingFilter: true,rowGroup: true,hide: true},
-    { field: "descripcion", filter: true, floatingFilter: true},
-    { field: "codigo", filter: true, floatingFilter: true},
-    { field: "fecha_compra", filter: true, floatingFilter: true},
-    {field: "avaluo",filter: true,floatingFilter: true,valueFormatter: "'$' + value.toLocaleString()",},
-  ]);
+  const [colDefs, setColDefs] = useState([]);
+
+  useEffect(() => {
+    if (rowData.length > 0) {
+      const keys = Object.keys(rowData[0]); // Obtenemos las claves del primer objeto de rowData
+      const columns = keys.map((key) => ({
+        field: key, // Aqui se inyecta la key que sera practicamente cada cada clave del objeto.
+        filter: true, // Atributos de todas estas columnas
+        floatingFilter: true,
+        flex: 1,
+        editable: true,
+      }));
+      setColDefs(columns); // Actualizamos colDefs con las columnas dinámicas que tiene cada tabla.
+    }
+  }, [rowData]);
+
+
 
   const mostrarEnCosola = () => {
-    console.log(setRowData)
+    window.console()
+    console.log(rowData)
   }
 
-  const fetchData = async (table) => { 
+  const fetchData = async (table) => {
     const response = await fetch(`http://localhost:3000/api/datos?table=${table}`);
     const data = await response.json();
     setRowData(data);
@@ -106,7 +145,8 @@ export const DataTableQuery = () => {
   return (
     <div className="container mb-6">
       <Section />
-      <Input onSearch={fetchData} /> {/* CAMBIO: Pasamos fetchData como prop */}
+      <TableOpcion></TableOpcion>
+      <Input onSearch={fetchData} />
       <div
         className={themeGrid ? "ag-theme-alpine" : "ag-theme-quartz-dark"}
         style={{ height: 500 }}
@@ -116,12 +156,12 @@ export const DataTableQuery = () => {
       </div>
       <div className="buttons mt-4">
         <button
-          onClick={() => gridRef.current.api.exportDataAsCsv()} // Simplificado
+          onClick={() => gridRef.current.api.exportDataAsCsv()} 
           className="button is-primary is-outlined"
         >
           Exportar a CSV
         </button>
-        <button onClick={() => window.print()} className="button is-info is-inverted"> {/* Simplificado */}
+        <button onClick={() => window.print()} className="button is-info is-inverted">
           Imprimir
         </button>
         <button className="button" onClick={mostrarEnCosola}>Mostrar en consola</button>

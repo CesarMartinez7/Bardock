@@ -52,10 +52,7 @@ export const Navbar = () => {
 
               <div className="navbar-dropdown">
                 <Link to="datosv2" className="navbar-item">
-                  Data v2
-                </Link>
-                <Link to="datosv1" className="navbar-item">
-                  Datos Preview V1
+                  Data
                 </Link>
                 <a className="navbar-item">Contact</a>
                 <hr className="navbar-divider" />
