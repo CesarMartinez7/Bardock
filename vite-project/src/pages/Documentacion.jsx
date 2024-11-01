@@ -17,7 +17,7 @@ const Documentacion = () => {
         </section>
             <Footer></Footer>
         </>
-    )
+       )
 }
 
 

@@ -4,7 +4,7 @@ import "ag-grid-community/styles/ag-theme-alpine.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import { useEffect, useRef, useState } from "react";
 import "ag-grid-enterprise";
-import { Data } from "../../assets/Logos.jsx"; // Asegúrate de que estas importaciones sean correctas
+import { DropButton, Data } from "../../assets/Logos.jsx"; // Ajusta las importaciones según sea necesario
 import { FaSearch } from "react-icons/fa";
 
 const Section = () => {
@@ -55,15 +55,14 @@ const Input = ({ onSearch }) => { // CAMBIO: Agregada la prop onSearch
   const handleSubmit = (e) => {
     e.preventDefault(); // Previene el comportamiento predeterminado
     const table = e.target.elements.table.value; // CAMBIO: Obtiene el valor del input
-    console.log(table); // CAMBIO: Imprime el valor del input
     onSearch(table); // CAMBIO: Llama a la función onSearch con el valor
   };
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}> {/* CAMBIO: Cambiado a onSubmit para manejar el envío */}
         <label className="label">Tablas</label>
-        <input type="text" className="input" name="table" />
+        <input type="text" className="input" name="table" /> {/* CAMBIO: Añadido name="table" */}
         <div className="buttons mt-3 mb-4">
           <button className="button is-success is-dark" type="submit">
             <span className="icon">
@@ -81,27 +80,51 @@ export const DataTableQuery = () => {
   const gridRef = useRef();
   const [rowData, setRowData] = useState([]);
   const [colDefs, setColDefs] = useState([
-    {field: "id_articulo",filter: true,floatingFilter: true,flex: 2,editable: true},
-    {field: "id_categoria",filter: true,floatingFilter: true,rowGroup: true,hide: true},
-    { field: "descripcion", filter: true, floatingFilter: true},
-    { field: "codigo", filter: true, floatingFilter: true},
-    { field: "fecha_compra", filter: true, floatingFilter: true},
-    {field: "avaluo",filter: true,floatingFilter: true,valueFormatter: "'$' + value.toLocaleString()",},
+    {
+      field: "descripcion_activo",
+      filter: true,
+      floatingFilter: true,
+      flex: 2,
+      editable: true,
+    },
+    {
+      field: "id_articulo",
+      filter: true,
+      floatingFilter: true,
+      rowGroup: true,
+      hide: true,
+    },
+    { field: "id_activo", filter: true, floatingFilter: true },
+    { field: "codigo", filter: true, floatingFilter: true },
+    { field: "fecha_compra", filter: true, floatingFilter: true },
+    {
+      field: "avaluo",
+      filter: true,
+      floatingFilter: true,
+      valueFormatter: "'$' + value.toLocaleString()",
+    },
   ]);
 
-  const mostrarEnCosola = () => {
-    console.log(setRowData)
-  }
+  const [themeGrid, setThemeGrid] = useState(
+    window.matchMedia("(prefers-color-scheme: light)").matches
+  );
 
+  const onExportClick = () => {
+    gridRef.current.api.exportDataAsCsv();
+  };
+
+  const onPrint = () => {
+    setTimeout(() => {
+      window.print();
+    }, 1000);
+  };
+
+  // CAMBIO: Función para obtener datos según la tabla seleccionada
   const fetchData = async (table) => { 
     const response = await fetch(`http://localhost:3000/api/datos?table=${table}`);
     const data = await response.json();
     setRowData(data);
   };
-
-  const [themeGrid, setThemeGrid] = useState(
-    window.matchMedia("(prefers-color-scheme: light)").matches
-  );
 
   return (
     <div className="container mb-6">
@@ -116,16 +139,15 @@ export const DataTableQuery = () => {
       </div>
       <div className="buttons mt-4">
         <button
-          onClick={() => gridRef.current.api.exportDataAsCsv()} // Simplificado
+          onClick={onExportClick}
           className="button is-primary is-outlined"
         >
           Exportar a CSV
         </button>
-        <button onClick={() => window.print()} className="button is-info is-inverted"> {/* Simplificado */}
+        <button onClick={onPrint} className="button is-info is-inverted">
           Imprimir
         </button>
-        <button className="button" onClick={mostrarEnCosola}>Mostrar en consola</button>
-
+        <DropButton />
       </div>
     </div>
   );

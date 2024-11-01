@@ -29,8 +29,11 @@ conec.connect((err) => {
   console.log("Conectado a la base de datos con éxito");
 });
 
-app.get("/api/datos", (req, resp) => {
-  const sql = "SELECT * FROM activo";
+
+app.get("/api/datos", (req, resp,) => {
+  let table = req.query.table || "activo"
+  console.log(table)
+  const sql = `SELECT * FROM ${table}`;
   conec.query(sql, (err, resultadoQuery) => {
     if (err) {
       return resp.status(500).json({ error: "Error en la consulta" });
@@ -38,6 +41,9 @@ app.get("/api/datos", (req, resp) => {
     resp.json(resultadoQuery);
   });
 });
+
+
+app.get("")
 
 
 
