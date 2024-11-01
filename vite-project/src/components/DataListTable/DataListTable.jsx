@@ -6,27 +6,56 @@ import { useEffect, useRef, useState } from "react";
 import "ag-grid-enterprise";
 import { DropButton, TableNameContext } from "../../pages/DataList.jsx";
 import { Data } from "../../assets/Logos.jsx";
-import { FaSearch } from "react-icons/fa"
+import { FaSearch } from "react-icons/fa";
 
 const Section = () => {
+  const styles = {
+    backgroundColor: "#6C63FF",
+  };
+
+  const handleClickData = () => {
+    window.scrollTo({ behavior: "smooth", top: 567 });
+  };
+
+  const handleClickBars = () => {
+    window.scrollTo({ behavior: "smooth", top: 1284 });
+  };
   return (
     <section className="section columns is-desktop mb-5">
       <div className="column is-align-content-center">
-        <h1 className="title">Soon</h1>
-        <h2 className="subtitle is-size-3">you can see your data here</h2>
-        <p className="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sequi ducimus at ipsa optio quia aliquid voluptate magnam obcaecati, saepe nobis quis maxime. Fugiat deleniti perferendis sit distinctio facilis maxime..</p>
+        <h1 className="title is-size-1">Soon</h1>
+        <h2 className="subtitle  ">you can see your data here</h2>
+        <p className="content">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
+          sequi ducimus at ipsa optio quia aliquid voluptate magnam obcaecati,
+          saepe nobis quis maxime. Fugiat deleniti perferendis sit distinctio
+          facilis maxime..
+        </p>
+        <div className="buttons">
+          <button
+            className="button is-dark"
+            style={styles}
+            onClick={handleClickData}
+          >
+            Ver Datos
+          </button>
+          <button className="button " onClick={handleClickBars}>
+            Ver Graficos
+          </button>
+        </div>
       </div>
       <div className="column has-text-centered is-align-content-center">
         <Data width={350} height={350}></Data>
       </div>
     </section>
-  )
-}
+  );
+};
 
 const Input = () => {
   return (
     <div className="container">
       <form action="/datosv2" method="GET">
+      <label className="label">Tablas</label>
         <input type="text" className="input" />
         <div className="buttons mt-3 mb-4">
           <button className="button is-success is-dark" type="submit">
@@ -38,9 +67,8 @@ const Input = () => {
         </div>
       </form>
     </div>
-  )
-}
-
+  );
+};
 
 export const DataTableQuery = () => {
   const gridRef = useRef();
@@ -61,8 +89,20 @@ export const DataTableQuery = () => {
 
   const [rowData, setRowData] = useState([]);
   const [colDefs, setColDefs] = useState([
-    { field: "descripcion_activo", filter: true, floatingFilter: true, flex: 2, editable: true },
-    { field: "id_articulo", filter: true, floatingFilter: true, rowGroup: true, hide: true },
+    {
+      field: "descripcion_activo",
+      filter: true,
+      floatingFilter: true,
+      flex: 2,
+      editable: true,
+    },
+    {
+      field: "id_articulo",
+      filter: true,
+      floatingFilter: true,
+      rowGroup: true,
+      hide: true,
+    },
     { field: "id_activo", filter: true, floatingFilter: true },
     { field: "codigo", filter: true, floatingFilter: true },
     { field: "fecha_compra", filter: true, floatingFilter: true },
@@ -99,7 +139,10 @@ export const DataTableQuery = () => {
         <AgGridReact ref={gridRef} rowData={rowData} columnDefs={colDefs} />
       </div>
       <div className="buttons mt-4">
-        <button onClick={onExportClick} className="button is-primary is-outlined ">
+        <button
+          onClick={onExportClick}
+          className="button is-primary is-outlined "
+        >
           Exportar a CSV
         </button>
         <button onClick={onPrint} className="button is-info is-inverted">
