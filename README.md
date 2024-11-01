@@ -54,6 +54,8 @@ El Frontend y el backend ahora corren el un mismo servidor, esto hace que los do
 
 Si notas que cuando haces cambios no se muestran en la pagina, es porque la carpeta dist esta hecha para produccion, y no se actualiza o cambia segun cuando se hacen cambios. La solucion mas rapida para eso es eliminar la carpeta dist y ejecutar el comando __npm run build__ otra vez, de esta manera el hara tomara el cargara tus ultimos cambios.
 
+Ya se pueden llamar diferentes tablas desde la misma pestaña, esto ahorra rendimiento y reduce la carga de pestañas innecesarias.
+
 <h1>Soon</h1>
 
 
@@ -61,9 +63,8 @@ Si notas que cuando haces cambios no se muestran en la pagina, es porque la carp
 - Encriptar las contraseñas los usuarios ROOT
 - Terminar las interfaces 
 - Pantallas Vacias
-
-
-
+- Mejorar Conjunto de Tablas, y procesarlas en el servidor antes que se pasen al la query 
+- Mejorar Input de tablas y añadir logica a Graficos.
 
 
 
