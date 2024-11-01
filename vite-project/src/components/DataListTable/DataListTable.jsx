@@ -6,6 +6,41 @@ import { useEffect, useRef, useState } from "react";
 import "ag-grid-enterprise";
 import { DropButton, TableNameContext } from "../../pages/DataList.jsx";
 import { Data } from "../../assets/Logos.jsx";
+import { FaSearch } from "react-icons/fa"
+
+const Section = () => {
+  return (
+    <section className="section columns is-desktop mb-5">
+      <div className="column is-align-content-center">
+        <h1 className="title">Soon</h1>
+        <h2 className="subtitle is-size-3">you can see your data here</h2>
+        <p className="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sequi ducimus at ipsa optio quia aliquid voluptate magnam obcaecati, saepe nobis quis maxime. Fugiat deleniti perferendis sit distinctio facilis maxime..</p>
+      </div>
+      <div className="column has-text-centered is-align-content-center">
+        <Data width={350} height={350}></Data>
+      </div>
+    </section>
+  )
+}
+
+const Input = () => {
+  return (
+    <div className="container">
+      <form action="/datosv2" method="GET">
+        <input type="text" className="input" />
+        <div className="buttons mt-3 mb-4">
+          <button className="button is-success is-dark" type="submit">
+            <span className="icon">
+              <FaSearch></FaSearch>
+            </span>
+            <span>Buscar</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  )
+}
+
 
 export const DataTableQuery = () => {
   const gridRef = useRef();
@@ -50,20 +85,12 @@ export const DataTableQuery = () => {
       setRowData(data);
     };
     Fetching();
-  }, [BREAKPOINT,themeGrid]);
-  
+  }, [BREAKPOINT, themeGrid]);
+
   return (
     <div className="container mb-6">
-      <section className="section columns is-desktop mb-5">
-        <div className="column is-align-content-center">
-          <h1 className="title">Soon</h1>
-          <h2 className="subtitle is-size-3">you can see your data here</h2>
-          <p className="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias sequi ducimus at ipsa optio quia aliquid voluptate magnam obcaecati, saepe nobis quis maxime. Fugiat deleniti perferendis sit distinctio facilis maxime..</p>
-        </div>
-        <div className="column has-text-centered is-align-content-center">
-          <Data width={350} height={350}></Data>
-        </div>
-      </section>
+      <Section></Section>
+      <Input></Input>
       <div
         className={themeGrid ? "ag-theme-alpine" : "ag-theme-quartz-dark"}
         style={{ height: 500 }}
