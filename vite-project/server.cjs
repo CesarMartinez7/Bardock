@@ -39,10 +39,7 @@ app.get("/datos", (req, resp) => {
   });
 });
 
-app.get("/pruebas", (req, resp) => {
-  console.log(req.body);
-  resp.send("En Get");
-});
+
 
 app.post("/registrer", (req, resp) => {
   // Datos q vienen de el formulario
