@@ -3,13 +3,11 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import { useEffect, useRef, useState } from "react";
-import { useContext } from "react";
 import "ag-grid-enterprise";
 import { DropButton, TableNameContext } from "../../pages/DataList.jsx";
 import { Data } from "../../assets/Logos.jsx";
 
 export const DataTableQuery = () => {
-  const { nameTable } = useContext(TableNameContext);
   const gridRef = useRef();
   const onExportClick = () => {
     gridRef.current.api.exportDataAsCsv();
@@ -28,8 +26,8 @@ export const DataTableQuery = () => {
 
   const [rowData, setRowData] = useState([]);
   const [colDefs, setColDefs] = useState([
-    { field: "descripcion_activo", filter: true, floatingFilter: true, flex: 2, editable: true, width: 20, },
-    { field: "id_articulo", filter: true, floatingFilter: true, rowGroup: true, hide: true, },
+    { field: "descripcion_activo", filter: true, floatingFilter: true, flex: 2, editable: true },
+    { field: "id_articulo", filter: true, floatingFilter: true, rowGroup: true, hide: true },
     { field: "id_activo", filter: true, floatingFilter: true },
     { field: "codigo", filter: true, floatingFilter: true },
     { field: "fecha_compra", filter: true, floatingFilter: true },
@@ -41,8 +39,10 @@ export const DataTableQuery = () => {
     },
   ]);
 
-  const BREAKPOINT = "http://localhost:3000/datos";
-
+  const BREAKPOINT = "http://localhost:3000/api/datos";
+  const [themeGrid, setThemeGrid] = useState(
+    window.matchMedia("(prefers-color-scheme: light)").matches
+  );
   useEffect(() => {
     const Fetching = async () => {
       const respuesta = await fetch(BREAKPOINT);
@@ -50,10 +50,8 @@ export const DataTableQuery = () => {
       setRowData(data);
     };
     Fetching();
-  }, []);
-  const [themeGrid, setThemeGrid] = useState(
-    window.matchMedia("(prefers-color-scheme: light)").matches
-  );
+  }, [BREAKPOINT,themeGrid]);
+  
   return (
     <div className="container mb-6">
       <section className="section columns is-desktop mb-5">

@@ -29,9 +29,8 @@ const BarChart = ({ typing = "Avaluo", title = "Avaluo", ejeX = "Producto", data
 
   const fetchDatos = async () => {
     try {
-      const respuesta = await fetch("http://localhost:3000/datos");
+      const respuesta = await fetch("http://localhost:3000/api/datos");
       const responseData = await respuesta.json();
-      console.table(responseData);
 
       // Usar dataKey para obtener los datos
       setData({

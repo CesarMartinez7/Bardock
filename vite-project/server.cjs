@@ -29,7 +29,7 @@ conec.connect((err) => {
   console.log("Conectado a la base de datos con éxito");
 });
 
-app.get("/datos", (req, resp) => {
+app.get("/api/datos", (req, resp) => {
   const sql = "SELECT * FROM activo";
   conec.query(sql, (err, resultadoQuery) => {
     if (err) {
