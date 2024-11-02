@@ -64,7 +64,7 @@ const DataTablePage = () => {
   return (
     <TableNameContext.Provider value={nameTable}>
       <DataTableQuery/>
-      <BarChart dataKey="avaluo" ejeX="descripcion_activo"></BarChart>
+      <BarChart  table={nameTable}></BarChart>
       <Footer></Footer>
     </TableNameContext.Provider>
   );
