@@ -6,33 +6,58 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 
-const Reglas = [
-  { table: "activo", title: "Avaluo", ejex: "Producto", dataKey: "avaluo" },
-  { table: "articulo", title: "Avaluo", ejex: "descripcion", dataKey: "estado" },
-];
 
-const reglador = (tabla) => {
-  const reglaEncontrada = Reglas.find((value) => value.table === tabla);
-  if (reglaEncontrada) {
-    console.log("Encontrado");
-    console.log(reglaEncontrada.title, reglaEncontrada.ejex, reglaEncontrada.dataKey);
-    return [reglaEncontrada.title, reglaEncontrada.ejex, reglaEncontrada.dataKey];
-  } else {
-    console.log("No encontrado");
-    return null;
+
+// typing = "Avaluo", title = "Avaluo", ejeX = "Producto", dataKey = "Avaluo"
+
+const BarChart = ({ table = "bodega", }) => {
+  // TableSearch
+  const [tableSearch,setTableSearch] = useState("activo")
+  const onSubmitTableSearch = (e) => {
+    e.preventDefault()
+    const table = e.target.elements.tablesearch.value.toLowerCase()
+    console.log(table)
+    setTableSearch(e => e = table)
+    console.log(tableSearch)
+    
   }
-};
-
-const final = reglador("activo");
 
 
+  /// Pasar Reglas al los Graficos
+  const Reglas = [
+    { table: "activo", title: "Avaluo", ejex: "descripcion_activo", dataKey: "avaluo" },
+    { table: "articulo", title: "Avaluo", ejex: "descripcion", dataKey: "estado" },
+    { table: "acta_asignacion", title: "Fecha Acta", ejex: "observacion", dataKey: "fecha_registro" },
+    { table: "bodega", title: "Bodega", ejex: "descripcion", dataKey: "prefijo" },
+    { table: "Categoria_Articulo", title: "Categoria", ejex: "descripcion", dataKey: "estado" },
+    { table: "centro_costo", title: "centro_Costo", ejex: "descripcion", dataKey: "Estado" },
 
-const BarChart = ({ table = reglador(table) ,typing = table[0], title =table[0] , ejeX = table[1], dataKey = table[2] }) => {
+
+  ];
+
+  const Reglador = (tabla) => {
+    const reglaEncontrada = Reglas.find((value) => value.table === tabla);
+    if (reglaEncontrada) {
+      console.log("Encontrado");
+      return [reglaEncontrada.title, reglaEncontrada.ejex, reglaEncontrada.dataKey];
+    } else {
+      console.log("No encontrado");
+      return null;
+    }
+  };
+
+  // Aqui viene el resultado del reglador que hara que se muestre los atributos que pasaran al Grafico
+  const regladorClean = Reglador(tableSearch);
+  // regladorClean[0] = "Title"
+  // regladorClean[1] = "EjeX"
+  // regladorClean[2] = "Datakey o Eje y"
+
+
   const [data, setData] = useState({
     labels: [],
     datasets: [
       {
-        label: title,
+        label: regladorClean[0],
         data: [],
         backgroundColor: "rgba(75, 192, 192, 0.6)",
         borderColor: "rgba(75, 192, 192, 1)",
@@ -51,16 +76,16 @@ const BarChart = ({ table = reglador(table) ,typing = table[0], title =table[0] 
 
   const fetchDatos = async () => {
     try {
-      const respuesta = await fetch("http://localhost:3000/api/datos");
+      const respuesta = await fetch(`http://localhost:3000/api/datos?table=${tableSearch}`);
       const responseData = await respuesta.json();
-
+      console.table(responseData)
       // Usar dataKey para obtener los datos
       setData({
-        labels: responseData.map((item) => item[ejeX]),
+        labels: responseData.map((item) => item[regladorClean[1]]),
         datasets: [
           {
-            label: title,
-            data: responseData.map((item) => item[dataKey]),  // Usar dataKey aquí, tiene que se notacion de corchetes por reglas de Js.
+            label: regladorClean[0],
+            data: responseData.map((item) => item[regladorClean[2]]),  // Usar dataKey aquí, tiene que se notacion de corchetes por reglas de Js.
             backgroundColor: "rgba(75, 192, 192, 0.6)",
             borderColor: "rgba(75, 192, 192, 1)",
             borderWidth: 1,
@@ -73,12 +98,17 @@ const BarChart = ({ table = reglador(table) ,typing = table[0], title =table[0] 
   };
 
   useEffect(() => {
-    fetchDatos();
-  }, []);
+    if(regladorClean){
+      fetchDatos()
+    }
+  }, [tableSearch]);
 
   return (
     <div className="container">
-      <h2 className='is-size-6'>Gráfico de {typing}</h2>
+      <form onSubmit={onSubmitTableSearch}>
+        <input className='input'name='tablesearch'></input>
+      </form>
+      <h2 className='is-size-6'>Gráfico de la Tabla: {tableSearch.toLocaleUpperCase()}</h2>
       <p className='content is-size-7'>Puedes poner el nombre de la tabla para personalizar la respuesta de ella.</p>
       <Bar data={data} options={options} />
     </div>

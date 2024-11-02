@@ -2,32 +2,44 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext, createContext } from "react";
 import "ag-grid-enterprise";
-import { Data } from "../../assets/Logos.jsx"; // Asegúrate de que estas importaciones sean correctas
+import { Data } from "../../assets/Logos.jsx";
 import { FaSearch } from "react-icons/fa";
 
 
 
 const TableOpcion = () => {
-  return (
-    <section className="section">
-      <h1 className="subtitle is-size-4">Tablas Disponibles</h1>
-      <div className="grid">
-        <div className="cell box subtitle is-size-6 has-text-centered">Acta_Asignacion</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">Activo</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">Articulo</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">Bodega</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">Categoria_Articulo</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">Centro_costo</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">detalle_acta_inventario</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">orden_inventario</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">perfil</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">stock</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">tipo_Documento</div>
-        <div className="cell box subtitle is-size-6 has-text-centered">Usuario</div>
-      </div>
+  const array = [
+    { name: "Acta Asignacion", table: "Acta_Asignacion", description: "Registro de la asignación de un activo." },
+    { name: "Activo", table: "Activo", description: "Información sobre los activos de la organización." },
+    { name: "Articulo", table: "Articulo", description: "Detalles de los artículos gestionados." },
+    { name: "Bodega", table: "Bodega", description: "Información sobre los almacenes o bodegas." },
+    { name: "Categoria Articulos", table: "Categoria_Articulos", description: "Clasificación de los artículos por categorías." },
+    { name: "Centro de Costo", table: "Centro_de_Costo", description: "Divisiones para el control de costos." },
+    { name: "Detalles de acta de inventario", table: "Detalles_de_acta_de_inventario", description: "Información detallada de cada acta de inventario." },
+    { name: "Orden de Inventario", table: "Orden_de_Inventario", description: "Registros de las órdenes para realizar inventarios." },
+    { name: "Perfil", table: "Perfil", description: "Configuraciones y permisos de usuarios." },
+    { name: "Tipo de documentos", table: "Tipo_de_documentos", description: "Clasificación de los diferentes tipos de documentos utilizados." },
+    { name: "Stok", table: "Stok", description: "Registro de la cantidad de artículos en inventario." }
+  ];
+  return (<>
+    <h1 className="subtitle is-size-4">Tablas Disponibles</h1>
+    <section className="grid ">
+      {array.map((value) => (
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <h1 className="subtitle is-size-5">{value.name}</h1>
+              <p>{value.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
     </section>
+
+
+  </>
 
   )
 }
@@ -39,11 +51,11 @@ const Section = () => {
   };
 
   const handleClickData = () => {
-    window.scrollTo({ behavior: "smooth", top: 567 });
+    window.scrollTo({ behavior: "smooth", top: 1284 });
   };
 
   const handleClickBars = () => {
-    window.scrollTo({ behavior: "smooth", top: 1284 });
+    window.scrollTo({ behavior: "smooth", top: 1966 });
   };
 
   return (
@@ -77,32 +89,34 @@ const Section = () => {
   );
 };
 
-const Input = ({ onSearch }) => { 
+
+
+const Input = ({ onSearch }) => {
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    const table = e.target.elements.table.value; 
-    console.log(table); 
-    onSearch(table); 
+    const table = e.target.elements.table.value;
+    console.log(table);
+    onSearch(table);
   };
 
   return (
-    <div className="container box is-shadowless is-flex is-justify-content-center">
-      <form onSubmit={handleSubmit} className="field">
+      <form onSubmit={handleSubmit} className="field container">
         <div className=" columns">
           <div className="column">
-            <input type="text" className="input is-link" name="table"  placeholder="Busca tu tabla..."/>
+            <input type="text" className="input" name="table" placeholder="Busca tu tabla..." />
           </div>
           <div className="column">
-          <button className="button is-primary is-outlined" type="submit">
-            <span className="icon">
-              <FaSearch />
-            </span>
-            <span>Buscar</span>
-          </button>
+            <button className="button is-info is-inverted " type="submit" >
+              <span className="icon">
+                <FaSearch />
+              </span>
+              <span>Buscar</span>
+            </button>
           </div>
         </div>
       </form>
-    </div>
+
   );
 };
 
@@ -128,8 +142,7 @@ export const DataTableQuery = () => {
 
 
   const mostrarEnCosola = () => {
-    window.console()
-    console.log(rowData)
+    console.table(rowData)
   }
 
   const fetchData = async (table) => {
@@ -147,25 +160,17 @@ export const DataTableQuery = () => {
       <Section />
       <TableOpcion></TableOpcion>
       <Input onSearch={fetchData} />
-      <div
-        className={themeGrid ? "ag-theme-alpine" : "ag-theme-quartz-dark"}
-        style={{ height: 500 }}
-        id="grid"
-      >
+      <div className={themeGrid ? "ag-theme-alpine" : "ag-theme-quartz-dark"} style={{ height: 500 }} id="grid">
         <AgGridReact ref={gridRef} rowData={rowData} columnDefs={colDefs} />
       </div>
       <div className="buttons mt-4">
-        <button
-          onClick={() => gridRef.current.api.exportDataAsCsv()} 
-          className="button is-primary is-outlined"
-        >
+        <button onClick={() => gridRef.current.api.exportDataAsCsv()} className="button is-primary is-outlined">
           Exportar a CSV
         </button>
         <button onClick={() => window.print()} className="button is-info is-inverted">
           Imprimir
         </button>
         <button className="button" onClick={mostrarEnCosola}>Mostrar en consola</button>
-
       </div>
     </div>
   );
