@@ -10,6 +10,7 @@ const DataListV2Page = lazy(() => import("./pages/DataList"));
 const Documentacion = lazy(() => {
   return import("./pages/Documentacion")
 })
+const Contact = lazy(()=> import("./pages/Contact/contact"))
 
 export function App() {
   return (
@@ -22,6 +23,7 @@ export function App() {
           <Route path="datosv2" element={<DataListV2Page />} />
           <Route path="documentacion" element={<Documentacion></Documentacion>}></Route>
           <Route path="*" element={<NotFoundPage />} />
+          <Route path="contact" element={<Contact/>}></Route>
         </Routes>
       </BrowserRouter>
     </Suspense>

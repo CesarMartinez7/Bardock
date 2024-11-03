@@ -27,10 +27,10 @@ const TableOpcion = () => {
     <h1 className="subtitle is-size-4">Tablas Disponibles</h1>
     <section className="grid ">
       {array.map((value) => (
-        <div class="card">
+        <div class="card is-radiusless">
           <div class="card-content">
             <div class="content">
-              <h1 className="subtitle is-size-5">{value.name}</h1>
+              <p className="subtitle has-text-link is-hoverable is-size-5">{value.name}</p>
               <p>{value.description}</p>
             </div>
           </div>

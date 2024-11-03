@@ -54,7 +54,7 @@ export const Navbar = () => {
                 <Link to="datosv2" className="navbar-item">
                   Data
                 </Link>
-                <a className="navbar-item">Contact</a>
+                <Link to="contact" className="navbar-item">Contact</Link>
                 <hr className="navbar-divider" />
                 <a className="navbar-item">Report an issue</a>
               </div>
