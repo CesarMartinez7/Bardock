@@ -115,13 +115,13 @@ const Contact = () => {
       className="card p-5 is-flex is-justify-content-center is-gap-3 "
       style={styles}
     >
-      <a className="button" href="http://google.com">
+      <a className="button" href="https://github.com/CesarMartinez7" target="_blank" on>
         <GitHub w={40} c={color ? "#ffff" : "#2f2f2f"}></GitHub>
       </a>
       <a className="button">
         <Telegram />
       </a>
-      <a className="button">
+      <a className="button" href="https://mail.google.com/mail/u/0/#sent/KtbxLxGWvNbVPcDxkmFGwCRLfrLQCwZsGV?compose=CllgCJTMZCBnVDlLvfGHQzkltZjnpgSNpKQWjBLRWFcrcgczSllBqGSBLbpwTDwVjmZqMXJglmL">
         <Gmail></Gmail>
       </a>
       <a href="" className="button">

@@ -27,10 +27,10 @@ const TableOpcion = () => {
     <h1 className="subtitle is-size-4">Tablas Disponibles</h1>
     <section className="grid ">
       {array.map((value) => (
-        <div class="card is-radiusless">
+        <div class="card">
           <div class="card-content">
             <div class="content">
-              <p className="subtitle has-text-link is-hoverable is-size-5">{value.name}</p>
+              <p className="subtitle  is-size-5">{value.name}</p>
               <p>{value.description}</p>
             </div>
           </div>
@@ -91,8 +91,18 @@ const Section = () => {
 
 
 
-const Input = ({ onSearch }) => {
+const Search = ({ onSearch }) => {
   
+  const tableInput = useRef(null)
+  
+  window.addEventListener("blur",()=>{
+    tableInput.current.focus()
+  })
+  window.addEventListener("offline",() => {
+    window.alert("Por favor conectese a internet")
+  })
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const table = e.target.elements.table.value;
@@ -104,10 +114,10 @@ const Input = ({ onSearch }) => {
       <form onSubmit={handleSubmit} className="field container">
         <div className=" columns">
           <div className="column">
-            <input type="text" className="input" name="table" placeholder="Busca tu tabla..." />
+            <input type="text" className="input" name="table" placeholder="Busca tu tabla..." ref={tableInput} />
           </div>
           <div className="column">
-            <button className="button is-info is-inverted " type="submit" >
+            <button className="button is-info is-inverted" type="submit" >
               <span className="icon">
                 <FaSearch />
               </span>
@@ -159,7 +169,7 @@ export const DataTableQuery = () => {
     <div className="container mb-6">
       <Section />
       <TableOpcion></TableOpcion>
-      <Input onSearch={fetchData} />
+      <Search onSearch={fetchData} />
       <div className={themeGrid ? "ag-theme-alpine" : "ag-theme-quartz-dark"} style={{ height: 500 }} id="grid">
         <AgGridReact ref={gridRef} rowData={rowData} columnDefs={colDefs} />
       </div>

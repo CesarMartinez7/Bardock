@@ -13,14 +13,47 @@
 }
 
 
+.logos-items{
+    height: 50vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit,minmax(4rem,1fr));
+    gap: 10px;
+    place-items: center;
+    padding: 2vh 1vw;
+}
+.logos-items .item{
+    transition: transform 500ms, drop-shadow 500ms  ;
+    padding: 10px;
+    border-radius: 4px;
+    
+}
+
+
+.logos-items .item:hover{
+    transform: scale(1.3);
+}
 
 @media(prefers-color-scheme:dark){
     :root {
-        --bulma-primary-h: 104deg;
-        --bulma-primary-s: 94%;
-        --bulma-scheme-h: 2142;
-        --bulma-scheme-s: 4%;
-    }
+        --bulma-primary-h: 114deg;
+        --bulma-primary-s: 97%;
+        --bulma-primary-l: 61%;
+        --bulma-scheme-h: 2;
+        --bulma-scheme-s: 0%;
+        --bulma-light-l: 0%;
+        --bulma-soft-l: 100%;
+        --bulma-active-border-l-delta: 100%;
+        --bulma-hover-color-l-delta: 100%;
+        --bulma-active-color-l-delta: 100%;
+        --bulma-hover-shadow-a-delta: 100;
+        --bulma-active-shadow-a-delta: 100;
+        --bulma-family-primary: Calibri,SF Pro,Segoe UI,Roboto,Oxygen,Ubuntu,Helvetica Neue,Helvetica,Arial,sans-serif;
+        
+      }
+      
+      
 }
 
 ::selection{
