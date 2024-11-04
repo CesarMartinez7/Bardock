@@ -43,10 +43,6 @@ app.get("/api/datos", (req, resp,) => {
 });
 
 
-app.get("")
-
-
-
 app.post("/registrer", (req, resp) => {
   // Datos q vienen de el formulario
   let name = req.body.name;
