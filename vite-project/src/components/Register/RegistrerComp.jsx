@@ -62,7 +62,7 @@ const Register = () => {
         </div>
         <div className="field is-grouped">
           <div className="control">
-            <button className="button is-link" id="submit" type="submit">
+            <button className="button is-dark" id="submit" type="submit">
               Enviar
             </button>
           </div>

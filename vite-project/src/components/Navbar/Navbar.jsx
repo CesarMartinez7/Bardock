@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Link, Outlet } from "react-router-dom";
 import { LogoDesign } from "../../assets/Logos";
 import { GatoIcon } from "../../assets/Logos";
+import { FaJava, FaJs } from "react-icons/fa";
 // import  "../../assets/react.svg"
 
 export const Navbar = () => {
@@ -14,13 +15,13 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className="navbar box p-2"
+        className="navbar has-shadow p-2"
         role="navigation"
         aria-label="main navigation"
       >
-        <div className="navbar-brand is-size-1">
+        <div className="navbar-brand is-medium is-size-1">
           <Link className="navbar-item is-size-1" to="/">
-            <GatoIcon width={500} height={200}></GatoIcon>
+            <FaJs ></FaJs>
           </Link>
 
           <a
@@ -30,9 +31,9 @@ export const Navbar = () => {
             aria-expanded="false"
             onClick={handleIsActive}
           >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+            <span aria-hidden="true" className="is-info"></span>
+            <span aria-hidden="true" className="is-info"></span>
+            <span aria-hidden="true" className="is-info"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
@@ -44,11 +45,11 @@ export const Navbar = () => {
             </Link>
 
             <Link to="/documentacion" className="navbar-item">
-              Documentacion
+              Docs
             </Link>
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">More</a>
+              <a className="navbar-link is-dark">More</a>
 
               <div className="navbar-dropdown">
                 <Link to="datosv2" className="navbar-item">
@@ -64,8 +65,8 @@ export const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to="registrer" className="button is-link" style={{ background: "#6C63FF" }}>
-                  Registro
+                <Link to="registrer" className="button is-rounded " >
+                  Sign up
                 </Link>
               </div>
             </div>

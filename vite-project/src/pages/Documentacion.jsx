@@ -87,6 +87,9 @@ const Documentacion = () => {
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus placeat odio officia iste illum rem nulla, in voluptatum voluptatem dignissimos? Provident dicta distinctio quo modi doloribus quisquam, sunt deserunt excepturi earum eum commodi minima cumque! Reprehenderit, deserunt voluptatum velit debitis, tenetur aperiam tempora optio ad exercitationem dolorum, eveniet cumque ullam!
           </p>
+          <figure class="image is-128x128">
+  <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+</figure>
         </div>
         <div className="content is-size-6 is-size-7-mobile">
           <h1 className="title">Lorem ipsum dolor sit amet</h1>

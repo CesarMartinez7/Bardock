@@ -24,16 +24,12 @@ const TableOpcion = () => {
     { name: "Stok", table: "Stok", description: "Registro de la cantidad de artículos en inventario." }
   ];
   return (<>
-    <h1 className="subtitle is-size-4">Tablas Disponibles</h1>
-    <section className="grid ">
+    <h1 className="title">Tablas Disponibles</h1>
+    <section className="grid">
       {array.map((value) => (
-        <div class="card">
-          <div class="card-content">
-            <div class="content">
-              <p className="subtitle  is-size-5">{value.name}</p>
-              <p>{value.description}</p>
-            </div>
-          </div>
+        <div class="box border-colors is-gap-3 is-flex is-flex-direction-column" >
+            <h1 className="header-subtitle is-size-6">{value.name}</h1>
+          <p className="is-size-7">{value.description}</p>
         </div>
       ))}
     </section>
@@ -72,7 +68,7 @@ const Section = () => {
         <div className="buttons">
           <button
             className="button is-dark"
-            style={styles}
+
             onClick={handleClickData}
           >
             Ver Datos
@@ -92,16 +88,16 @@ const Section = () => {
 
 
 const Search = ({ onSearch }) => {
-  
+
   const tableInput = useRef(null)
-  
-  window.addEventListener("blur",()=>{
+
+  window.addEventListener("blur", () => {
     tableInput.current.focus()
   })
-  window.addEventListener("offline",() => {
+  window.addEventListener("offline", () => {
     window.alert("Por favor conectese a internet")
   })
-  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -111,21 +107,21 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-      <form onSubmit={handleSubmit} className="field container">
-        <div className=" columns">
-          <div className="column">
-            <input type="text" className="input" name="table" placeholder="Busca tu tabla..." ref={tableInput} />
-          </div>
-          <div className="column">
-            <button className="button is-info is-inverted" type="submit" >
-              <span className="icon">
-                <FaSearch />
-              </span>
-              <span>Buscar</span>
-            </button>
-          </div>
+    <form onSubmit={handleSubmit} className="field container">
+      <div className=" columns">
+        <div className="column">
+          <input type="text" className="input" name="table" placeholder="Busca tu tabla..." ref={tableInput} />
         </div>
-      </form>
+        <div className="column">
+          <button className="button is-info " type="submit" >
+            <span className="icon">
+              <FaSearch />
+            </span>
+            <span>Buscar</span>
+          </button>
+        </div>
+      </div>
+    </form>
 
   );
 };
@@ -177,7 +173,7 @@ export const DataTableQuery = () => {
         <button onClick={() => gridRef.current.api.exportDataAsCsv()} className="button is-primary is-outlined">
           Exportar a CSV
         </button>
-        <button onClick={() => window.print()} className="button is-info is-inverted">
+        <button onClick={() => window.print()} className="button is-info ">
           Imprimir
         </button>
         <button className="button" onClick={mostrarEnCosola}>Mostrar en consola</button>

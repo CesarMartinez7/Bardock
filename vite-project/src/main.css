@@ -12,7 +12,16 @@
     padding: 0.3vh 2vw 0.3vh 2vw;
 }
 
+.border-colors{
+    border: 1px solid #dfdfdf;
+    transition: transform 500ms ;
+    
+}
 
+.border-colors:hover{
+    border: 1px solid rgb(149, 149, 149);
+    transform: translateY(-4px);
+}
 .logos-items{
     height: 50vh;
     width: 100%;
@@ -60,11 +69,46 @@
     background-color: rgb(104, 104, 104);
 }
 
-.icon-women{
+.icon-data{
     transition: transform 500ms ;
 }
 
 
-.icon-women:hover{
+.icon-data:hover{
     transform: scale(1.1);
+    
 }
+
+
+
+.header-box{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header-subtitle::after{
+    content: "🛠️";
+}
+
+/* .title-animate{
+    transition: filter  500ms;
+    
+}
+
+.title-animate:hover{
+    filter: drop-shadow(0 0 0.75rem rgb(179, 32, 212));
+
+} */
+/* @keyframes titleAnimate {
+    0%{
+        filter: drop-shadow(rgb(46, 45, 46),0px  9px 10px );
+        backdrop-filter: blur(1px);
+        background-color: red;
+        
+    }
+    100%{
+        filter: drop-shadow(blue,0px  9px 10px );
+        backdrop-filter: blur(1px);
+        background-color: red;
+    } */
