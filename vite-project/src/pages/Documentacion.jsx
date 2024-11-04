@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { MySQL,Vite,Nodejs,Expressjs,Chartjs,JavaScript,ReactCon,Firefox, VisualStudioCode,Yarn,Git} from "../assets/Logos";
+import { MySQL,Vite,Nodejs,Expressjs,Chartjs,JavaScript,ReactCon,Firefox, VisualStudioCode,Yarn,Git, Prettier} from "../assets/Logos";
 import { Footer } from "../components/Footer/Footer";
 import {
   FaReact,
@@ -56,11 +56,11 @@ const Documentacion = () => {
 
           <section className="hero is-medium">
             <div className="logos-items">
-              <FaNodeJs fontSize={"4rem"} className="item"></FaNodeJs>
-              <Vite className="item"/>
               <Expressjs  className="item"/>
+              <Vite className="item"/>
               <ReactCon className="item"></ReactCon>
               <MySQL className="item"/>
+              <FaNodeJs fontSize={"4rem"} className="item"></FaNodeJs>
               <VisualStudioCode className="item"></VisualStudioCode>
               <FaPython fontSize={"4em"} className="item"></FaPython>
               <JavaScript className="item" />
@@ -69,6 +69,7 @@ const Documentacion = () => {
               <Chartjs className="item"/>
               <Firefox className="item"></Firefox>
               <Git className="item"></Git>
+              <Prettier className="item"></Prettier>
             </div>
           </section>
           <blockquote>
