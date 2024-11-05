@@ -15,7 +15,7 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className="navbar has-shadow p-2"
+        className="navbar has-shadow p-2 "
         role="navigation"
         aria-label="main navigation"
       >

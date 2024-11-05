@@ -31,8 +31,6 @@ const BarChart = ({ table = "bodega", }) => {
     { table: "bodega", title: "Bodega", ejex: "descripcion", dataKey: "prefijo" },
     { table: "Categoria_Articulo", title: "Categoria", ejex: "descripcion", dataKey: "estado" },
     { table: "centro_costo", title: "centro_Costo", ejex: "descripcion", dataKey: "Estado" },
-
-
   ];
 
   const Reglador = (tabla) => {

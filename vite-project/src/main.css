@@ -91,24 +91,3 @@
     content: "🛠️";
 }
 
-/* .title-animate{
-    transition: filter  500ms;
-    
-}
-
-.title-animate:hover{
-    filter: drop-shadow(0 0 0.75rem rgb(179, 32, 212));
-
-} */
-/* @keyframes titleAnimate {
-    0%{
-        filter: drop-shadow(rgb(46, 45, 46),0px  9px 10px );
-        backdrop-filter: blur(1px);
-        background-color: red;
-        
-    }
-    100%{
-        filter: drop-shadow(blue,0px  9px 10px );
-        backdrop-filter: blur(1px);
-        background-color: red;
-    } */

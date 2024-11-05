@@ -112,10 +112,10 @@ const Contact = () => {
   };
   return (
     <div
-      className="card p-5 is-flex is-justify-content-center is-gap-3 "
+      className=" p-5 is-flex is-justify-content-center is-gap-3 "
       style={styles}
     >
-      <a className="button" href="https://github.com/CesarMartinez7" target="_blank" on>
+      <a className="button" href="https://github.com/CesarMartinez7" target="_blank" >
         <GitHub w={40} c={color ? "#ffff" : "#2f2f2f"}></GitHub>
       </a>
       <a className="button">

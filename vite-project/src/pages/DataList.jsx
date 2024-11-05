@@ -4,6 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 import {Footer} from "../components/Footer/Footer"
 import {FaTable} from "react-icons/fa";
 import BarChart from "../components/Charts/Bar";
+import Pastel from "../components/Charts/Pastel";
 
 
 export const DropButton = () => {
@@ -65,6 +66,7 @@ const DataTablePage = () => {
     <TableNameContext.Provider value={nameTable}>
       <DataTableQuery/>
       <BarChart  table={nameTable}></BarChart>
+      <Pastel></Pastel>
       <Footer></Footer>
     </TableNameContext.Provider>
   );
