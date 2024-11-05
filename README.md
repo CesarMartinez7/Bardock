@@ -33,8 +33,9 @@ Solo asegurate de tener instalado <span>
 
 
 Si quieres desplegar el proyecto asegurate de usar el comando:
-__npm run build__.
-<pre></pre>
+<pre>
+npm run build.
+</pre>
 
 Se integro la Creacion de Graficos con [RECHARTS](https://recharts.org/en-US), Los graficos toman una ejeX y una data key como argumento en eje Y.
 
