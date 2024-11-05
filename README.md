@@ -3,33 +3,27 @@
 
 <section style="display:grid;grid-template-columns:repeat(3,1fr);gap:15px">
 
-<div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="400px" heigth="400px">
-</div>
-<div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="400px" heigth="400px">
-</div>
+
 
 
 
 </section>
 
 
-<h5>Para ejecutar el Proyecto de forma Local es importante primero instalar las dependencias, Esto se hace ya sea con:  </h5>
+<p>Para ejecutar el Proyecto de forma Local es importante primero instalar las dependencias, Esto se hace ya sea con:  </p>
 
-__npm__ or __yarn__
+<code>
+npm or yarn
+</code> 
+<hr>
 
-<img src="./vite-project/public/pack.png"></img>
+<pre>npm install 
+yarn install
+</pre>
 
-Lo mas recomendable seria entrar a __vite-project__ porque alli se encuentra todo el proyecto. 
+Para instalar todas las dependencias del proyecto.
 
 
-Ejecutar el servidor en el archivo __server.cjs__
-ya que alli se encuentra el servidor local en el puerto __3000__ con el comando:  <span style="color:green">__node server.cjs__</span>
-
-Se abrira un servidor y puede dejarlo abierto alli estara la respuesta al __MySQL__.
-
-Esto hara que la pestaña de __http://localhost:5173/datos__ se habilite y podra acceder a esta pestaña que mapea la respuesta del mysql.
 
 > [!TIP]
 > Puedes ejecutar el archivo <span style="color:green; Este">lanzador.py</span> el creara tus dos servidores.
@@ -40,18 +34,16 @@ Solo asegurate de tener instalado <span>
 
 Si quieres desplegar el proyecto asegurate de usar el comando:
 __npm run build__.
+<pre></pre>
 
 Se integro la Creacion de Graficos con [RECHARTS](https://recharts.org/en-US), Los graficos toman una ejeX y una data key como argumento en eje Y.
-
-
-Para ejecutar el servidor primero tienes que que correr el comando 
-__npm run build__ or __yarn run build__ dentro del proyecto. Despues ya podras ejecutar el servidor **server.cjs**
 
 
 > [!TIP]
 > ASEGURATE DE CONFIGURAR TU BASE DE DATOS EN LOCAL, COMO LA CONTRASEÑA Y EL USUARIO. Igual con la nueva tabla usuarioroot que tendra informacion de los usuarios que tienen acesso a poder modificar y crear productos.
 
-El puerto por default es el que se le asigne en PORT o __3000__ pero puedes cambiarlo o reasignarlo cuando quieras.
+>[!ALERT] 
+> El puerto por default es el que se le asigne en PORT o <code>3000</code> pero puedes cambiarlo o reasignarlo cuando quieras.
 
 El Frontend y el backend ahora corren el un mismo servidor, esto hace que los dos se ejecuten al mismo tiempo y hace innecesario el LANZADOR.py q solo lanza los dos en diferentes puertos
 
@@ -71,5 +63,5 @@ Ya se pueden llamar diferentes tablas desde la misma pestaña, esto ahorra rendi
 # Tengo que corregir esto.
 - En el Archivo pl.cjs intente migrar a POSGRES pero no pude XDDDD, tenia respuesta de posgres pero tenia un error de promesa
 
-- Me acabe de dar cuenta hace 2minutos de escribir lo de arriba es que la razon por la cual no daba respuesta el servidor en deploy, era porque en el package.json tome el posgres como dependencia de desarollo, supongo que ni yarn ni npm la instala o la tienen en cuenta en el deploy, por eso este no da respuesta y cuando se pasa la peticion sale un error de promesa. Tambien como espera un parametro la funcion que seria el "table-Name" este no lo encuentra y como no esta por default en la funcion este no puede hacer nada sin este parametro, no mas hacer un __SELECT * FROM ""__
+- Me acabe de dar cuenta hace 2 minutos de escribir lo de arriba es que la razon por la cual no daba respuesta el servidor en deploy, era porque en el package.json tome el posgres como dependencia de desarollo, supongo que ni yarn ni npm la instala o la tienen en cuenta en el deploy, por eso este no da respuesta y cuando se pasa la peticion sale un error de promesa. Tambien como espera un parametro la funcion que seria el "table-Name" este no lo encuentra y como no esta por default en la funcion este no puede hacer nada sin este parametro, no mas hacer un __SELECT * FROM ""__
 
