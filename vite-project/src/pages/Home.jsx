@@ -2,15 +2,19 @@ import React from "react";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Footer } from "../components/Footer/Footer";
 import { Women, Worker } from "../assets/Logos";
-import { FaAndroid, FaFileExcel, FaFileCsv } from "react-icons/fa"
+import { FaAndroid, FaFileExcel, FaFileCsv, FaReact, FaFileAlt, FaFileExport } from "react-icons/fa"
 import Main from "../components/Main/Main";
+import { useNavigate } from "react-router-dom";
 
 
 
 
 
 const HomePage = () => {
-
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    navigate("/datosv2")
+  }
   return (
     <>
       <Main />
@@ -34,8 +38,9 @@ const HomePage = () => {
             <button className="button">
               <FaFileExcel fontSize={"2em"}></FaFileExcel>
             </button>
-            <button className="button">
-            <FaFileCsv fontSize={"2em"}></FaFileCsv>
+            <button className="button" onClick={handleNavigate}>
+            <FaFileExport fontSize={"2em"}></FaFileExport>
+            
 
             </button>
           </div>

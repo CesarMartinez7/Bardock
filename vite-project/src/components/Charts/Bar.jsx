@@ -57,8 +57,8 @@ const BarChart = ({ table = "bodega", }) => {
       {
         label: regladorClean[0],
         data: [],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "rgba(46, 51, 61,0.8)",
+        borderColor: "rgba(46, 51, 61,1)",
         borderWidth: 1,
       },
     ],
@@ -84,8 +84,8 @@ const BarChart = ({ table = "bodega", }) => {
           {
             label: regladorClean[0],
             data: responseData.map((item) => item[regladorClean[2]]),  // Usar dataKey aquí, tiene que se notacion de corchetes por reglas de Js.
-            backgroundColor: "rgba(75, 192, 192, 0.6)",
-            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: "rgba(40, 51, 61,0.8)",
+            borderColor: "rgba(46, 51, 61,0.1)",
             borderWidth: 1,
           },
         ],

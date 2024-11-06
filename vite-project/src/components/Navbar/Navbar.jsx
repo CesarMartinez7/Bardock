@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Link, Outlet } from "react-router-dom";
 import { LogoDesign } from "../../assets/Logos";
 import { GatoIcon } from "../../assets/Logos";
-import { FaJava, FaJs } from "react-icons/fa";
+import { FaDatabase, FaFile, FaHome, FaJava, FaJs } from "react-icons/fa";
 // import  "../../assets/react.svg"
 
 export const Navbar = () => {
@@ -42,6 +42,7 @@ export const Navbar = () => {
           <div className="navbar-start">
             <Link to="/" className="navbar-item">
               Home
+              <FaHome></FaHome>
             </Link>
 
             <Link to="/documentacion" className="navbar-item">
@@ -55,9 +56,12 @@ export const Navbar = () => {
                 <Link to="datosv2" className="navbar-item">
                   Data
                 </Link>
+                <hr className="navbar-divider"/>
                 <Link to="contact" className="navbar-item">Contact</Link>
                 <hr className="navbar-divider" />
                 <a className="navbar-item">Report an issue</a>
+                <hr className="navbar-divider"/>
+                <Link to="dash" className="navbar-item">Dashboard Beta</Link>
               </div>
             </div>
           </div>

@@ -11,6 +11,7 @@ const Documentacion = lazy(() => {
   return import("./pages/Documentacion")
 })
 const Contact = lazy(()=> import("./pages/Contact/contact"))
+const DashBoard = lazy(()=> import("./pages/dashboard"))
 
 export function App() {
   return (
@@ -24,6 +25,7 @@ export function App() {
           <Route path="documentacion" element={<Documentacion></Documentacion>}></Route>
           <Route path="*" element={<NotFoundPage />} />
           <Route path="contact" element={<Contact/>}></Route>
+          <Route path="dash" element={<DashBoard></DashBoard>}></Route>
         </Routes>
       </BrowserRouter>
     </Suspense>

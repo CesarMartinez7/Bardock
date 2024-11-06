@@ -32,7 +32,6 @@ conec.connect((err) => {
 
 app.get("/api/datos", (req, resp,) => {
   let table = req.query.table || "activo"
-  console.log(table)
   const sql = `SELECT * FROM ${table}`;
   conec.query(sql, (err, resultadoQuery) => {
     if (err) {
@@ -48,8 +47,6 @@ app.post("/registrer", (req, resp) => {
   let name = req.body.name;
   let email = req.body.email;
   let password = req.body.password;
-  
-  console.log(req.body);
   const data = [name, email, password];
 
   conec.execute("SELECT count(nombre) as RESULTADO FROM userroot WHERE nombre = ? OR email = ?", [name, email], (err, resultado) => {
