@@ -1,6 +1,7 @@
-import React from "react";
+import React, { createContext } from "react";
 import Pastel from "../components/Charts/Pastel";
 import BarChart from "../components/Charts/Bar";
+import { useContext } from "react";
 
 const DashGrid = () => {
   return (
@@ -8,12 +9,11 @@ const DashGrid = () => {
       <div className="fixed-grid has-5-cols">
         <div className="grid">
           <div className="cell is-col-span-3 box">
-            <BarChart/>
+            <BarChart />
           </div>
           <div className="cell box is-col-span-2">
-            <Pastel/>
+            <Pastel />
           </div>
-          
         </div>
       </div>
     </div>
@@ -27,11 +27,15 @@ const Cont = () => {
         <div className="grid">
           <div className="cell box has-text-dark has-background-dark has-text-white">
             <h1 className="has-text-white title is-4">Total Sales</h1>
-            <p className="has-text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ducimus deleniti ex, dolorum ad culpa quo? Quis velit ut repellendus!</p>
+            <p className="has-text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+              ducimus deleniti ex, dolorum ad culpa quo? Quis velit ut
+              repellendus!
+            </p>
           </div>
           <div className="cell box">
             <h1 className="title is-size-4">Total money</h1>
-            <h1  className="title ">$ 2000,0003</h1>
+            <h1 className="title ">$ 2000,0003</h1>
           </div>
           <div className="cell box">
             <h1>Hello</h1>
@@ -53,14 +57,17 @@ const Cont = () => {
   );
 };
 
+const DataContext = createContext();
+
 const Final = () => {
   return (
     <>
-    <div className="section">
-      <Cont />
-      <DashGrid />
-
-    </div>
+      <DataContext.Provider>
+        <div className="section">
+          <Cont />
+          <DashGrid />
+        </div>
+      </DataContext.Provider>
     </>
   );
 };
