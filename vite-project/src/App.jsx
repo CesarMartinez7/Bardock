@@ -11,7 +11,7 @@ const Documentacion = lazy(() => {
   return import("./pages/Documentacion")
 })
 const Contact = lazy(()=> import("./pages/Contact/contact"))
-const DashBoard = lazy(()=> import("./pages/dashboard"))
+const DashBoard = lazy(()=> import("./pages/Dashboard.jsx"))
 
 export function App() {
   return (

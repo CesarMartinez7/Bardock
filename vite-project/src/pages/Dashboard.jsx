@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext ,useState} from "react";
 import Pastel from "../components/Charts/Pastel";
 import BarChart from "../components/Charts/Bar";
 import { useContext } from "react";
@@ -60,10 +60,11 @@ const Cont = () => {
 const DataContext = createContext();
 
 const Final = () => {
+  const [data,setData] = useState("activo");
   return (
     <>
       <DataContext.Provider>
-        <div className="section">
+        <div className="section" value={data}>
           <Cont />
           <DashGrid />
         </div>

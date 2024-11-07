@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GitHub } from "../../assets/Logos";
+import { GitHub } from "../../components/Icons/Logos.jsx";
 import "./index.css";
 const Gmail = (props) => (
   <svg

@@ -1,16 +1,7 @@
 
 <h1 style="line-height:2; font-size: clamp(3rem,2rem,3rem);white-space: nowrap">Proyecto Mobiliario 👨‍💻</h1>
 
-<section style="display:grid;grid-template-columns:repeat(3,1fr);gap:15px">
-
-
-
-
-
-</section>
-
-
-<p>Para ejecutar el Proyecto de forma Local es importante primero instalar las dependencias, Esto se hace ya sea con:  </p>
+<p>Para ejecta el Proyecto de forma Local es importante primero instalar las dependencias, Esto se hace ya sea con:  </p>
 
 <code>
 npm or yarn

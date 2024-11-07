@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Footer } from "../components/Footer/Footer";
-import { Women, Worker } from "../assets/Logos";
+import { Women, Worker } from "../components/Icons/Logos.jsx";
 import { FaAndroid, FaFileExcel, FaFileCsv, FaReact, FaFileAlt, FaFileExport } from "react-icons/fa"
 import Main from "../components/Main/Main";
 import { useNavigate } from "react-router-dom";

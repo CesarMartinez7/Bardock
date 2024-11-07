@@ -1,5 +1,5 @@
 import React from "react";
-import { NotFound } from "../assets/Logos";
+import { NotFound } from "../components/Icons/Logos.jsx";
 
 const NotFoundPage = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { MySQL,Vite,Nodejs,Expressjs,Chartjs,JavaScript,ReactCon,Firefox, VisualStudioCode,Yarn,Git, Prettier} from "../assets/Logos";
+import { MySQL,Vite,Nodejs,Expressjs,Chartjs,JavaScript,ReactCon,Firefox, VisualStudioCode,Yarn,Git, Prettier} from "../components/Icons/Logos.jsx";
 import { Footer } from "../components/Footer/Footer";
 import {
   FaReact,
@@ -72,13 +72,13 @@ const Documentacion = () => {
               <Prettier className="item"></Prettier>
             </div>
           </section>
-          <blockquote>
+          <pre>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
             quasi fuga amet exercitationem, sit cumque praesentium beatae animi
             magnam? Accusamus provident corporis dolorem nisi ipsa magnam cum
             veritatis neque accusantium quas illo, molestiae quos velit quae
             ipsam architecto iure dolor.
-          </blockquote>
+          </pre>
         </div>
         <div className="content is-size-6 is-size-6-mobile">
           <h1 className="title">

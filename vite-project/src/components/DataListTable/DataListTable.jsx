@@ -4,7 +4,7 @@ import "ag-grid-community/styles/ag-theme-alpine.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import { useEffect, useRef, useState, useContext, createContext } from "react";
 import "ag-grid-enterprise";
-import { Data } from "../../assets/Logos.jsx";
+import { Data } from "../Icons/Logos.jsx";
 import { FaSearch } from "react-icons/fa";
 
 
