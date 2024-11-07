@@ -1,5 +1,5 @@
 
-<h1 style="line-height:2; font-size: clamp(3rem,2rem,3rem);white-space: nowrap">DataFast</h1>
+<h1 style="line-height:2; font-size: clamp(3rem,2rem,3rem);white-space: nowrap">DataFast ⚡👨🏻‍💻</h1>
 
 <p>Para ejecta el Proyecto de forma Local es importante primero instalar las dependencias, Esto se hace ya sea con:  </p>
 
@@ -45,7 +45,7 @@ Ya se pueden llamar diferentes tablas desde la misma pestaña, esto ahorra rendi
 
 <h1>Soon</h1>
 
-- Pasar a una nueva rama para tomar el framework de **tailwind**
+- Pasar a una nueva rama para retormar pero ahora con el framework de **tailwind**
 - Añadir los ID de la base de datos, que puedan ser auto_incrementables.
 - Encriptar las contraseñas los usuarios ROOT
 - Terminar las interfaces 
