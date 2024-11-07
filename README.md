@@ -34,7 +34,8 @@ Se integro la Creacion de Graficos con [RECHARTS](https://recharts.org/en-US), L
 > [!TIP]
 > ASEGURATE DE CONFIGURAR TU BASE DE DATOS EN LOCAL, COMO LA CONTRASEÑA Y EL USUARIO. Igual con la nueva tabla usuarioroot que tendra informacion de los usuarios que tienen acesso a poder modificar y crear productos.
 
->[!ALERT] 
+
+> [!CAUTION]
 > El puerto por default es el que se le asigne en PORT o <code>3000</code> pero puedes cambiarlo o reasignarlo cuando quieras.
 
 El Frontend y el backend ahora corren el un mismo servidor, esto hace que los dos se ejecuten al mismo tiempo y hace innecesario el LANZADOR.py q solo lanza los dos en diferentes puertos
