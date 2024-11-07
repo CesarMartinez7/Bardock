@@ -11,11 +11,10 @@
     "start": "node DATABASE/server.cjs"
   },
   "dependencies": {
-    "ag-grid-react": "^32.3.0",
-    "react-loading-components":"1.1.12",
+    "@headlessui/react": "^2.2.0",
     "ag-grid-enterprise": "32.3.2",
+    "ag-grid-react": "^32.3.0",
     "body-parser": "^1.20.3",
-    "bulma": "^1.0.2",
     "chart.js": "^4.4.6",
     "cors": "^2.8.5",
     "esbuild": "^0.24.0",
@@ -26,6 +25,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
+    "react-loading-components": "1.1.12",
     "react-router-dom": "6.27.0",
     "recharts": "2.13.1"
   },
@@ -34,12 +34,15 @@
     "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.11.1",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.9.0",
+    "postcss": "^8.4.47",
     "postgres": "^3.4.5",
+    "tailwindcss": "^3.4.14",
     "vite": "^5.4.8"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",

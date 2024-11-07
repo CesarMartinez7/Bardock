@@ -21,7 +21,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="registrer" element={<RegistrerPage />} />
-          <Route path="datosv2" element={<DataListV2Page />} />
+          <Route path="datos" element={<DataListV2Page />} />
           <Route path="documentacion" element={<Documentacion></Documentacion>}></Route>
           <Route path="*" element={<NotFoundPage />} />
           <Route path="contact" element={<Contact/>}></Route>

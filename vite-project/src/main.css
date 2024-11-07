@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .container-center{
     left: 50%;
     top: 50%;
@@ -44,26 +48,6 @@
     transform: scale(1.3);
 }
 
-@media(prefers-color-scheme:dark){
-    :root {
-        --bulma-primary-h: 114deg;
-        --bulma-primary-s: 97%;
-        --bulma-primary-l: 61%;
-        --bulma-scheme-h: 2;
-        --bulma-scheme-s: 0%;
-        --bulma-light-l: 0%;
-        --bulma-soft-l: 100%;
-        --bulma-active-border-l-delta: 100%;
-        --bulma-hover-color-l-delta: 100%;
-        --bulma-active-color-l-delta: 100%;
-        --bulma-hover-shadow-a-delta: 100;
-        --bulma-active-shadow-a-delta: 100;
-        --bulma-family-primary: Calibri,SF Pro,Segoe UI,Roboto,Oxygen,Ubuntu,Helvetica Neue,Helvetica,Arial,sans-serif;
-        
-      }
-      
-      
-}
 
 ::selection{
     background-color: rgb(104, 104, 104);
