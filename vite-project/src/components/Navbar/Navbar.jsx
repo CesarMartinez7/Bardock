@@ -38,9 +38,12 @@ export const Navbar = () => {
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="inline-flex gap-3 lg:flex lg:flex-1 lg:justify-end ">
+            <Link to="login" className="font-semibold ">
+              Login
+            </Link>
             <Link to="registrer" className="font-semibold ">
-              Start
+              Sign Up 
             </Link>
           </div>
         </nav>

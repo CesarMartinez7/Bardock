@@ -3,7 +3,8 @@ const cors = require("cors");
 const mysql = require("mysql2");
 const bodyparser = require("body-parser");
 const chalk = require("chalk");
-const path = require("path"); 
+const path = require("path");
+const bycript = require("bcrypt");
 
 const app = express();
 
@@ -29,9 +30,8 @@ conec.connect((err) => {
   console.log("Conectado a la base de datos con éxito");
 });
 
-
-app.get("/api/datos", (req, resp,) => {
-  let table = req.query.table || "activo"
+app.get("/api/datos", (req, resp) => {
+  let table = req.query.table || "activo";
   const sql = `SELECT * FROM ${table}`;
   conec.query(sql, (err, resultadoQuery) => {
     if (err) {
@@ -42,43 +42,50 @@ app.get("/api/datos", (req, resp,) => {
 });
 
 
-app.post("/registrer", (req, resp) => {
-  // Datos q vienen de el formulario
-  let name = req.body.name;
-  let email = req.body.email;
-  let password = req.body.password;
-  const data = [name, email, password];
 
-  conec.execute("SELECT count(nombre) as RESULTADO FROM userroot WHERE nombre = ? OR email = ?", [name, email], (err, resultado) => {
-    if (err) {
-      return resp.status(500).send("Error en la base de datos");
+app.post("/registrer", async (req, resp) => {
+  // Datos q vienen de el Registro
+  const { name, email, password } = req.body;
+  console.log(req.body);
+
+  const hashPassword = await bycript.hash(password,10)
+
+  const data = [name, email, hashPassword];
+  console.log(hashPassword)
+  
+  
+
+  conec.execute(
+    "SELECT count(nombre) as RESULTADO FROM userroot WHERE nombre = ? OR email = ?",
+    [name, email],
+    (err, resultado) => {
+      if (err) {
+        return resp.status(500).send("Error en la base de datos");
+      }
+
+      const userExistente = resultado[0].RESULTADO;
+
+      if (userExistente > 0) {
+        return resp.status(400).send("Ya se encuentra registrado");
+      } else {
+        const InsertInto =
+          "INSERT INTO userroot (nombre, email, password) VALUES (?, ?, ?)";
+        conec.execute(InsertInto, data, (err, result) => {
+          if (err) {
+            return resp.status(500).send("Error en la inserción");
+          }
+          console.log(`El resultado en la inserción es ${result}`);
+          resp.status(201).send("Usuario registrado con éxito");
+        });
+      }
     }
-
-    const userExistente = resultado[0].RESULTADO;
-
-    if (userExistente > 0) {
-      return resp.status(400).send("Ya se encuentra registrado");
-    } else {
-      const InsertInto = "INSERT INTO userroot (nombre, email, password) VALUES (?, ?, ?)";
-      conec.execute(InsertInto, data, (err, result) => {
-        if (err) {
-          return resp.status(500).send("Error en la inserción");
-        }
-        console.log(`El resultado en la inserción es ${result}`);
-        resp.status(201).send("Usuario registrado con éxito");
-      });
-    }
-  });
+  );
 });
-
-
-
 
 app.post("/datos", (req, resp) => {
   console.log(req.body);
   resp.end();
 });
-
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));

@@ -64,7 +64,7 @@ const DataTablePage = () => {
 
   return (
     <TableNameContext.Provider value={nameTable} >
-      <main className="p-12">
+      <main className="p-6">
       <DataTableQuery/>
       <Footer></Footer>
 

@@ -100,17 +100,15 @@ export const Footer = ({ name = "FastData" }) => {
 
             <li>
               <a
-                href="#"
+                href="https://github.com/CesarMartinez7/DataFast/tree/main"
                 rel="noreferrer"
                 target="_blank"
                 className="text-gray-700 transition hover:opacity-75"
               >
                 <span className="sr-only">GitHub</span>
-
                 <FaGithub className="text-2xl"></FaGithub>
               </a>
             </li>
-
             <li>
               <a
                 href="#"

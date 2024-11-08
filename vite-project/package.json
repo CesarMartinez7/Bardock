@@ -14,6 +14,7 @@
     "@headlessui/react": "^2.2.0",
     "ag-grid-enterprise": "32.3.2",
     "ag-grid-react": "^32.3.0",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "chart.js": "^4.4.6",
     "cors": "^2.8.5",

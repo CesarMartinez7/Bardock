@@ -12,10 +12,7 @@
 }
 
 
-:root{
-    padding: 0.3vh 2vw 0.3vh 2vw;
-    color: "#2f2f2f";
-}
+
 
 .border-colors{
     border: 1px solid #dfdfdf;

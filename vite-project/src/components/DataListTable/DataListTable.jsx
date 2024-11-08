@@ -97,7 +97,7 @@ const Section = () => {
   };
 
   return (
-    <section className="flex flex-col md:flex-row gap-3 mt-14">
+    <section className="flex flex-col md:flex-row gap-3 mt-14 p-0 lg:p-0">
       <div className=" content-center p-6">
         <h1 className="font-extrabold font-1 text-4xl">Soon</h1>
         <h2 className="font-light">you can see your data here</h2>
@@ -215,20 +215,27 @@ export const DataTableQuery = () => {
       >
         <AgGridReact ref={gridRef} rowData={rowData} columnDefs={colDefs} />
       </div>
-      <div className="inline-flex gap-2 mt-4">
-        <button
-          onClick={() => gridRef.current.api.exportDataAsCsv()}
-          className="p-2 text-nowrap bg-indigo-600 rounded-md text-neutral-50 hover:bg-indigo-700 md:text-nowrap transition-colors duration-300  hover:shadow-md duration-150"
-        >
-          Exportar a CSV
-        </button>
-        <button onClick={() => window.print()} className="p-2 bg-gray-50 rounded-md text-gray-950 border hover:shadow-md duration-150">
-          Imprimir
-        </button>
-        <button className="p-2 bg-gray-50 rounded-md text-gray-950 border hover:shadow-md duration-150" onClick={mostrarEnCosola}>
-          Mostrar en consola
-        </button>
-      </div>
+      <div className="flex flex-shrink-0 gap-2 mt-4">
+  <button
+    onClick={() => gridRef.current.api.exportDataAsCsv()}
+    className="text-nowrap text-xs bg-indigo-600 text-white px-2 py-1 rounded" // Cambié pl-2 pr-2 a px-2 py-1 para reducir el tamaño
+  >
+    Exportar a CSV
+  </button>
+  <button
+    onClick={() => window.print()}
+    className="p-1 bg-gray-50 rounded-md text-gray-950 border hover:shadow-md duration-150 md:p-2" // Ajusté el padding a p-1
+  >
+    Imprimir
+  </button>
+  <button
+    className="p-1 bg-gray-50 rounded-md text-gray-950 border hover:shadow-md duration-150"
+    onClick={mostrarEnCosola}
+  >
+    Mostrar en consola
+  </button>
+</div>
+
     </div>
   );
 };
