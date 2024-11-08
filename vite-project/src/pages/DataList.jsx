@@ -63,11 +63,12 @@ const DataTablePage = () => {
   };
 
   return (
-    <TableNameContext.Provider value={nameTable}>
+    <TableNameContext.Provider value={nameTable} >
+      <main className="p-12">
       <DataTableQuery/>
-      <BarChart  table={nameTable}></BarChart>
-      <Pastel></Pastel>
       <Footer></Footer>
+
+      </main>
     </TableNameContext.Provider>
   );
 };

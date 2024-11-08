@@ -37,9 +37,9 @@ const Documentacion = () => {
 
   return (
     <>
-      <section className="section is-medium is-flex is-justify-content-center is-gap-3 is-flex-wrap is-flex-direction-column mt-2">
+      <section className="p-24 mt-14">
         <div className="content is-size-6 is-size-7-mobile">
-          <h1 className="title">Documentacion 📄</h1>
+          <h1 className="font-extrabold text-wrap text-2xl">Documentacion 📄</h1>
           <strong>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Perspiciatis!
@@ -72,13 +72,7 @@ const Documentacion = () => {
               <Prettier className="item"></Prettier>
             </div>
           </section>
-          <pre>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
-            quasi fuga amet exercitationem, sit cumque praesentium beatae animi
-            magnam? Accusamus provident corporis dolorem nisi ipsa magnam cum
-            veritatis neque accusantium quas illo, molestiae quos velit quae
-            ipsam architecto iure dolor.
-          </pre>
+          
         </div>
         <div className="content is-size-6 is-size-6-mobile">
           <h1 className="title">

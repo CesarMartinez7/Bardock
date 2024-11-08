@@ -2,7 +2,7 @@ import React from 'react';
 import Loading from 'react-loading-components';
 
 const LoadingComp = () => (
-  <Loading  type='oval' width={100} height={100} fill='#2f2f2f' />
+  <Loading  type='oval' width={60} height={60} fill='#4338CA' />
 );
 
 const LoadingPage = () => {

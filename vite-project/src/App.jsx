@@ -22,7 +22,7 @@ export function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="registrer" element={<RegistrerPage />} />
           <Route path="datos" element={<DataListV2Page />} />
-          <Route path="documentacion" element={<Documentacion></Documentacion>}></Route>
+          <Route path="docs" element={<Documentacion></Documentacion>}></Route>
           <Route path="*" element={<NotFoundPage />} />
           <Route path="contact" element={<Contact/>}></Route>
           <Route path="dash" element={<DashBoard></DashBoard>}></Route>

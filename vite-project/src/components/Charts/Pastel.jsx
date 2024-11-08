@@ -115,14 +115,12 @@ const Pastel = ({ table = "bodega" }) => {
   }, [tableSearch]);
 
   return (
-    <div className="container has-shadow">
+    <div className="flex flex-col gap-2">
+      <h2>Graph</h2>
       <form onSubmit={onSubmitTableSearch}>
-        <input className="input" name="tablesearch" />
+        <input className=" outline-none pl-3 rounded-md w-full pt-2 pb-2 border focus:border-gray-300 focus-within:shadow-lg transition-shadow duration-100" name="tablesearch" placeholder="Search table" />
       </form>
-      <h2 className="is-size-6">
-        Gráfico de la Tabla: {tableSearch.toUpperCase()}
-      </h2>
-      <div className="" style={{ width: "100%", height: "100%" }}>
+      <div className="w-50 p-8" >
         <Pie data={data} />
       </div>
     </div>
