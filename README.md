@@ -44,6 +44,13 @@ Si notas que cuando haces cambios no se muestran en la pagina, es porque la carp
 
 Ya se pueden llamar diferentes tablas desde la misma pestaña, esto ahorra rendimiento y reduce la carga de pestañas innecesarias.
 
+<h1>En Pruebas</h1>
+Se añadio una verificacion UserROOT
+
+TAMBIEN UN ENCRIPTAMIENTO CON BCRYPT pero FALTA LA VERIFICACION con comparate.
+
+Tambien un Nuevo Render Pages con Condicional.
+
 <h1>Soon</h1>
 
 - Pasar a una nueva rama para retormar pero ahora con el framework de **tailwind**

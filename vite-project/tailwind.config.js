@@ -8,6 +8,7 @@ export default {
     extend: {
       colors:{
         bulmaColor:"#00BFA9",
+        bulmaColorHover:"#04BFC9"
       },
       animation:{
         border: 'background ease infinite',
