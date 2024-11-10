@@ -5,8 +5,13 @@ import { App } from "./App.jsx";
 import useUser from "../hook/useUser.jsx";
 import { Server } from "./components/Icons/Logos.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
+import { useNavigation } from "react-router-dom";
 
 const root = createRoot(document.getElementById("root"));
+
+const handleNavigate = () => {
+ window.open("https://github.com/CesarMartinez7/DataFast","","width:200px")
+}
 
 const UserNotFound = () => {
   return (
@@ -27,7 +32,7 @@ const UserNotFound = () => {
           <Server w={"200px"} h={"200px"} />
         </div>
         <div>
-          <button className="bg-bulmaColor text-white p-2 rounded hover:bg-bulmaColorHover font-semibold">Restart</button>
+          <button className="bg-bulmaColor text-white p-2 rounded hover:bg-bulmaColorHover font-semibold" onClick={handleNavigate}>Go to Github</button>
         </div>
       </div>
       <Footer></Footer>
