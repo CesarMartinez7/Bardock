@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa6";
 
-export const Footer = ({ name = "FastData" }) => {
+export const Footer = () => {
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24">

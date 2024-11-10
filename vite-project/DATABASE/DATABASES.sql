@@ -126,6 +126,7 @@ CREATE TABLE tipo_documento (
 CREATE TABLE `userroot` (
   nombre varchar(50) NOT NULL,
   email varchar(200) NOT NULL,
+  rool varchar(1) NOT NULL ,
   password varchar(40) NOT NULL
 ) 
 -- Para que veas la creacion de una tabla, Un poco innecesario

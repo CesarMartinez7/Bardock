@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors:{
+        bulmaColor:"#00BFA9",
+      },
       animation:{
         border: 'background ease infinite',
       },
