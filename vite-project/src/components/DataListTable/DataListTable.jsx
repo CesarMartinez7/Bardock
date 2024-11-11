@@ -68,15 +68,18 @@ const TableOpcion = () => {
   ];
   return (
     <>
-      <section className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 grid-rows-3 place-content-center place-items-center p-1">
+      <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 grid-rows-3 place-content-center place-items-center p-1 xl:p-8">
         {array.map((value, key) => (
-          <article
-            key={key}
-            className="flex flex-col gap-1 border h-full w-full hover:bg-gray-50  border-gray-200 p-5 hover:z-50 transition duration-500 ease-out hover:shadow-md rounded-lg"
-          >
-            <h3 className="font-semibold text-2xl text-gray-800">{value.name}</h3>
-            <p className="text-gray-600">{value.description}</p>
-          </article>
+          <div class="card sm:max-w-sm shadow-gray-200 p-5 rounded-lg shadow-lg">
+          <div class="card-body">
+            <h2 class="text-xl font-semibold text-gray-600 text-wrap">{value.name}</h2>
+            <p class="mb-4 text-gray-500">
+              {value.description}
+            </p>
+            <div class="card-actions">
+            </div>
+          </div>
+        </div>
         ))}
       </section>
     </>
@@ -97,11 +100,11 @@ const Section = () => {
   };
 
   return (
-    <section className="flex flex-col md:flex-row gap-3 mt-14 p-0 lg:p-0">
-      <div className=" content-center p-6">
-        <h1 className="font-extrabold font-1 text-4xl">Soon</h1>
-        <h2 className="font-light">you can see your data here</h2>
-        <p className="w-4/5 text-gray-600">
+    <section className="flex flex-col md:flex-row gap-3 mt-14 lg:p-0 ">
+      <div className=" content-center xl:p-14 mt-24 xl:mt-12 md:w-3/6 xl:w-6/12">
+        <h1 className="font-extrabold text-5xl pb-4">Soon</h1>
+        <h2 className="font-medium text-lg text-gray-700">you can see your data here</h2>
+        <p className="w-full text-gray-600">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
           sequi ducimus at ipsa optio quia aliquid voluptate magnam obcaecati,
           saepe nobis quis maxime. Fugiat deleniti perferendis sit distinctio
@@ -119,7 +122,7 @@ const Section = () => {
           </button>
         </div>
       </div>
-      <div className="column has-text-centered is-align-content-center">
+      <div className="md:w-6/12 grid xl:p-14 place-items-center items-center place-content-center">
         <Data width={350} height={350}></Data>
       </div>
     </section>

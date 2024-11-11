@@ -25,19 +25,19 @@
     transform: translateY(-4px);
 }
 .logos-items{
-    height: 50vh;
     width: 100%;
     display: grid;
     place-content: center;
     grid-template-columns: repeat(auto-fit,minmax(4rem,1fr));
-    gap: 10px;
+    gap: 1.20rem;
     place-items: center;
-    padding: 2vh 1vw;
+    padding: 3vh 2vw;
 }
 .logos-items .item{
     transition: transform 500ms, drop-shadow 500ms  ;
-    padding: 10px;
+    padding: 1rem;
     border-radius: 4px;
+    font-size: 1.50rem;
     
 }
 

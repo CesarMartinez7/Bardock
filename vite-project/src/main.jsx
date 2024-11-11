@@ -32,7 +32,7 @@ const UserNotFound = () => {
           <Server w={"200px"} h={"200px"} />
         </div>
         <div>
-          <button className="bg-bulmaColor text-white p-2 rounded hover:bg-bulmaColorHover font-semibold" onClick={handleNavigate}>Go to Github</button>
+          <button className="bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700 duration-500 font-semibold" onClick={handleNavigate}>Go to Github</button>
         </div>
       </div>
       <Footer></Footer>
