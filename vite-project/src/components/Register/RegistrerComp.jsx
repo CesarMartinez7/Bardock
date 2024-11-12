@@ -23,7 +23,7 @@ const Register = () => {
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form action="/registrer" method="POST" className="space-y-6">
         <div>
-          <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
+          <label className="block text-sm/6  text-gray-700 font-bold">
             Nombre
           </label>
           <div className="mt-2">
@@ -32,16 +32,16 @@ const Register = () => {
               name="name"
               type="text"
               required
-              placeholder="Nombre"
+              placeholder="Goku"
               autoComplete="email"
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 pl-4"
+              className="block w-full rounded-md border-0 py-1.5 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm/6 pl-4"
             />
           </div>
         </div>
 
         <div>
           <div className="flex items-center justify-between">
-            <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900">
+            <label htmlFor="password" className="block text-sm/6 text-gray-700 font-bold">
               Email
             </label>
             <div className="text-sm">
@@ -56,22 +56,22 @@ const Register = () => {
               name="email"
               type="email"
               required
-              placeholder="Cesarwaasasa@gmail.com"
+              placeholder="dragonballz@hotmail.com"
               autoComplete="current-password"
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 pl-4"
+              className="block w-full rounded-md border-0 py-1.5 outline-none text-gray-900 shadow-sm ring-1  ring-gray-300 placeholder:text-gray-400  sm:text-sm/6 pl-4"
             />
           </div>
         </div>
         <div className="mt-2">
-          <label htmlFor="">Contraseña</label>
+          <label htmlFor="" className="text-gray-700 font-bold text-sm/6">Contraseña</label>
             <input
               id="password"
               name="password"
               type="password"
               required
-              placeholder="8931289313jj312391"
+              placeholder="dragonballzGokunoleganaavegeta"
               autoComplete="current-password"
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 pl-4"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset outline-none ring-gray-300 placeholder:text-gray-400sm:text-sm/6 pl-4"
             />
           </div>
         
