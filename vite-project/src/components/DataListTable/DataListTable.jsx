@@ -176,6 +176,7 @@ export const DataTableQuery = () => {
   const [rowData, setRowData] = useState([]);
   const [colDefs, setColDefs] = useState([]);
 
+
   useEffect(() => {
     if (rowData.length > 0) {
       const keys = Object.keys(rowData[0]); // Obtenemos las claves del primer objeto de rowData
