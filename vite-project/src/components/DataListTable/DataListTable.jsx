@@ -70,7 +70,7 @@ const TableOpcion = () => {
     <>
       <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 grid-rows-3 place-content-center place-items-center p-1 xl:p-8">
         {array.map((value, key) => (
-          <div class="card sm:max-w-sm shadow-gray-200 p-5 rounded-lg shadow-lg">
+          <div class="w-full h-full sm:max-w-sm shadow-gray-200 p-5 rounded-lg shadow-lg ">
           <div class="card-body">
             <h2 class="text-xl font-semibold text-gray-600 text-wrap">{value.name}</h2>
             <p class="mb-4 text-gray-500">
@@ -158,7 +158,7 @@ const Search = ({ onSearch }) => {
             ref={tableInput}
           />
         </div>
-        <div className="column">
+        <div>
           <button className="p-2 flex content-center text-center items-center gap-2 justify-center rounded-md bg-gray-800 text-white is-info border" type="submit">
             <span className="icon">
               <FaSearch />
@@ -207,7 +207,7 @@ export const DataTableQuery = () => {
   );
 
   return (
-    <div className="container mb-6">
+    <div >
       <Section />
       <TableOpcion></TableOpcion>
       <Search onSearch={fetchData} />

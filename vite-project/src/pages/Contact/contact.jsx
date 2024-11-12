@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { GitHub } from "../../components/Icons/Logos.jsx";
 import "./index.css";
+import { FaGift, FaGithub, FaLinkedin } from "react-icons/fa";
 const Gmail = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -95,18 +96,47 @@ const XformerlyTwitter = (props) => (
   </svg>
 );
 
+const data = [
+  { "name": "Cesar",
+    "href": [
+      "https://www.linkedin.com/in/cesar-martinez-383943332/", // Link
+      "mailto:cesarwamartinez@gmail.com?subject=Asunto&body=Contrato 🕐", // Gmail
+      "google.com", // Telegram
+      "google.com", // X
+      "https://github.com/CesarMartinez7/", // GitHub
+    ] },
+  { "name": "Ditta",
+    "href": [
+      "https://www.linkedin.com/in/cesar-martinez-383943332/", // Link
+      "mailto:cesarwamartinez@gmail.com?subject=Asunto&body=Contrato 🕐", // Gmail
+      "google.com", // X
+      "google.com", // Telegram
+      "https://github.com/CesarMartinez7/", // GitHub
+    ]},
+    { "name": "Enisberto",
+      "href": [
+        "https://www.linkedin.com/in/cesar-martinez-383943332/", // Link
+        "mailto:cesarwamartinez@gmail.com?subject=Asunto&body=Contrato 🕐", // Gmail
+        "google.com", // X
+        "google.com", // Telegram
+        "https://github.com/CesarMartinez7/", // GitHub
+      ]}
+]
+
+
 const Contact = () => {
-  const [color, setColor] = useState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  );
-
-  useEffect(() => {
-    setColor(window.matchMedia("(prefers-color-scheme: dark)").matches);
-  }, []);
-
-  
   return (
-    <h1>contact</h1>
+    <div className="p-24 w-full h-screen flex justify-center items-center gap-5 flex-col ">
+      {data.map((data) => (
+        <article className=" h-fit inline-flex gap-5 shadow-lg rounded-lg items-center p-4 border w-fit ">
+            <a href={data.href[0]}  target="_blank"  className="p-2 border rounded-lg hover:scale-150 duration-200" ><LinkedIn></LinkedIn></a>
+            <a href={data.href[1]}  target="_blank"  className="p-2 border rounded-lg hover:scale-150 duration-200" ><Gmail></Gmail></a>
+            <a href={data.href[2]}  target="_blank"  className="p-2 border rounded-lg hover:scale-150 duration-200" ><XformerlyTwitter></XformerlyTwitter></a>
+            <a href={data.href[3]}  target="_blank"  className="p-2 border rounded-lg hover:scale-150 duration-200" ><Telegram></Telegram></a>
+            <a href={data.href[4]} className="p-2 border rounded-lg hover:scale-150 duration-200" ><FaGithub fontSize={"2rem"} color="#2f2f2f"></FaGithub></a>
+        </article>
+      ))}
+    </div>
   );
 };
 
