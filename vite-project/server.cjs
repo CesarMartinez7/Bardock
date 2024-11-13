@@ -27,7 +27,7 @@ conec.connect((err) => {
   if (err) {
     throw err;
   }
-  console.log("Conectado a la base de datos con éxito");
+  console.log(chalk.bgCyanBright("Conectado a la Base de datos con exito"));
 });
 
 app.get("/api/datos", (req, resp) => {
@@ -43,15 +43,14 @@ app.get("/api/datos", (req, resp) => {
 
 
 
-app.post("/registrer", async (req, resp) => {
+app.post("/register", async (req, resp) => {
   // Datos q vienen de el Registro
   const { name, email, password } = req.body;
   console.log(req.body);
-
   const hashPassword = await bycript.hash(password,10)
+  console.log(hashPassword)
 
   const data = [name, email, hashPassword];
-  console.log(hashPassword)
   
   
 
@@ -69,22 +68,16 @@ app.post("/registrer", async (req, resp) => {
         return resp.status(400).send("Ya se encuentra registrado");
       } else {
         const InsertInto =
-          "INSERT INTO userroot (nombre, email, password) VALUES (?, ?, ?)";
+          "INSERT INTO userroot (nombre, email, password,rool) VALUES (?, ?, ?,'U')";
         conec.execute(InsertInto, data, (err, result) => {
           if (err) {
             return resp.status(500).send("Error en la inserción");
           }
-          console.log(`El resultado en la inserción es ${result}`);
-          resp.status(201).send("Usuario registrado con éxito");
+          resp.status(201).sendFile(path.join(__dirname,"src","components","UserRegister","userRegister.html"));
         });
       }
     }
   );
-});
-
-app.post("/datos", (req, resp) => {
-  console.log(req.body);
-  resp.end();
 });
 
 app.get("*", (req, res) => {
@@ -93,6 +86,7 @@ app.get("*", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(chalk.green(`Servidor corriendo en el puerto ${PORT}`));
-  console.log(chalk.yellow(`Server:       http://localhost:${PORT}`));
+  console.log(chalk.bgGreen(`Servidor corriendo en el puerto ${PORT}`));
+  console.log(`Server:      ${chalk.greenBright(`http://localhost:${PORT}`)}`);
+  console.log(`Ruta Api:    ${chalk.blueBright(`http://localhost:${PORT}/api/datos`)}`)
 });

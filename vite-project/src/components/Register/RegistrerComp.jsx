@@ -21,7 +21,7 @@ const Register = () => {
     </div>
 
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form action="/registrer" method="POST" className="space-y-6">
+      <form action="/register" method="POST" className="space-y-6">
         <div>
           <label className="block text-sm/6  text-gray-700 font-bold">
             Nombre
@@ -44,11 +44,6 @@ const Register = () => {
             <label htmlFor="password" className="block text-sm/6 text-gray-700 font-bold">
               Email
             </label>
-            <div className="text-sm">
-              <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                Forgot password?
-              </a>
-            </div>
           </div>
           <div className="mt-2">
             <input
