@@ -5,25 +5,15 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 // Registrar las escalas y elementos necesarios
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
+const BarChart = ({ table = "bodega" }) => {
+  const [tableSearch, setTableSearch] = useState("activo");
 
-
-
-// typing = "Avaluo", title = "Avaluo", ejeX = "Producto", dataKey = "Avaluo"
-
-const BarChart = ({ table = "bodega", }) => {
-  // TableSearch
-  const [tableSearch,setTableSearch] = useState("activo")
   const onSubmitTableSearch = (e) => {
-    e.preventDefault()
-    const table = e.target.elements.tablesearch.value.toLowerCase()
-    console.log(table)
-    setTableSearch(e => e = table)
-    console.log(tableSearch)
-    
-  }
+    e.preventDefault();
+    const table = e.target.elements.tablesearch.value.toLowerCase();
+    setTableSearch(table);
+  };
 
-
-  /// Pasar Reglas al los Graficos
   const Reglas = [
     { table: "activo", title: "Avaluo", ejex: "descripcion_activo", dataKey: "avaluo" },
     { table: "articulo", title: "Avaluo", ejex: "descripcion", dataKey: "estado" },
@@ -35,30 +25,26 @@ const BarChart = ({ table = "bodega", }) => {
 
   const Reglador = (tabla) => {
     const reglaEncontrada = Reglas.find((value) => value.table === tabla);
-    if (reglaEncontrada) {
-      console.log("Encontrado");
-      return [reglaEncontrada.title, reglaEncontrada.ejex, reglaEncontrada.dataKey];
-    } else {
-      console.log("No encontrado");
-      return null;
-    }
+    return reglaEncontrada ? [reglaEncontrada.title, reglaEncontrada.ejex, reglaEncontrada.dataKey] : null;
   };
 
-  // Aqui viene el resultado del reglador que hara que se muestre los atributos que pasaran al Grafico
   const regladorClean = Reglador(tableSearch);
-  // regladorClean[0] = "Title"
-  // regladorClean[1] = "EjeX"
-  // regladorClean[2] = "Datakey o Eje y"
-
 
   const [data, setData] = useState({
     labels: [],
     datasets: [
       {
-        label: regladorClean[0],
+        label: regladorClean ? regladorClean[0] : "Sin datos",
         data: [],
-        backgroundColor: "rgba(46, 51, 61,0.8)",
-        borderColor: "rgba(46, 51, 61,1)",
+        backgroundColor: [
+          "rgba(99, 102, 241, 0.7)", // Indigo-600
+          "rgba(255, 99, 132, 0.7)", // Rojo
+          "rgba(54, 162, 235, 0.7)", // Azul
+          "rgba(255, 206, 86, 0.7)", // Amarillo
+          "rgba(75, 192, 192, 0.7)", // Verde claro
+          "rgba(153, 102, 255, 0.7)", // Violeta
+        ],
+        borderColor: "rgba(0, 0, 0, 1)", // Color del borde
         borderWidth: 1,
       },
     ],
@@ -76,16 +62,21 @@ const BarChart = ({ table = "bodega", }) => {
     try {
       const respuesta = await fetch(`http://localhost:3000/api/datos?table=${tableSearch}`);
       const responseData = await respuesta.json();
-      console.table(responseData)
-      // Usar dataKey para obtener los datos
       setData({
         labels: responseData.map((item) => item[regladorClean[1]]),
         datasets: [
           {
             label: regladorClean[0],
-            data: responseData.map((item) => item[regladorClean[2]]),  // Usar dataKey aquí, tiene que se notacion de corchetes por reglas de Js.
-            backgroundColor: "rgba(40, 51, 61,0.8)",
-            borderColor: "rgba(46, 51, 61,0.1)",
+            data: responseData.map((item) => item[regladorClean[2]]),
+            backgroundColor: [
+              "rgba(99, 102, 241, 0.7)", // Indigo-600
+              "rgba(255, 99, 132, 0.7)", // Rojo
+              "rgba(54, 162, 235, 0.7)", // Azul
+              "rgba(255, 206, 86, 0.7)", // Amarillo
+              "rgba(75, 192, 192, 0.7)", // Verde claro
+              "rgba(153, 102, 255, 0.7)", // Violeta
+            ],
+            borderColor: "rgba(0, 0, 0, 1)", // Color del borde
             borderWidth: 1,
           },
         ],
@@ -96,20 +87,19 @@ const BarChart = ({ table = "bodega", }) => {
   };
 
   useEffect(() => {
-    if(regladorClean){
-      fetchDatos()
+    if (regladorClean) {
+      fetchDatos();
     }
   }, [tableSearch]);
 
   return (
-    <div className="container">
-      <form onSubmit={onSubmitTableSearch}>
-        <input className='input'name='tablesearch'></input>
-      </form>
-      <h2 className='is-size-6'>Gráfico de la Tabla: {tableSearch.toLocaleUpperCase()}</h2>
-      <p className='content is-size-7'>Puedes poner el nombre de la tabla para personalizar la respuesta de ella.</p>
-      <Bar data={data} options={options} />
-    </div>
+      <div className="container">
+        <form onSubmit={onSubmitTableSearch}>
+          <input className='input' name='tablesearch' placeholder="Buscar tabla" />
+        </form>
+        <h2 className='font-light'>Gráfico <span className="font-light">{tableSearch.toLocaleUpperCase()}</span></h2>
+        <Bar data={data} options={options} />
+      </div>
   );
 };
 

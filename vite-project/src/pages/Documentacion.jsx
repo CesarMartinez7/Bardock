@@ -50,10 +50,10 @@ const Documentacion = () => {
     <>
       <section className="p-9 mt-14 lg:p-20 flex flex-col gap-5">
         <div className="">
-          <section class="bg-white dark:bg-gray-900">
+          <section class="bg-transparent">
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-              <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">Powering innovation at <span class="font-extrabold">200,000+</span> companies worldwide</h2>
+              <div class="max-w-screen-lg text-gray-500 sm:text-lg ">
+                <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 ">Powering innovation at <span class="font-extrabold">200,000+</span> companies worldwide</h2>
                 <p class="mb-4 font-light">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</p>
                 <p class="mb-4 font-medium">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease.</p>
                 <a href="#" class="inline-flex items-center font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700">
@@ -81,10 +81,10 @@ const Documentacion = () => {
             </section>
           </section>
         </div>
-        <section class="bg-white dark:bg-gray-900">
+        <section class="">
           <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
             <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">We didn't reinvent the wheel</h2>
+              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">We didn't reinvent the wheel</h2>
               <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni doloribus asperiores facilis velit, perspiciatis provident non ducimus exercitationem cumque aliquid amet recusandae, laudantium, nisi expedita est officiis? Odit, aperiam! Sit ipsam corporis quis sint minus sapiente vitae eum commodi? Ab!</p>
               <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
             </div>
