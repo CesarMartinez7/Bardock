@@ -1,7 +1,7 @@
 
 <h1 style="line-height:2; font-size: clamp(3rem,2rem,3rem);white-space: nowrap">DataFast ⚡👨🏻‍💻</h1>
 
-Para clonar esta o cualquier otra rama del proyecto puedes hacerlo con el comando desde git bash en tu ordenador. 
+Para clonar esta o cualquier otra rama del proyecto puedes hacerlo con el comando desde __BASH GIT__ en tu ordenador. 
 ```bash
     git clone --branch <name-branch> https://github.com/CesarMartinez7/DataFast
 ```

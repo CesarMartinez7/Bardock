@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaJs } from "react-icons/fa6";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Link } from "react-router-dom";
-import { Vite } from "../Icons/Logos";
+import { LogoDesign, Vite, Women } from "../Icons/Logos";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Docs", href: "docs" },
@@ -16,7 +16,7 @@ export const Navbar = () => {
   return (
     <nav class= "relative w-full z-20 top-0 start-0 bg-transparent">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <FaJs></FaJs>
+        <LogoDesign  alto={"50px"} ancho={"40px"}></LogoDesign>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <Link className="bg-indigo-600 pl-4 pr-4 text-white pt-2 pb-2 rounded-md " to="registrer" >Login</Link>
           <button

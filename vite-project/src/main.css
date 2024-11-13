@@ -33,6 +33,13 @@
     place-items: center;
     padding: 3vh 2vw;
 }
+
+
+@media(width<500px){
+    .logos-items{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
 .logos-items .item{
     transition: transform 500ms, drop-shadow 500ms  ;
     padding: 1rem;
