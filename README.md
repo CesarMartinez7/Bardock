@@ -59,6 +59,8 @@ Tambien un Nuevo Render Pages con Condicional.
 - Mejorar Input de tablas y añadir logica a Graficos.
 # Tengo que corregir esto.
 - En el Archivo pl.cjs intente migrar a POSGRES pero no pude XDDDD, tenia respuesta de posgres pero tenia un error de promesa
+- Ya funciona el los eventos en la peticion y da respuesta, falta compararlas y devolverlas desemcriptadas listas para el pollo y hacer el render condicional por rooles
+
 
 - Me acabe de dar cuenta hace 2 minutos de escribir lo de arriba es que la razon por la cual no daba respuesta el servidor en deploy, era porque en el package.json tome el posgres como dependencia de desarollo, supongo que ni yarn ni npm la instala o la tienen en cuenta en el deploy, por eso este no da respuesta y cuando se pasa la peticion sale un error de promesa. Tambien como espera un parametro la funcion que seria el "table-Name" este no lo encuentra y como no esta por default en la funcion este no puede hacer nada sin este parametro, no mas hacer un __SELECT * FROM ""__
 
