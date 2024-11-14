@@ -10,7 +10,7 @@ const Login = () => {
           </h1>
         </div>
         <div className="">
-          <form action="" method="get">
+          <form action="/login" method="get">
             <div>
               <label className="block text-sm/6  text-gray-700 font-bold">
                 Nombre
