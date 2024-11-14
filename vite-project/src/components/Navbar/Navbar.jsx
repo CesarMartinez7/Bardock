@@ -17,8 +17,9 @@ export const Navbar = () => {
     <nav class= "relative w-full z-20 top-0 start-0 bg-transparent">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <LogoDesign  alto={"50px"} ancho={"40px"}></LogoDesign>
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <Link className="bg-indigo-600 pl-4 pr-4 text-white pt-2 pb-2 rounded-md " to="registrer" >Login</Link>
+        <div class="inline-flex gap-1 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <Link className="bg-indigo-600 pl-4 pr-4 text-white pt-2 pb-2 rounded-md " to="register">Register</Link>
+          <Link className="bg-indigo-600 pl-4 pr-4 text-white pt-2 pb-2 rounded-md " to="login">Login</Link>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"

@@ -12,6 +12,7 @@ const Documentacion = lazy(() => {
 })
 const Contact = lazy(()=> import("./pages/Contact/contact"))
 const DashBoard = lazy(()=> import("./pages/Dashboard.jsx"))
+const LoginPage = lazy(()=> import("./components/Login/Login.jsx"))
 
 export function App() {
   return (
@@ -20,12 +21,13 @@ export function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="registrer" element={<RegistrerPage />} />
+          <Route path="register" element={<RegistrerPage />} />
           <Route path="datos" element={<DataListV2Page />} />
           <Route path="docs" element={<Documentacion></Documentacion>}></Route>
           <Route path="*" element={<NotFoundPage />} />
           <Route path="contact" element={<Contact/>}></Route>
           <Route path="dash" element={<DashBoard></DashBoard>}></Route>
+          <Route path="login" element={<LoginPage></LoginPage>}></Route>
         </Routes>
       </BrowserRouter>
     </Suspense>
