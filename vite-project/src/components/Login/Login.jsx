@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Login = () => {
+  const [name,setName] = useState("");
+  const [password,setPassword] = useState("")
+  // Pasar los datos por un filtro con estados y despues hacer las peticiones por el useEffect y el evento submit de REACT
+  const handleSubmit = (e) => {
+      e.preventDefault()
+      fetch(`http://localhost:3000/api/login?name=${name}&password=${password}`)
+      .then((respuesta) => respuesta.json())
+      .then(data => console.log(data))   
+  }
+  // useEffect(()=>{
+  //   // Por ahora da respuesta en la consola, hace falta buscar la manera de obtener los datos por el submit del formulario
+  // },[])
+
   return (
     <main className=" w-screen md:w-screen h-screen mt-28 p-6 flex justify-center">
       <div className="sm:w-full  xl:p-9 xl:w-96 rounded-md  ">
@@ -10,19 +23,21 @@ const Login = () => {
           </h1>
         </div>
         <div className="">
-          <form action="/login" method="get">
+          <form action="/api/login" method="get" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm/6  text-gray-700 font-bold">
                 Nombre
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
+                  id="name"
                   name="name"
                   type="text"
+                  onChange={(e)=>{
+                    console.log(name)
+                    setName(e.target.value)}}
                   required
                   placeholder="Goku"
-                  autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm/6 pl-4"
                 />
               </div>
@@ -35,6 +50,7 @@ const Login = () => {
                 id="password"
                 name="password"
                 type="password"
+                onChange={(e)=>setPassword(e.target.value)}
                 required
                 placeholder="dragonballzGokunoleganaavegeta"
                 autoComplete="current-password"

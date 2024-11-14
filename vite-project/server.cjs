@@ -30,30 +30,24 @@ conec.connect((err) => {
   console.log(chalk.bgCyanBright("Conectado a la Base de datos con exito"));
 });
 
-app.get("/login",(req,resp)=>{
+
+
+app.get("/api/login",(req,resp)=>{
   const {name,password} = req.query
   console.log(req.query)
   const SQL = " SELECT * FROM userroot where nombre = ? and password = ?"
   const data = [name,password]
   conec.execute(SQL,data,(err,result)=>{
     if(err){
-      console.log("Huvo un error")
+      throw err
     }
-    console.log(result[0])
-    // Manejo de la respuesta si es mayor a 0, los crendenciales estan bien o existen en MYSQL  
-    if(result.length > 0){
-      if(result[0].rool == "A"){
-        resp.send("Encontrado y con el RESPUESTA DE ADMIN")
-      }else if(result[0].rool === "U"){
-        resp.send("Encontrado y con la respuesta de USER")
-      }else{
-        resp.send("No es ni user ni admin")
-      }
-    }else{
-      resp.send("No existe")
-    }
+    resp.json(result)
   })
 })
+
+
+
+
 
 app.get("/api/datos", (req, resp) => {
   let table = req.query.table || "activo";
