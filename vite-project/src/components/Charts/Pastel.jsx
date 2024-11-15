@@ -86,13 +86,6 @@ const Pastel = ({ table = "bodega" }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <form onSubmit={onSubmitTableSearch}>
-        <input
-          className="outline-none pl-3 rounded-md w-full pt-2 pb-2 border transition-shadow duration-100"
-          name="tablesearch"
-          placeholder="Buscar tabla"
-        />
-      </form>
       <div className="w-80 h-80 p-4">
         <Pie
           data={data}
