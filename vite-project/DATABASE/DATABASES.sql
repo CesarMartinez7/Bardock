@@ -127,12 +127,12 @@ CREATE TABLE `userroot` (
   nombre varchar(50) NOT NULL,
   email varchar(200) NOT NULL,
   rool varchar(1) NOT NULL , -- /// A:ADMIN /// U:U   ///
-  password varchar(40) NOT NULL
+  password varchar(200) NOT NULL --- Ya cambiado a lenght de 200 caracteres
 ) 
--- Para que veas la creacion de una tabla, Un poco innecesario
-show create table activo;
 
--- DIEZ REGISTROS GENERADOS POR CHAGPT PARA TESTING OJO Los datos no son reales
+INSERT INTO userroot (nombre,email,rool,password) VALUES ("admin","admin@gmail.com","A","admin")
+
+-- DIEZ REGISTROS GENERADOS POR CHAGPT PARA TESTING 
 
 -------------------------------##########################################----------------------------------#-------------#-#-#--#-#-#-#-#
 INSERT INTO acta_asignacion (id_acta_asignacion, id_usuario_asignado, fecha_acta, id_usuario_elabora, observacion) VALUES

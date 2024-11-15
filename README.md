@@ -6,6 +6,7 @@ Para clonar esta o cualquier otra rama del proyecto puedes hacerlo con el comand
     git clone --branch <name-branch> https://github.com/CesarMartinez7/DataFast
 ```
 <p>Para ejecta el Proyecto de forma Local es importante primero instalar las dependencias, Esto se hace ya sea con:  </p>
+Para instalar todas las dependencias del proyecto.
 
 <code>
 npm or yarn
@@ -16,7 +17,6 @@ npm or yarn
 yarn install
 </pre>
 
-Para instalar todas las dependencias del proyecto.
 
 
 
@@ -25,11 +25,10 @@ Si quieres desplegar el proyecto asegurate de usar el comando:
 npm run build.
 </pre>
 
-Se integro la Creacion de Graficos con [RECHARTS](https://recharts.org/en-US), Los graficos toman una ejeX y una data key como argumento en eje Y.
 
 
 > [!TIP]
-> ASEGURATE DE CONFIGURAR TU BASE DE DATOS EN LOCAL, COMO LA CONTRASEÑA Y EL USUARIO. Igual con la nueva tabla usuarioroot que tendra informacion de los usuarios que tienen acesso a poder modificar y crear productos.
+> ASEGURATE DE CONFIGURAR TU BASE DE DATOS EN LOCAL, COMO LA CONTRASEÑA Y EL USUARIO. Igual con la nueva tabla userroot que tendra informacion de los usuarios que tienen acesso a poder modificar y crear productos.
 
 
 > [!CAUTION]
@@ -50,6 +49,7 @@ Tambien un Nuevo Render Pages con Condicional.
 
 <h1>Soon</h1>
 
+- Se añadieron tipos de graficos diferentes para mas novedad
 - Pasar a una nueva rama para retormar pero ahora con el framework de **tailwind**
 - Añadir los ID de la base de datos, que puedan ser auto_incrementables.
 - Encriptar las contraseñas los usuarios ROOT

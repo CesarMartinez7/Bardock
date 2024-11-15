@@ -94,9 +94,6 @@ const BarChart = ({ table = "bodega" }) => {
 
   return (
       <div className="container">
-        <form onSubmit={onSubmitTableSearch}>
-          <input className='input' name='tablesearch' placeholder="Buscar tabla" />
-        </form>
         <h2 className='font-light'>Gráfico <span className="font-light">{tableSearch.toLocaleUpperCase()}</span></h2>
         <Bar data={data} options={options} />
       </div>
