@@ -3,16 +3,30 @@ import React, { useEffect, useState } from "react";
 const Login = () => {
   const [name,setName] = useState("");
   const [password,setPassword] = useState("")
+  const [fetchingUser,setFetchingUser] = useState([])
   // Pasar los datos por un filtro con estados y despues hacer las peticiones por el useEffect y el evento submit de REACT
   const handleSubmit = (e) => {
       e.preventDefault()
       fetch(`http://localhost:3000/api/login?name=${name}&password=${password}`)
       .then((respuesta) => respuesta.json())
-      .then(data => console.log(data))   
+      .then(data => setFetchingUser(data)) 
+      fetchingUser.forEach((user)=>{
+        console.log(user.nombre)
+        console.log(user.password)
+        /// Hacer un retorno de  true o false en caso que exista o no exista, la solucion mas facil que se me ocurre es pasarlo por un useContext y entrar el en un renderizado condicional EN el main.jsx 
+        if(user.nombre === name && user.password === password){
+          window.alert("El Usuario y la Contraseña son correctas")
+            return true
+        }else{
+          window.alert("No existe el Usuario con esas credenciales")
+          return false
+        }
+        
+      }
+    )  
   }
-  // useEffect(()=>{
-  //   // Por ahora da respuesta en la consola, hace falta buscar la manera de obtener los datos por el submit del formulario
-  // },[])
+
+
 
   return (
     <main className=" w-screen md:w-screen h-screen mt-28 p-6 flex justify-center">
