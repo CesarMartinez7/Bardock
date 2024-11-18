@@ -10,7 +10,7 @@ import { useNavigation } from "react-router-dom";
 const root = createRoot(document.getElementById("root"));
 
 const handleNavigate = () => {
- window.open("https://github.com/CesarMartinez7/DataFast","","width:200px")
+ window.open("https://github.com/CesarMartinez7/DataFast/tree/tailwind","","width:200px")
 }
 
 const UserNotFound = () => {
