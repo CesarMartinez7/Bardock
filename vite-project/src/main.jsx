@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import "./main.css";
 import { App } from "./App.jsx";
 import useUser from "../hook/useUser.jsx";
@@ -46,6 +46,7 @@ const UserNotFound = () => {
   );
 };
 
+export const UserContext = createContext(null)
 
 /// Totality render final con las petciones finales,  es decir render de que si es admin o user normal, se hara con el hook en userPrueba.jsx o algo asi.
 const Totality = () => {
@@ -53,9 +54,12 @@ const Totality = () => {
   let password = "user"
   const {rool} = useUserPrueba({password,name});
   if (rool === "A") {
-    return <AppAdmin></AppAdmin>;
+    return 
+    <UserContext.Provider value={{name,password}}>
+      <AppAdmin></AppAdmin>
+    </UserContext.Provider>;
   }
-  if (rool !== "A ") {
+  if (rool !== "A") {
     return <AppUser></AppUser>
   }
 };

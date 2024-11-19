@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import useUserPrueba from "../../../hook/userPrueba";
 import { Footer } from "../Footer/Footer";
+import { useContext } from "react";
+import {UserContext} from "../../../src/main"
+import "bootstrap/dist/css/bootstrap.css"
 
 const Login = () => {
+  // const contexto = useContext(UserContext)
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   
