@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, useContext, createContext } from "react";
 import "ag-grid-enterprise";
 import { Data } from "../Icons/Logos.jsx";
 import { FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const TableOpcion = () => {
   const array = [
@@ -87,22 +88,19 @@ const TableOpcion = () => {
 };
 
 const Section = () => {
-  const styles = {
-    backgroundColor: "#6C63FF",
-  };
-
+  const toCharts = useNavigate()
   const handleClickData = () => {
     window.scrollTo({ behavior: "smooth", top: 1284 });
   };
 
   const handleClickBars = () => {
-    window.scrollTo({ behavior: "smooth", top: 1966 });
+    toCharts("/dash")
   };
 
   return (
     <section className="flex flex-col md:flex-row gap-3 mt-14 lg:p-0 ">
       <div className=" content-center xl:p-14 mt-24 xl:mt-12 md:w-3/6 xl:w-6/12">
-        <h1 className="font-extrabold text-5xl pb-4">Soon</h1>
+        <h1 className="font-bold text-6xl pb-4 text-gray-800">Soon</h1>
         <h2 className="font-medium text-lg text-gray-700">you can see your data here</h2>
         <p className="w-full text-gray-600">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias

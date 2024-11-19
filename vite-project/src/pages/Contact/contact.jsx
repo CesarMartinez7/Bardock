@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GitHub } from "../../components/Icons/Logos.jsx";
 import "./index.css";
 import { FaGift, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Footer } from "../../components/Footer/Footer.jsx";
 const Gmail = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +127,8 @@ const data = [
 
 const Contact = () => {
   return (
-    <div className="p-24 w-full h-screen flex justify-center items-center gap-5 flex-col ">
+    <>
+    <div className="p-40 w-full h-screen flex justify-center items-center gap-5 flex-col ">
       {data.map((data) => (
         <article className=" h-fit inline-flex gap-5 shadow-lg rounded-lg items-center p-4 border w-fit ">
             <a href={data.href[0]}  target="_blank"  className="p-2 border rounded-lg hover:scale-150 duration-200" ><LinkedIn></LinkedIn></a>
@@ -137,6 +139,8 @@ const Contact = () => {
         </article>
       ))}
     </div>
+    <Footer></Footer>
+    </>
   );
 };
 

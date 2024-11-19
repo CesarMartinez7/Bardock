@@ -57,6 +57,6 @@ const Totality = () => {
 
 root.render(
   <>
-    <Totality></Totality>
+    <Totality/>
   </>
 );
