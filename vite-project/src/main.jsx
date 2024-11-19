@@ -43,6 +43,8 @@ const UserNotFound = () => {
   );
 };
 
+
+/// Totality render final con las petciones finales,  es decir render de que si es admin o user normal, se hara con el hook en userPrueba.jsx o algo asi.
 const Totality = () => {
   const [rool] = useUser();
   if (rool === "A") {
@@ -55,6 +57,6 @@ const Totality = () => {
 
 root.render(
   <>
-    <App></App>
+    <Totality></Totality>
   </>
 );
