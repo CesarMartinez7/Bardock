@@ -6,6 +6,9 @@ import useUser from "../hook/useUser.jsx";
 import { Server } from "./components/Icons/Logos.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import { useNavigation } from "react-router-dom";
+import useUserPrueba from "../hook/userPrueba.jsx";
+import { AppAdmin } from "./auth/admin.jsx";
+import { AppUser } from "./auth/UserPublic.jsx";
 
 const root = createRoot(document.getElementById("root"));
 
@@ -46,12 +49,14 @@ const UserNotFound = () => {
 
 /// Totality render final con las petciones finales,  es decir render de que si es admin o user normal, se hara con el hook en userPrueba.jsx o algo asi.
 const Totality = () => {
-  const [rool] = useUser();
+  let name = "user"
+  let password = "user"
+  const {rool} = useUserPrueba({password,name});
   if (rool === "A") {
-    return <App></App>;
+    return <AppAdmin></AppAdmin>;
   }
   if (rool !== "A ") {
-    return <UserNotFound />;
+    return <AppUser></AppUser>
   }
 };
 
