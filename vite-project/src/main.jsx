@@ -31,8 +31,11 @@ const UserNotFound = () => {
         <div className="">
           <Server w={"200px"} h={"200px"} />
         </div>
-        <div>
+        <div className="inline-flex gap-2">
           <button className="bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700 duration-500 font-semibold" onClick={handleNavigate}>Go to Github</button>
+          <button className="bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700 duration-500 font-semibold" onClick={()=>{
+            location.reload()
+          }}>Restart</button>
         </div>
       </div>
       <Footer></Footer>
@@ -52,6 +55,6 @@ const Totality = () => {
 
 root.render(
   <>
-    <Totality></Totality>
+    <App></App>
   </>
 );

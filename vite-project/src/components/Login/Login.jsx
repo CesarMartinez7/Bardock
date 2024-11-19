@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useUserPrueba from "../../../hook/userPrueba";
+import { Footer } from "../Footer/Footer";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -16,11 +17,13 @@ const Login = () => {
   };
 
   return (
+    <>
+    
     <main className="w-screen h-screen mt-28 p-6 flex justify-center">
       <div className="sm:w-full xl:p-9 xl:w-96 rounded-md">
         <div className="mt-4 mb-4">
           <h1 className="font-bold text-3xl text-gray-700 text-center">
-            Inicia sesión en tu cuenta
+          Sign in to your account
           </h1>
         </div>
         <div>
@@ -64,6 +67,8 @@ const Login = () => {
         </div>
       </div>
     </main>
+    <Footer></Footer>
+    </>
   );
 };
 
