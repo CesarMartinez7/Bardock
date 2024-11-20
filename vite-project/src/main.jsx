@@ -46,26 +46,27 @@ const UserNotFound = () => {
   );
 };
 
-export const UserContext = createContext(null)
+
 
 /// Totality render final con las petciones finales,  es decir render de que si es admin o user normal, se hara con el hook en userPrueba.jsx o algo asi.
-const Totality = () => {
-  let name = "user"
-  let password = "user"
+const RenderFinal = () => {
+  const [password,setPassword] = useState("user")
+  const [name,setName] = useState("user")
   const {rool} = useUserPrueba({password,name});
   if (rool === "A") {
-    return 
-    <UserContext.Provider value={{name,password}}>
+    return (
       <AppAdmin></AppAdmin>
-    </UserContext.Provider>;
+    )
   }
-  if (rool !== "A") {
-    return <AppUser></AppUser>
+  else if (rool !== "A") {
+    return (
+      <AppUser></AppUser>
+    )
   }
 };
 
 root.render(
   <>
-    <Totality/>
+    <RenderFinal/>
   </>
 );

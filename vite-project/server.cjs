@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, "dist")));
 const dataServerDB = {
   host: "localhost",
   user: "root",
-  password: "oyasumi",
+  password: "oyasumipunpun",
   database: "nodomobiliario",
 };
 
