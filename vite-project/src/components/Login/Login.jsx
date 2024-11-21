@@ -6,7 +6,7 @@ import { UserContext } from "../../main";
 
 const Login = ({}) => {
   const { password, setPassword, name, setName } = useContext(UserContext);
-  // Tratando de implementar el contexto desde aqui para despues cambiarlo en todo
+  // Tratando de implementar el contexto desde aqui para despues cambiarlo en todo, CONTEXTO FUNCIONO 👌
   const { rool } = useUserPrueba({ name, password });
 
   // Aquí puedes manejar la lógica después de la petición
