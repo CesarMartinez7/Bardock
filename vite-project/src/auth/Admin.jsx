@@ -14,7 +14,7 @@ const Contact = lazy(()=> import("../pages/Contact/contact"))
 const DashBoard = lazy(()=> import("../pages/Dashboard.jsx"))
 const LoginPage = lazy(()=> import("../components/Login/Login.jsx"))
 import { UserContext } from "../main.jsx";
-import { UseContext } from "react";
+import { useContext } from "react";
 
 
 export function AppAdmin() {

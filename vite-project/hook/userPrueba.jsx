@@ -10,8 +10,9 @@ const useUserPrueba = ({password,name}) => {
                 console.table(roolUser)
                 if(roolUser.length > 0){
                     setRool(roolUser[0]?.rool)
+                    console.log(rool)
                 }else{
-                    console.log("No encontrado+")
+                    console.log("No encontrado")
                 }
             })
     },[name,password])
