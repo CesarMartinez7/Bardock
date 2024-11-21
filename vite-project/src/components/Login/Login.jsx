@@ -8,7 +8,9 @@ const Login = () => {
       e.preventDefault()
       fetch(`http://localhost:3000/api/login?name=${name}&password=${password}`)
       .then((respuesta) => respuesta.json())
-      .then(data => console.log(data))   
+      .then(data => console.log(data))
+      // Fetching con el len
+      
   }
   // useEffect(()=>{
   //   // Por ahora da respuesta en la consola, hace falta buscar la manera de obtener los datos por el submit del formulario
