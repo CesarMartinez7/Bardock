@@ -13,8 +13,13 @@ const Documentacion = lazy(() => {
 const Contact = lazy(()=> import("../pages/Contact/contact"))
 const DashBoard = lazy(()=> import("../pages/Dashboard.jsx"))
 const LoginPage = lazy(()=> import("../components/Login/Login.jsx"))
+import { UserContext } from "../main.jsx";
+import { UseContext } from "react";
+
 
 export function AppAdmin() {
+  // De aqui vienen los resultados antes del render que vienen de un provedor context, de hay sacamos la contraseña, su cambio de estao y lo mismo con el name.
+  const {password,setPassword,name,setName} = useContext(UserContext)
   return (
     <Suspense fallback={<LoadingComponente />}>
       <BrowserRouter>
@@ -27,7 +32,7 @@ export function AppAdmin() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path="contact" element={<Contact/>}></Route>
           <Route path="dash" element={<DashBoard></DashBoard>}></Route>
-          <Route path="login" element={<LoginPage></LoginPage>}></Route>
+          <Route path="login" element={<LoginPage name={name} password={password} setName={setName} setPassword={setPassword}></LoginPage>}></Route>
         </Routes>
       </BrowserRouter>
     </Suspense>

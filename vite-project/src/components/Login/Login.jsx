@@ -5,18 +5,22 @@ import { useContext } from "react";
 
 
 
-const Login = () => {
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
+const Login = ({name,password,setName,setPassword}) => {
+  // const [name, setName] = useState("");
+  // const [password, setPassword] = useState("");
+  
   const {rool} = useUserPrueba({ name, password });
 
+  // Aquí puedes manejar la lógica después de la petición
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes manejar la lógica después de la petición
+    console.log(rool)
     if (rool) {
       window.alert(`Tu rol de la petición es ${rool}`);
     }
   };
+  console.log(name)
+  console.log(password)
 
   return (
     <>
