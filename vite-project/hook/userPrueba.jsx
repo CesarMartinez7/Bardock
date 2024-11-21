@@ -11,8 +11,10 @@ const useUserPrueba = ({password,name}) => {
                 if(roolUser.length > 0){
                     setRool(roolUser[0]?.rool)
                     console.log(rool)
+                    // alert("Usuario encontrado con exito")
                 }else{
                     console.log("No encontrado")
+                    // alert("Usuario no encontrado")
                 }
             })
     },[name,password])
