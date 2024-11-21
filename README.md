@@ -47,6 +47,10 @@ TAMBIEN UN ENCRIPTAMIENTO CON BCRYPT pero FALTA LA VERIFICACION con comparate.
 
 Tambien un Nuevo Render Pages con Condicional.
 
+
+Se añadio un Boton que permite toggler entre usuario y Admin, falta implementarlo de la mejor manera para que este funcione pero con un formulario con el elemento del form en onSubmit.
+Se puede probar esta funcionalidad Entrando primero al ventana de charts y veras que no te salen los graficos,despues presiona en login y presione el ultimo Boton y este pasara a admin para que puedes ver los graficos.
+
 <h1>Soon</h1>
 
 - Se añadieron tipos de graficos diferentes para mas novedad
