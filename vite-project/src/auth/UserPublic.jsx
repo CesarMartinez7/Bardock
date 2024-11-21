@@ -10,7 +10,7 @@ const DataListV2Page = lazy(() => import("../pages/DataList"));
 const Documentacion = lazy(() => {
   return import("../pages/Documentacion")
 })
-const Contact = lazy(()=> import("../pages/Contact/contact"))
+const Contact = lazy(()=> import("../pages/contact.jsx"))
 const DashBoard = lazy(()=> import("../pages/Dashboard.jsx"))
 const LoginPage = lazy(()=> import("../components/Login/Login.jsx"))
 

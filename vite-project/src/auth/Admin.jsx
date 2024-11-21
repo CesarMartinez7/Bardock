@@ -7,15 +7,15 @@ const HomePage = lazy(() => import("../pages/Home.jsx"));
 const RegistrerPage = lazy(() => import("../pages/Registrer"));
 const NotFoundPage = lazy(() => import("../pages/404"));
 const DataListV2Page = lazy(() => import("../pages/DataList"));
-const Documentacion = lazy(() => {
-  return import("../pages/Documentacion")
-})
-const Contact = lazy(()=> import("../pages/Contact/contact"))
+const Contact = lazy(()=> import("../pages/contact.jsx"))
 const DashBoard = lazy(()=> import("../pages/Dashboard.jsx"))
 const LoginPage = lazy(()=> import("../components/Login/Login.jsx"))
 import { UserContext } from "../main.jsx";
 import { useContext } from "react";
-
+const Account = lazy(()=> import("../components/Account/Account.jsx"))
+const Documentacion = lazy(() => {
+  return import("../pages/Documentacion")
+})
 
 export function AppAdmin() {
   // De aqui vienen los resultados antes del render que vienen de un provedor context, de hay sacamos la contraseña, su cambio de estao y lo mismo con el name.
@@ -33,6 +33,7 @@ export function AppAdmin() {
           <Route path="contact" element={<Contact/>}></Route>
           <Route path="dash" element={<DashBoard></DashBoard>}></Route>
           <Route path="login" element={<LoginPage name={name} password={password} setName={setName} setPassword={setPassword}></LoginPage>}></Route>
+          <Route path="account" element={<Account></Account>}></Route>
         </Routes>
       </BrowserRouter>
     </Suspense>

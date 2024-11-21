@@ -41,7 +41,7 @@ export default function Example() {
             </div>
           </div>
           <div className="text-center">
-            <p className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+            <p className="text-balance text-5xl font-semibold tracking-tight text-gray-800 sm:text-7xl">
               Welcome to <span className='bg-gradient-to-r from-indigo-800 via-indigo-500 font-semibold to-indigo-300 inline-block text-transparent bg-clip-text'>FastData</span>
             </p>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">

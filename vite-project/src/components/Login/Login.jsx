@@ -29,7 +29,7 @@ const Login = ({ }) => {
         <div className="sm:w-full xl:p-9 xl:w-96 rounded-md md:w-96">
           <div className="mt-4 mb-4">
             <h1 className="font-bold text-3xl text-gray-700 text-center">
-              Sign in to your account
+              Sign in to your Account
             </h1>
           </div>
           <div>
@@ -73,7 +73,7 @@ const Login = ({ }) => {
                   type="submit"
                   className="bg-indigo-600 w-full text-white p-2 rounded-md focus:outline-none"
                 >
-                  Enviar
+                  Sing up
                 </button>
                 {/* Se comprobo con este boton y si sirve para cambiar de usuario,El usuario por default es user, osea que no tiene acesso a la barra de charts, pero despues que presiona el boton este cambia enseguida a admin y le deja ver la ventana de charts,es Boton sigue funcionando como prueba y esta hecho con async y await */}
                 <button
