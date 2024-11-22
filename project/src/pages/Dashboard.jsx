@@ -60,6 +60,12 @@ const Final = () => {
             Charts <strong className="bg-gradient-to-r from-indigo-800 via-indigo-500 font-semibold to-indigo-300 inline-block text-transparent bg-clip-text">Graph</strong>
           </p>
           <p className="text-pretty  font-light xl:text-center  text-gray-500 text-sm 2xl:text-xl xl:text-lg md:pl-10 md:pr-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, cupiditate facilis quam culpa placeat minus autem aperiam, ex beatae minima hic quas quisquam sapiente dolorum sint. Explicabo repudiandae officiis quidem!</p>
+          <div className="inline-flex gap-2 mt-6">
+            <button onClick={() => {
+              window.print()
+            }} href="" className="bg-indigo-600 flex-1 p-2 rounded-md hover:bg-indigo-800  text-white ">Imprimir</button>
+            <a href="" className=" flex-1 p-2 rounded-md text-gray-800 text-nowrap">See Docs</a>
+          </div>
         </div>
         <div className="flex flex-col gap-5" value={data}>
           <Grid></Grid>

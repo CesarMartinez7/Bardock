@@ -239,3 +239,7 @@ INSERT INTO detalle_orden_inventario (id_detalle_orden_inventario, id_orden_inve
 (8, 4, 8, 8, 'Mouse Óptico', 15),
 (9, 5, 9, 9, 'Proyector', 1),
 (10, 5, 10, 10, 'Cámara Digital', 2);
+
+
+INSERT INTO userroot (nombre,email,rool,password) values ("admin","admin@gmail.com","A","admin");
+INSERT INTO userroot (nombre,email,rool,password) values ("user","user@gmail.com","U","user");

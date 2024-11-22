@@ -113,7 +113,7 @@ const data = [
       "google.com", // Telegram
       "https://github.com/CesarMartinez7/", // GitHub
     ]},
-    { "name": "Enisberto",
+    { "name": "Junior",
       "href": [
         "https://www.linkedin.com/in/cesar-martinez-383943332/", // Link
         "mailto:cesarwamartinez@gmail.com?subject=Asunto&body=Contrato 🕐", // Gmail
@@ -129,7 +129,8 @@ const Contact = () => {
     <>
     <div className="p-40 w-full h-screen flex justify-center items-center gap-5 flex-col ">
       {data.map((data) => (
-        <article className=" h-fit inline-flex gap-5 shadow-lg rounded-lg items-center p-4 border w-fit ">
+        <article className=" h-fit inline-flex gap-5 shadow-lg rounded-lg items-center p-4 border  xl:w-[440px] md:w-[440px]">
+            <h1 className="font-bold">{data.name}</h1>
             <a href={data.href[0]}  target="_blank"  className="p-2 border rounded-lg hover:scale-150 duration-200" ><LinkedIn></LinkedIn></a>
             <a href={data.href[1]}  target="_blank"  className="p-2 border rounded-lg hover:scale-150 duration-200" ><Gmail></Gmail></a>
             <a href={data.href[2]}  target="_blank"  className="p-2 border rounded-lg hover:scale-150 duration-200" ><XformerlyTwitter></XformerlyTwitter></a>
