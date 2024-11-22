@@ -34,7 +34,8 @@ npm run build.
 > [!CAUTION]
 > El puerto por default es el que se le asigne en PORT o <code>3000</code> pero puedes cambiarlo o reasignarlo cuando quieras.
 
-El Frontend y el backend ahora corren el un mismo servidor, esto hace que los dos se ejecuten al mismo tiempo y hace innecesario el LANZADOR.py q solo lanza los dos en diferentes puertos
+El Frontend y el backend ahora corren el un mismo servidor, esto hace que los dos se ejecuten al mismo tiempo y hace innecesario el LANZADOR.py q solo lanza los dos en diferentes puertos.
+
 
 Si notas que cuando haces cambios no se muestran en la pagina, es porque la carpeta dist esta hecha para produccion, y no se actualiza o cambia segun cuando se hacen cambios. La solucion mas rapida para eso es eliminar la carpeta dist y ejecutar el comando __npm run build__ otra vez, de esta manera el hara tomara el cargara tus ultimos cambios.
 

@@ -1,0 +1,24 @@
+import React from "react";
+import { useContext } from "react";
+import { UserContext } from "../../main";
+
+const Account = ({ }) => {
+    const { name,rool} = useContext(UserContext)
+    const cargo = rool === "A" ? "Administrador" : "Publico"
+    return (
+        <>
+            <main className="w-fit absolute top-[50%] left-[50%] translate-x-[-50%] border translate-y-[-50%] rounded-md p-6 shadow-md">
+                <span className="text-center flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-16 text-gray-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </span>
+                <p className="text-left mt-5 text-gray-600">Name User: <strong className="font-light text-md">{name}</strong> </p>
+                <p className="text-right text-gray-600">Cargo Administrativo: <span className="font-light text-md">{cargo}</span></p>
+            </main>
+        </>
+    )
+}
+
+
+export default Account
