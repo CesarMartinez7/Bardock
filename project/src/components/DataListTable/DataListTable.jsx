@@ -72,15 +72,14 @@ const TableOpcion = () => {
       <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 grid-rows-3 place-content-center place-items-center p-1 xl:p-8">
         {array.map((value, key) => (
           <div class="w-full h-full sm:max-w-sm shadow-gray-200 p-5 rounded-lg shadow-lg ">
-          <div class="card-body">
-            <h2 class="text-xl font-semibold text-gray-600 text-wrap">{value.name}</h2>
-            <p class="mb-4 text-gray-500">
-              {value.description}
-            </p>
-            <div class="card-actions">
+            <div class="card-body">
+              <h2 class="text-xl font-semibold text-gray-600 text-wrap">
+                {value.name}
+              </h2>
+              <p class="mb-4 text-gray-500">{value.description}</p>
+              <div class="card-actions"></div>
             </div>
           </div>
-        </div>
         ))}
       </section>
     </>
@@ -88,25 +87,24 @@ const TableOpcion = () => {
 };
 
 const Section = () => {
-  const toCharts = useNavigate()
+  const toCharts = useNavigate();
   const handleClickData = () => {
     window.scrollTo({ behavior: "smooth", top: 1284 });
   };
 
   const handleClickBars = () => {
-    toCharts("/dash")
+    toCharts("/dash");
   };
 
   return (
     <section className="flex flex-col md:flex-row gap-3 mt-14 lg:p-0 ">
       <div className=" content-center xl:p-14 mt-24 xl:mt-12 md:w-3/6 xl:w-6/12">
-        <h1 className="font-bold text-6xl pb-4 text-gray-800">Soon</h1>
-        <h2 className="font-medium text-lg text-gray-700">you can see your data here</h2>
-        <p className="w-full text-gray-600">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
-          sequi ducimus at ipsa optio quia aliquid voluptate magnam obcaecati,
-          saepe nobis quis maxime. Fugiat deleniti perferendis sit distinctio
-          facilis maxime..
+        <h1 className="font-bold text-wrap text-4xl pb-2 text-gray-800 xl:text-6xl">Analizador de Datos 👨‍🚀</h1>
+        <h2 className="font-medium text-lg text-gray-700">
+          you can see your data here
+        </h2>
+        <p className="w-full text-gray-600 font-light mt-3 mb-5 text-lg">
+        Nuestra Página de Datos es una solución potente diseñada para proporcionar una visualización clara y ordenada de la información a través de tablas. Esta aplicación está optimizada para manejar grandes volúmenes de datos, presentándolos de manera intuitiva y fácil de interpretar.
         </p>
         <div className="flex gap-4 text-white mt-5">
           <button
@@ -115,7 +113,10 @@ const Section = () => {
           >
             Ver Datos
           </button>
-          <button className="border-gray-200 hover:bg-gray-100 duration-500 hover:shadow-lg text-black border  p-2 rounded-md" onClick={handleClickBars}>
+          <button
+            className="border-gray-200 hover:bg-gray-100 duration-500 hover:shadow-lg text-black border  p-2 rounded-md"
+            onClick={handleClickBars}
+          >
             Ver Graficos
           </button>
         </div>
@@ -146,7 +147,7 @@ const Search = ({ onSearch }) => {
 
   return (
     <form onSubmit={handleSubmit} className="mb-5">
-      <div className="flex justify-center content-center gap-3" >
+      <div className="flex justify-center content-center gap-3">
         <div className="">
           <input
             type="text"
@@ -157,7 +158,10 @@ const Search = ({ onSearch }) => {
           />
         </div>
         <div>
-          <button className="p-2 flex content-center text-center items-center gap-2 justify-center rounded-md bg-gray-800 text-white is-info border" type="submit">
+          <button
+            className="p-2 flex content-center text-center items-center gap-2 justify-center rounded-md bg-gray-800 text-white is-info border"
+            type="submit"
+          >
             <span className="icon">
               <FaSearch />
             </span>
@@ -173,7 +177,6 @@ export const DataTableQuery = () => {
   const gridRef = useRef();
   const [rowData, setRowData] = useState([]);
   const [colDefs, setColDefs] = useState([]);
-
 
   useEffect(() => {
     if (rowData.length > 0) {
@@ -206,7 +209,7 @@ export const DataTableQuery = () => {
   );
 
   return (
-    <div >
+    <div>
       <Section />
       <TableOpcion></TableOpcion>
       <Search onSearch={fetchData} />
@@ -218,26 +221,25 @@ export const DataTableQuery = () => {
         <AgGridReact ref={gridRef} rowData={rowData} columnDefs={colDefs} />
       </div>
       <div className="flex flex-shrink-0 gap-2 mt-4">
-  <button
-    onClick={() => gridRef.current.api.exportDataAsCsv()}
-    className="text-nowrap text-xs bg-indigo-600 text-white px-2 py-1 rounded" // Cambié pl-2 pr-2 a px-2 py-1 para reducir el tamaño
-  >
-    Exportar a CSV
-  </button>
-  <button
-    onClick={() => window.print()}
-    className="p-1 bg-gray-50 rounded-md text-gray-950 border hover:shadow-md duration-150 md:p-2" // Ajusté el padding a p-1
-  >
-    Imprimir
-  </button>
-  <button
-    className="p-1 bg-gray-50 rounded-md text-gray-950 border hover:shadow-md duration-150"
-    onClick={mostrarEnCosola}
-  >
-    Mostrar en consola
-  </button>
-</div>
-
+        <button
+          onClick={() => gridRef.current.api.exportDataAsCsv()}
+          className="text-nowrap text-xs bg-indigo-600 text-white px-2 py-1 rounded" // Cambié pl-2 pr-2 a px-2 py-1 para reducir el tamaño
+        >
+          Exportar a CSV
+        </button>
+        <button
+          onClick={() => window.print()}
+          className="p-1 bg-gray-50 rounded-md text-gray-950 border hover:shadow-md duration-150 md:p-2" // Ajusté el padding a p-1
+        >
+          Imprimir
+        </button>
+        <button
+          className="p-1 bg-gray-50 rounded-md text-gray-950 border hover:shadow-md duration-150"
+          onClick={mostrarEnCosola}
+        >
+          Mostrar en consola
+        </button>
+      </div>
     </div>
   );
 };

@@ -12,6 +12,10 @@
 }
 
 
+.codeBar{
+    @apply p-4 bg-gray-900 rounded-md m-4
+}
+
 
 
 .border-colors{

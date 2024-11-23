@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {
+    
       colors:{
         bulmaColor:"#00BFA9",
         bulmaColorHover:"#04BFC9"
