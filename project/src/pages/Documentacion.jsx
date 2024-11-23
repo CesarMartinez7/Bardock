@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Descripcion from "../components/DescripcionList/Descripcion.jsx";
 import {
   MySQL,
   Vite,
@@ -108,6 +109,7 @@ const Documentacion = () => {
             praesentium corporis sint consequuntur harum magni fugit, enim dicta
             architecto perferendis, vel explicabo vero quod fugiat nihil sunt.
           </p>
+          <Descripcion></Descripcion>
           
         </div>
       </section>
