@@ -43,7 +43,15 @@ const handlerHover = () => {
   });
 };
 
-const Documentacion = ({ carpeta = "Project" }) => {
+const ButtonPrint = () => {
+  return(
+      <a href="" className="bg-indigo-500 p-4 text-white font-semibold transform  fixed top-[90%] right-[5%] rounded-[9999999px]" onClick={() => {
+        window.print()
+      }}>Imprimir Docs</a>
+  )
+}
+
+const Documentacion = ({ carpeta = "project" }) => {
   useEffect(() => {
     handlerHover();
   }, []);
@@ -52,13 +60,13 @@ const Documentacion = ({ carpeta = "Project" }) => {
     <>
       <section className="p-9 mt-14 lg:p-20 flex flex-col gap-5">
         <div>
+          <ButtonPrint></ButtonPrint>
           <section className="bg-transparent">
-            <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className=" px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
               <div className="max-w-screen-lg text-gray-500 sm:text-lg ">
                 <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 ">
-                  Powering innovation at{" "}
-                  <span className="font-extrabold">200,000+</span> companies
-                  worldwide
+                Documentation{" "}
+                  <span className="font-extrabold">Offical</span> of FastData
                 </h2>
                 <p className="mb-4 font-light">
                   Track work across the enterprise through an open,
@@ -67,7 +75,7 @@ const Documentacion = ({ carpeta = "Project" }) => {
                   and operations teams have richer contextual information to
                   rapidly respond to requests, incidents, and changes.
                 </p>
-                <p className="mb-4 font-medium">
+                <p className="mb-4 font-light">
                   Después de clonar el repositorio de GitHub, sigue estos pasos
                   para instalar las dependencias: navega a la carpeta donde
                   clonaste el repositorio usando el comando{" "}
@@ -88,7 +96,7 @@ const Documentacion = ({ carpeta = "Project" }) => {
                     <span className="text-white">install</span>
                   </code>
                 </pre>
-                <p className="mt-5">
+                <p className="mt-5 font-thin">
                   Si quieres correr el servidor de forma local puedes ejecutar
                   los siguientes comando dependiendo de que gestor de paquetes
                   utilices{" "}
@@ -100,23 +108,23 @@ const Documentacion = ({ carpeta = "Project" }) => {
                     <span className="text-white">dev</span>
                   </code>
                   <code className="block">
-                    1 <span className="text-yellow-400">yarn</span>{" "}
+                    2 <span className="text-yellow-400">yarn</span>{" "}
                     <span className="text-emerald-500">run</span>{" "}
                     <span className="text-white">dev</span>
                   </code>
                 </pre>
-                <p>
+                <p className="font-thin">
                   Tendras la pestaña de tu servidor abierta en tu navegador en
                   el puerto:{" "}
                   <code className="bg-gray-900 p-1 rounded-md">
                     <span className="text-cyan-400">5173</span>
                   </code>
                 </p>
-                <div className="">
+                <div className="mb-4">
                   <img
                     src={image}
                     alt=""
-                    className="object-cover rounded-xl m-2"
+                    className="object-cover shadow-xl rounded-xl m-2 "
                   />
                 </div>
                 <div>
@@ -131,7 +139,7 @@ const Documentacion = ({ carpeta = "Project" }) => {
                     Lo siguiente a configurar será tu servidor de Express para
                     que puedas visualizar tus datos.
                   </p>
-                  <p>
+                  <p className="font-thin">
                     Para esto, abre una nueva pestaña de la terminal en tu
                     editor y ejecuta el siguiente comando:
                   </p>
@@ -154,7 +162,7 @@ const Documentacion = ({ carpeta = "Project" }) => {
                   <h1 className="font-bold text-4xl mt-4 mb-5 text-gray-800 ">
                     ¿Qué pasó aquí? 🤒
                   </h1>
-                  <p>
+                  <p className="font-light">
                     Es posible que hayas encontrado un error como este porque no
                     configuraste correctamente las credenciales de tu servidor
                     de Express con tu{" "}
@@ -168,18 +176,57 @@ const Documentacion = ({ carpeta = "Project" }) => {
                       fatal: true Node.js v22.11.0
                     </code>
                   </pre>
-                  <p>Para corregir este error, desde tu editor o block de notas entra al archivo <span className="bg-gray-900 p-1 rounded-md text-yellow-200">server.cjs</span> y configura esto a tus credenciales</p>
+                  <p className="font-light">
+                    Para corregir este error, desde tu editor o block de notas
+                    entra al archivo{" "}
+                    <span className="bg-gray-900 p-1 rounded-md text-yellow-200">
+                      server.cjs
+                    </span>{" "}
+                    y configura esto a tus credenciales
+                  </p>
                   <pre className="codeBar">
                     <code className="block">const dataServerDB =</code>
-                    <code className="block text-indigo-400">host: "localhost",</code> 
-                    <code className="block text-blue-400">user: "root",</code>
-                    <code className="block text-cyan-400">password: "oyasumipunpuns",</code>
-                    <code className="block text-green-500">database: "nodomobiliario",;</code>
+                    <code className="block text-indigo-400">
+                      host: "yourhost",
+                    </code>
+                    <code className="block text-blue-400">
+                      user: "youruser",
+                    </code>
+                    <code className="block text-cyan-400">
+                      password: "yorpassword",
+                    </code>
+                    <code className="block text-green-500">
+                      database: "yourdatabase",;
+                    </code>
                   </pre>
+                  <p className="font-light">
+                    Tambien asegurate ejecutar el script SQL de base de datos{" "}
+                  </p>
                 </div>
               </div>
             </div>
-            <section className="bg-transparent p-20">
+            <section className="bg-transparent ">
+              <div className="px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                <h1 className="font-bold text-4xl mt-4 text-gray-800 mb-4">
+                  Tecnologías Utilizadas
+                </h1>
+                <p className="font-light text-gray-500 ">
+                  En este proyecto, nos hemos centrado en utilizar tecnologías
+                  modernas que no solo ofrecen una excelente documentación, sino
+                  que también son claras y fáciles de usar. Esto asegura que
+                  cualquier modificación futura sea sencilla de implementar,
+                  permitiendo una mejora continua del proyecto. Hemos
+                  seleccionado herramientas que aseguran que el desarrollo sea
+                  eficiente y que el mantenimiento sea manejable. La combinación
+                  de estas tecnologías nos ha proporcionado una base sólida para
+                  desarrollar una aplicación potente y escalable, garantizando
+                  al mismo tiempo un entorno de desarrollo eficiente y
+                  manejable. Al elegir estas tecnologías, nos aseguramos de
+                  estar preparados para cualquier desafío que pueda surgir y de
+                  tener las mejores herramientas a nuestra disposición para
+                  construir un producto de alta calidad.
+                </p>
+              </div>
               <div className="logos-items h-screen xl:h-2/4">
                 <Expressjs className="item" />
                 <Vite className="item" />
@@ -202,18 +249,10 @@ const Documentacion = ({ carpeta = "Project" }) => {
           <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
             <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">
-                We didn't reinvent the wheel
+              Conclusión
               </h2>
               <p className="mb-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                doloribus asperiores facilis velit, perspiciatis provident non
-                ducimus exercitationem cumque aliquid amet recusandae,
-                laudantium, nisi expedita est officiis? Odit, aperiam! Sit ipsam
-                corporis quis sint minus sapiente vitae eum commodi? Ab!
-              </p>
-              <p>
-                We are strategists, designers and developers. Innovators and
-                problem solvers. Small enough to be simple and quick.
+              A lo largo de este proyecto, hemos explorado y aprovechado diversas tecnologías modernas para construir una aplicación robusta y eficiente. Nuestro enfoque en la claridad y la facilidad de uso asegura que este proyecto no solo cumpla con los estándares actuales, sino que también sea fácil de mantener y expandir en el futuro. Estamos convencidos de que la base sólida establecida aquí permitirá un desarrollo continuo y una mejora constante, respondiendo efectivamente a las necesidades de los usuarios.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 mt-8">
@@ -232,18 +271,6 @@ const Documentacion = ({ carpeta = "Project" }) => {
           </div>
         </section>
         <div className="lg:p-20">
-          <h1 className="pb-5 font-extrabold text-balance text-4xl text-gray-800 mb-4 ">
-            Lorem ipsum dolor sit amet
-          </h1>
-          <p className=" text-gray-700 font-extralight ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit minus
-            culpa, odio eaque voluptates cupiditate mollitia aliquid porro
-            magnam cumque omnis nulla totam sunt officia iusto laboriosam sint
-            quia ratione veniam, rem, iste ex? Veniam similique, autem
-            distinctio rem eaque qui doloribus! Maiores, quis earum suscipit
-            praesentium corporis sint consequuntur harum magni fugit, enim dicta
-            architecto perferendis, vel explicabo vero quod fugiat nihil sunt.
-          </p>
           <Descripcion></Descripcion>
         </div>
       </section>
