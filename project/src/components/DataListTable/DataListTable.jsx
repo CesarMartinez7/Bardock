@@ -215,7 +215,7 @@ export const DataTableQuery = () => {
       <Search onSearch={fetchData} />
       <div
         className={themeGrid ? "ag-theme-alpine" : "ag-theme-quartz-dark"}
-        style={{ height: 500 }}
+        style={{ height: 700 }}
         id="grid"
       >
         <AgGridReact ref={gridRef} rowData={rowData} columnDefs={colDefs} />

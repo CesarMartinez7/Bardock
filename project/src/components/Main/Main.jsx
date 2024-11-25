@@ -44,9 +44,8 @@ export default function Example() {
             <p className="text-balance text-5xl font-semibold tracking-tight text-gray-800 sm:text-7xl">
               Welcome to <span className='bg-gradient-to-r from-indigo-800 via-indigo-500 font-semibold to-indigo-300 inline-block text-transparent bg-clip-text'>FastData</span>
             </p>
-            <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat.
+            <p className="mt-8 text-pretty text-md  font-medium text-gray-500 sm:text-xl/8 ">
+            FastData es una innovadora aplicación web diseñada para ofrecer una lectura de datos eficiente y visualmente atractiva, construida con la potente biblioteca de JavaScript, React.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
