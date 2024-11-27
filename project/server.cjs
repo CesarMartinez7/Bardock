@@ -70,6 +70,7 @@ app.get("/api/datos", (req, resp) => {
   ]
 
   // Parece haber un error que manda mas de 5 peticiones al servidor,
+  // En el servidor mandando con el launcher de Python tiene muchos errores, como peticiones limitadas por un tiempo y deja de tomar en cuenta el frontend , se recomienda no utilizar este launcher para lanzar los servidores al mismo tiempo si lo que quieres es hacerlo de forma rapida.
   let tablaSearch = req.query.table.toLowerCase() || "activo";
   tables.forEach((table)=>{
     if(tablaSearch.toLowerCase() == table.nameClient){
