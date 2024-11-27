@@ -4,24 +4,23 @@ import { Footer } from "../Footer/Footer";
 import { useContext } from "react";
 import { UserContext } from "../../main";
 
-const Login = ({ }) => {
+const Login = ({}) => {
   const { password, setPassword, name, setName } = useContext(UserContext);
   // Tratando de implementar el contexto desde aqui para despues cambiarlo en todo, CONTEXTO FUNCIONO 👌
   const { rool } = useUserPrueba({ name, password });
 
-  const inputPasswordRef = useRef(null)
-  const inputNameRef = useRef(null)
+  const inputPasswordRef = useRef(null);
+  const inputNameRef = useRef(null);
 
-  // Aquí es donde se maneja la solicitud con useRef porque anteriormente mandama muchas peticiones y tuve que hacer el formulario de manera menos controlada,TOTALMENTE FUNCIONAL 👍🏼,Faltaria buscar como funciona el localStorage para guardar, o buscar la implementacion en useMemo para ver 
+  // Aquí es donde se maneja la solicitud con useRef porque anteriormente mandama muchas peticiones y tuve que hacer el formulario de manera menos controlada,TOTALMENTE FUNCIONAL 👍🏼,Faltaria buscar como funciona el localStorage para guardar, o buscar la implementacion en useMemo para ver
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setName(inputNameRef.current.value) 
-    setPassword(inputPasswordRef.current.value)
+    e.preventDefault();
+    setName(inputNameRef.current.value);
+    setPassword(inputPasswordRef.current.value);
     fetch(`http://localhost:3000/api/login?name=${name}&password=${password}`)
       .then((respuesta) => respuesta.json())
-      .then(data => console.log(data))
-  }
-
+      .then((data) => console.log(data));
+  };
 
   return (
     <>
@@ -61,7 +60,7 @@ const Login = ({ }) => {
                   id="password"
                   name="password"
                   type="password"
-                  ref={inputPasswordRef}  
+                  ref={inputPasswordRef}
                   required
                   placeholder="dragonballzGokunoleganaavegeta"
                   autoComplete="current-password"

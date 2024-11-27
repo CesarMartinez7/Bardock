@@ -13,61 +13,61 @@ const TableOpcion = () => {
     {
       name: "Acta Asignacion",
       table: "Acta_Asignacion",
-      key:"Acta",
+      key: "Acta",
       description: "Registro de la asignación de un activo.",
     },
     {
       name: "Activo",
       table: "Activo",
-      key:"Activo",
+      key: "Activo",
       description: "Información sobre los activos de la organización.",
     },
     {
       name: "Articulo",
       table: "Articulo",
-      key:"Articulo",
+      key: "Articulo",
       description: "Detalles de los artículos gestionados.",
     },
     {
       name: "Bodega",
       table: "Bodega",
-      key:"Bodega",
+      key: "Bodega",
       description: "Información sobre los almacenes o bodegas.",
     },
     {
       name: "Categoria Articulos",
       table: "Categoria_Articulos",
-      key:"Categoria",
+      key: "Categoria",
       description: "Clasificación de los artículos por categorías.",
     },
     {
       name: "Centro de Costo",
       table: "Centro_de_Costo",
-      key:"Centro",
+      key: "Centro",
       description: "Divisiones para el control de costos.",
     },
     {
       name: "Detalles de acta de inventario",
       table: "Detalle_de_acta_de_inventario",
-      key:"Detalles inventario",
+      key: "Detalles inventario",
       description: "Información detallada de cada acta de inventario.",
     },
     {
       name: "Orden de Inventario",
       table: "Orden_de_Inventario",
-      key:"Orden",
+      key: "Orden",
       description: "Registros de las órdenes para realizar inventarios.",
     },
     {
       name: "Perfil",
       table: "Perfil",
-      key:"Perfil",
+      key: "Perfil",
       description: "Configuraciones y permisos de usuarios.",
     },
     {
       name: "Tipo de documentos",
       table: "Tipo_de_documentos",
-      key:"Tipo doc",
+      key: "Tipo doc",
       description:
         "Clasificación de los diferentes tipos de documentos utilizados.",
     },
@@ -86,7 +86,9 @@ const TableOpcion = () => {
   ];
   return (
     <main className="p-4 mt-30">
-      <h1 className="font-bold text-4xl text-gray-700 ml-6 text-center mb-10">Nombre Tablas</h1>
+      <h1 className="font-bold text-4xl text-gray-700 ml-6 text-center mb-10">
+        Nombre Tablas
+      </h1>
       <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 grid-rows-3 place-content-center place-items-center p-1 xl:p-8">
         {array.map((value, key) => (
           <div className="w-full h-full sm:max-w-sm shadow-gray-200 p-5 rounded-lg shadow-lg hover:scale-110 duration-150 hover:bg-white ">
@@ -94,7 +96,9 @@ const TableOpcion = () => {
               <h2 className="text-xl font-semibold text-gray-600 text-wrap">
                 {value.name}
               </h2>
-              <p className="text-gray-600">Key Input : <span className="text-indigo-400">{value.key}</span> </p>
+              <p className="text-gray-600">
+                Key Input : <span className="text-indigo-400">{value.key}</span>{" "}
+              </p>
               <p className="mb-4 text-gray-500">{value.description}</p>
               <div className="card-actions"></div>
             </div>
@@ -118,12 +122,18 @@ const Section = () => {
   return (
     <section className="flex flex-col md:flex-row gap-3 mt-14 lg:p-0 ">
       <div className=" content-center xl:p-14 mt-24 xl:mt-12 md:w-3/6 xl:w-6/12">
-        <h1 className="font-bold text-wrap text-4xl pb-2 text-gray-800 xl:text-6xl">Analizador de Datos 👨‍🚀</h1>
+        <h1 className="font-bold text-wrap text-4xl pb-2 text-gray-800 xl:text-6xl">
+          Analizador de Datos 👨‍🚀
+        </h1>
         <h2 className="font-medium text-lg text-gray-700">
           you can see your data here
         </h2>
         <p className="w-full text-gray-600 font-light mt-3 mb-5 text-lg">
-        Nuestra Página de Datos es una solución potente diseñada para proporcionar una visualización clara y ordenada de la información a través de tablas. Esta aplicación está optimizada para manejar grandes volúmenes de datos, presentándolos de manera intuitiva y fácil de interpretar.
+          Nuestra Página de Datos es una solución potente diseñada para
+          proporcionar una visualización clara y ordenada de la información a
+          través de tablas. Esta aplicación está optimizada para manejar grandes
+          volúmenes de datos, presentándolos de manera intuitiva y fácil de
+          interpretar.
         </p>
         <div className="flex gap-4 text-white mt-5">
           <button
