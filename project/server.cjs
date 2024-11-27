@@ -58,13 +58,15 @@ app.get("/api/datos", (req, resp) => {
     {"nameClient":"bodega","searchDb" : "bodega"},
     {"nameClient":"categoria","searchDb" : "categoria_articulo"},
     {"nameClient":"centro","searchDb" : "centro_costo"},
-    {"nameClient":"detalles asignacion","searchDb" : "destalles_acta_asignacion"},
+    {"nameClient":"detalles asignacion","searchDb" : "detalle_acta_asignacion"},
+    {"nameClient":"detalles inventario","searchDb" : "detalle_orden_inventario"},
     {"nameClient":"orden","searchDb" : "orden_inventario"},
     {"nameClient":"perfil","searchDb" : "perfil"},
     {"nameClient":"tipo doc","searchDb" : "tipo_documento"},
     {"nameClient":"tipo mov","searchDb" : "tipo_movimiento"},
     {"nameClient":"stock","searchDb" : "stock"},
     {"nameClient":"userroot","searchDb" : "userroot"},
+    {"nameClient":"activo","searchDb" : "activo"},
   ]
   let tablaSearch = req.query.table.toLowerCase() || "activo";
   tables.forEach((table)=>{

@@ -13,76 +13,95 @@ const TableOpcion = () => {
     {
       name: "Acta Asignacion",
       table: "Acta_Asignacion",
+      key:"Acta",
       description: "Registro de la asignación de un activo.",
     },
     {
       name: "Activo",
       table: "Activo",
+      key:"Activo",
       description: "Información sobre los activos de la organización.",
     },
     {
       name: "Articulo",
       table: "Articulo",
+      key:"Articulo",
       description: "Detalles de los artículos gestionados.",
     },
     {
       name: "Bodega",
       table: "Bodega",
+      key:"Bodega",
       description: "Información sobre los almacenes o bodegas.",
     },
     {
       name: "Categoria Articulos",
       table: "Categoria_Articulos",
+      key:"Categoria",
       description: "Clasificación de los artículos por categorías.",
     },
     {
       name: "Centro de Costo",
       table: "Centro_de_Costo",
+      key:"Centro",
       description: "Divisiones para el control de costos.",
     },
     {
       name: "Detalles de acta de inventario",
-      table: "Detalles_de_acta_de_inventario",
+      table: "Detalle_de_acta_de_inventario",
+      key:"Detalles inventario",
       description: "Información detallada de cada acta de inventario.",
     },
     {
       name: "Orden de Inventario",
       table: "Orden_de_Inventario",
+      key:"Orden",
       description: "Registros de las órdenes para realizar inventarios.",
     },
     {
       name: "Perfil",
       table: "Perfil",
+      key:"Perfil",
       description: "Configuraciones y permisos de usuarios.",
     },
     {
       name: "Tipo de documentos",
       table: "Tipo_de_documentos",
+      key:"Tipo doc",
       description:
         "Clasificación de los diferentes tipos de documentos utilizados.",
     },
     {
-      name: "Stok",
-      table: "Stok",
+      name: "Stock",
+      table: "Stock",
+      key: "Stock",
       description: "Registro de la cantidad de artículos en inventario.",
+    },
+    {
+      name: "Detalles Acta asignacion",
+      table: "Detalles asignacion",
+      key: "Detalles asignacion",
+      description: "Informacion detallada del orden el inventario.",
     },
   ];
   return (
-    <>
+    <main className="p-4 mt-30">
+      <h1 className="font-bold text-4xl text-gray-700 ml-6 text-center mb-10">Nombre Tablas</h1>
       <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 grid-rows-3 place-content-center place-items-center p-1 xl:p-8">
         {array.map((value, key) => (
-          <div class="w-full h-full sm:max-w-sm shadow-gray-200 p-5 rounded-lg shadow-lg ">
-            <div class="card-body">
-              <h2 class="text-xl font-semibold text-gray-600 text-wrap">
+          <div className="w-full h-full sm:max-w-sm shadow-gray-200 p-5 rounded-lg shadow-lg hover:scale-110 duration-150 hover:bg-white ">
+            <div className="card-body">
+              <h2 className="text-xl font-semibold text-gray-600 text-wrap">
                 {value.name}
               </h2>
-              <p class="mb-4 text-gray-500">{value.description}</p>
-              <div class="card-actions"></div>
+              <p className="text-gray-600">Key table input : <span className="text-indigo-400">{value.key}</span> </p>
+              <p className="mb-4 text-gray-500">{value.description}</p>
+              <div className="card-actions"></div>
             </div>
           </div>
         ))}
       </section>
-    </>
+    </main>
   );
 };
 
