@@ -68,6 +68,8 @@ app.get("/api/datos", (req, resp) => {
     {"nameClient":"userroot","searchDb" : "userroot"},
     {"nameClient":"activo","searchDb" : "activo"},
   ]
+
+  // Parece haber un error que manda mas de 5 peticiones al servidor,
   let tablaSearch = req.query.table.toLowerCase() || "activo";
   tables.forEach((table)=>{
     if(tablaSearch.toLowerCase() == table.nameClient){
