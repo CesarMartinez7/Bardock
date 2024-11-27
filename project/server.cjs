@@ -50,14 +50,36 @@ app.get("/api/login",(req,resp)=>{
 
 
 app.get("/api/datos", (req, resp) => {
-  let table = req.query.table || "activo";
-  const sql = `SELECT * FROM ${table}`;
-  conec.query(sql, (err, resultadoQuery) => {
-    if (err) {
-      return resp.status(500).json({ error: "Error en la consulta" });
+  console.log(req.query)
+  // Inplementar un array en nameClient que sea un array que se recorra el array de las posible conbinaciones del input del usuario para pasarlos para la database, y no tener una sola accion o un solo objeto. 🤒
+  const tables = [
+    {"nameClient":"acta","searchDb" : "acta_asignacion"},
+    {"nameClient":"articulo","searchDb" : "articulo"},
+    {"nameClient":"bodega","searchDb" : "bodega"},
+    {"nameClient":"categoria","searchDb" : "categoria_articulo"},
+    {"nameClient":"centro","searchDb" : "centro_costo"},
+    {"nameClient":"detalles asignacion","searchDb" : "destalles_acta_asignacion"},
+    {"nameClient":"orden","searchDb" : "orden_inventario"},
+    {"nameClient":"perfil","searchDb" : "perfil"},
+    {"nameClient":"tipo doc","searchDb" : "tipo_documento"},
+    {"nameClient":"tipo mov","searchDb" : "tipo_movimiento"},
+    {"nameClient":"stock","searchDb" : "stock"},
+    {"nameClient":"userroot","searchDb" : "userroot"},
+  ]
+  let tablaSearch = req.query.table.toLowerCase() || "activo";
+  tables.forEach((table)=>{
+    if(tablaSearch.toLowerCase() == table.nameClient){
+      const sql = `SELECT * FROM ${table.searchDb}`;
+      conec.query(sql, (err, resultadoQuery) => {
+        if (err) {
+          return resp.status(500).json({ error: "Error en la consulta" });
+        }
+        resp.json(resultadoQuery);
+        console.log("Se recorre con exito y manda peticion")
+      });
+      
     }
-    resp.json(resultadoQuery);
-  });
+  })
 });
 
 

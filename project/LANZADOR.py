@@ -8,7 +8,7 @@ import sys
 ## https://rico-schmidt.name/pymotw-3/subprocess/index.html
 
 def EjecutarServidores():
-    os.chdir("./vite-project/DATABASE") # Cambiar directorio
+    os.chdir("./project") # Cambiar directorio
     subprocess.Popen(["node","server.cjs"],shell=True)
 
 

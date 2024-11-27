@@ -134,10 +134,6 @@ const Search = ({ onSearch }) => {
   window.addEventListener("blur", () => {
     tableInput.current.focus();
   });
-  window.addEventListener("offline", () => {
-    window.alert("Por favor conectese a internet");
-  });
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const table = e.target.elements.table.value;
