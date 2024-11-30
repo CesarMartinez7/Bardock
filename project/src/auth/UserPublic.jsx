@@ -14,6 +14,7 @@ const Contact = lazy(()=> import("../pages/contact.jsx"))
 const DashBoard = lazy(()=> import("../pages/Dashboard.jsx"))
 const LoginPage = lazy(()=> import("../components/Login/Login.jsx"))
 const Account = lazy(()=> import("../components/Account/Account.jsx"))
+const Create = lazy(() => import("../pages/CreateDb.jsx"))
 export function AppUser() {
   return (
     <Suspense fallback={<LoadingComponente />}>
@@ -26,9 +27,9 @@ export function AppUser() {
           <Route path="docs" element={<Documentacion></Documentacion>}></Route>
           <Route path="*" element={<NotFoundPage />} />
           <Route path="contact" element={<Contact/>}></Route>
-          {/* <Route path="dash" element={<DashBoard></DashBoard>}></Route> */}
           <Route path="login" element={<LoginPage></LoginPage>}></Route>
           <Route path="account" element={<Account></Account>}></Route>
+          <Route path="create" element={<Create></Create>}></Route>
         </Routes>
       </BrowserRouter>
     </Suspense>

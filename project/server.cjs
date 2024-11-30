@@ -43,6 +43,18 @@ app.get("/api/login", (req, resp) => {
   });
 });
 
+app.get("/create",(req,resp) => {
+  resp.send("En post")
+  console.log(req.query)
+  console.log(req.body)
+  conec.execute("insert into centro_costo (id_centro_costo,descripcion,estado) values (?,?,?)",[id,descripcion,estado],(err,result) => {
+    if(err){
+      throw err
+    }
+    console.log(result)
+  })
+})
+
 app.get("/api/datos", (req, resp) => {
   console.log(req.query);
   // Inplementar un array en nameClient que sea un array que se recorra el array de las posible conbinaciones del input del usuario para pasarlos para la database, y no tener una sola accion o un solo objeto. 🤒
