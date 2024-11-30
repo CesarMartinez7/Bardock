@@ -43,16 +43,31 @@ app.get("/api/login", (req, resp) => {
   });
 });
 
-app.get("/create",(req,resp) => {
-  resp.send("En post")
-  console.log(req.query)
+app.post("/create",(req,resp) => {
   console.log(req.body)
-  conec.execute("insert into centro_costo (id_centro_costo,descripcion,estado) values (?,?,?)",[id,descripcion,estado],(err,result) => {
-    if(err){
-      throw err
-    }
-    console.log(result)
-  })
+  // Nombre de la tabla por la cual se pasara todo
+  const nameTable = req.body.tableName
+  if(nameTable === "centro_costo"){
+    const {id_centro_costo,descripcion,estado} = req.body
+    const data = [id_centro_costo,descripcion,estado]
+    conec.execute(`insert into ${nameTable}(id_centro_costo,descripcion,estado) values (?,?,?)`,data,(err)=>{
+      if(err){
+        throw err
+      }
+      console.log("Insertado con exito")
+    })
+  }
+  if(nameTable === "bodega"){
+    const {id_bodega,descripcion,estado,prefijo} = req.body
+    const data = [id_bodega,descripcion,estado,prefijo]
+    conec.execute(`insert into ${nameTable}(id_bodega,descripcion,estado,prefijo) values (?,?,?,?)`,data,(err)=>{
+      if(err){
+        throw err
+      }
+      console.log("Insertado con exito")
+    })
+  }
+  
 })
 
 app.get("/api/datos", (req, resp) => {
