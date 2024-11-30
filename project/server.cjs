@@ -46,7 +46,7 @@ app.get("/api/login", (req, resp) => {
 app.post("/create",(req,resp) => {
   console.log(req.body)
   // Nombre de la tabla por la cual se pasara todo
-  const nameTable = req.body.tableName
+  const nameTable = req.body.tableName.toLowerCase()
   if(nameTable === "centro_costo"){
     const {id_centro_costo,descripcion,estado} = req.body
     const data = [id_centro_costo,descripcion,estado]
@@ -67,7 +67,39 @@ app.post("/create",(req,resp) => {
       console.log("Insertado con exito")
     })
   }
+  if(nameTable === "activo"){
+    const {id_activo,id_articulo,descripcion_activo,codigo,serial,fecha_compra,fecha_garantia,avaluo,requiere_mantenimiento,periodicidad_mantenimiento,id_usuario_registra,fecha_registro,id_usuario_actualiza,fecha_actualiza,asignado_a} = req.body
+    const Data = [id_activo,id_articulo,descripcion_activo,codigo,serial,fecha_compra,fecha_garantia,avaluo,requiere_mantenimiento,periodicidad_mantenimiento,id_usuario_registra,fecha_registro,id_usuario_actualiza,fecha_actualiza,asignado_a]
+    console.log(Data)
+    conec.execute("insert into activo (id_activo,id_articulo,descripcion_activo,codigo,serial,fecha_compra,fecha_garantia,avaluo,requiere_mantenimiento,periodicidad_mantenimiento,id_usuario_registra,fecha_registro,id_usuario_actualiza,fecha_actualiza,asignado_a) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",Data,(err)=>{
+      if(err){
+        throw err
+      }
+      console.log(chalk.green("Insertado Con exito"))
+    })
+  }
+  if(nameTable === "perfil"){
+    console.log(req.body)
+    const {id_perfil,tipo_usuario,id_usuario} = req.body
+    conec.execute("insert into perfil (id_perfil,tipo_usuario,id_usuario) values (?,?,?)",[id_perfil,tipo_usuario,id_usuario],(err)=>{
+      if(err){
+        throw err
+      }
+      console.log("Insertado con exito")
+    })
+  }
   
+  if(nameTable === "acta_asignacion"){
+    console.log(req.body)
+    const {id_acta_asignacion, id_usuario_asignado, fecha_acta, id_usuario_elabora, fecha_registro, observacion} = req.body
+    conec.execute(`insert into ${nameTable} (id_acta_asignacion, id_usuario_asignado, fecha_acta, id_usuario_elabora, fecha_registro, observacion) values (?,?,?,?,?,?)`,[id_acta_asignacion, id_usuario_asignado, fecha_acta, id_usuario_elabora, fecha_registro, observacion],(err)=>{
+      if(err){
+        throw err
+      }
+      console.log("Insertado con exito")
+    })
+  }
+
 })
 
 app.get("/api/datos", (req, resp) => {

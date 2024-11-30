@@ -64,7 +64,7 @@ const Documentacion = ({ carpeta = "project" }) => {
           <section className="bg-transparent">
             <div className=" px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
               <div className="max-w-screen-lg text-gray-500 sm:text-lg ">
-                <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 ">
+                <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-800 ">
                 Documentation{" "}
                   <span className="font-extrabold">Offical</span> of FastData
                 </h2>

@@ -10,6 +10,7 @@ const navigation = [
   { name: "Data", href: "datos" },
   { name: "Contact", href: "contact" },
   { name: "DashBoard", href: "dash" },
+  { name: "Create", href:"create"}
 ];
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
