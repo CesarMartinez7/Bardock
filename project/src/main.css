@@ -20,6 +20,28 @@
   transition: transform 500ms;
 }
 
+
+.modalPover{
+  animation-name: animatetop;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+
+/* Se reutilizo un componente de modal que hize hace tiempo en un repositorio  */
+/* https://github.com/CesarMartinez7/Components-Css */
+@keyframes animatetop{
+  from{
+      top: -400px;
+      opacity: 0;
+  }
+  to{
+      @layer -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2
+      border-radius: 2px;
+     
+  }
+}
+
 .border-colors:hover {
   border: 1px solid rgb(149, 149, 149);
   transform: translateY(-4px);

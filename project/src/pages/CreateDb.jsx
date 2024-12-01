@@ -1,9 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { FaX } from 'react-icons/fa6';
+import { Footer } from '../components/Footer/Footer';
+
+
+
+// document.body.style.backgroundColor = "red"
+
 
 const ArrayDeTablas = [
     { 
-        name: "Centro Costo",
+        name: "Centro_Costo",
         columns:["id_centro_costo","descripcion","estado"]},
     { 
         name: "Activo",
@@ -30,19 +36,19 @@ const ArrayDeTablas = [
         columns:["id_articulo","id_categoria","descripcion","estado"]
     },
     {
-        name:"Categoria Articulo",
+        name:"Categoria_Articulo",
         columns:["id_categoria","descripcion","estado"]
     },
     {
-        name:"Detalle Acta Asignacion",
+        name:"Detalle_Acta_Asignacion",
         columns:["id_detalle_asignacion","id_acta_asignacion","id_activo"]
     },
     {
-        name:"Detalle Orden Inventario",
+        name:"Detalle_orden_Inventario",
         columns:["id_detalle_orden_inventario","id_orden_inventario","id_centro_costo","id_articulo","descripcion_articulo","cantidad"]
     },
     {
-        name:"Orden Inventario",
+        name:"Orden_Inventario",
         columns:["id_orden_inventario","id_tipo_movimiento","id_bodega","id_usuario_registra","fecha_registro","orden_no","id_bodega_destino","observacion"]
     },
     {
@@ -69,15 +75,19 @@ const Create = () => {
     };
 
     return (
+        <>
         <main className='p-10 mt-[2vh]'>
-            <h1 className="font-bold text-gray-600 text-4xl text-center">Crear Registros</h1>
+            <div className='p-24'>
+            <h1 className="font-bold text-4xl p-5 text-gray-700 2xl:text-6xl text-center text-pretty mt-36">Creacion de <span class="bg-gradient-to-r from-indigo-500 transform via-pink-400 to-red-400 text-transparent bg-clip-text ">Registros</span>🧑‍🚀</h1>
+            <p className='text-center font-light text-gray-600 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, error!</p>
+            </div>
             <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 grid-rows-3 place-content-center place-items-center p-1 xl:p-8 ">
                 {ArrayDeTablas.map((tabla, key) => (
                     <div key={key} className="w-full h-full sm:max-w-sm shadow-gray-200 p-12 rounded-lg shadow-lg hover:scale-110 duration-150 hover:bg-white " onClick={() => handleClickPopover(tabla)}>
                         <h1 className='text-sm  text-wrap 2xl:text-xl text-gray-500'>{tabla.name}</h1>
                     </div>
                 ))}
-                <div className={`z-[999] w-[90vw] 2xl:w-3/12 h-fit bg-white shadow-xl rounded-md border-gray-100 border-[1px] p-9 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  ${!selectedTable ? 'hidden' : ''}`} ref={popoverDiv}>
+                <div className={`z-[999] w-[90vw] 2xl:w-3/12 h-fit bg-white shadow-xl rounded-md border-gray-100 border-[1px] p-9 fixed top-1/2 left-1/2 transform modalPover -translate-x-1/2 -translate-y-1/2  ${!selectedTable ? 'hidden' : ''}`} ref={popoverDiv}>
                 <div className='inline-flex justify-end w-full text-gray-500'>
                     <FaX onClick={() => {
                         popoverDiv.current.classList.add("hidden")
@@ -96,11 +106,13 @@ const Create = () => {
                             <input type="text" placeholder="Ingrese datos" />
                         )}
                     </div>
-                    <input type="submit" value={"Enviar"} className='bg-indigo-600 p-2 rounded-md w-full mt-4 text-white font-semibold' />
+                    <input type="submit" value={"Guardar"} className='bg-indigo-600 p-2 rounded-md w-full mt-4 text-white font-semibold' />
                     </form>
                 </div>
             </section>
         </main>
+        <Footer></Footer>
+        </>
     );
 };
 

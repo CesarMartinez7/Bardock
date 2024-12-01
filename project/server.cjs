@@ -44,9 +44,30 @@ app.get("/api/login", (req, resp) => {
 });
 
 app.post("/create",(req,resp) => {
-  console.log(req.body)
   // Nombre de la tabla por la cual se pasara todo
   const nameTable = req.body.tableName.toLowerCase()
+  console.log(req.body)
+
+  if(nameTable === "articulo"){
+    const {id_articulo, id_categoria, descripcion, estado} = req.body
+    const arrayData = [id_articulo, id_categoria, descripcion, estado]
+    conec.execute(`INSERT INTO ${nameTable} (id_articulo, id_categoria, descripcion, estado) values (?,?,?,?)`,arrayData, (err)=>{
+      if(err){
+        throw err
+      }
+      console.log(chalk.green("Insertado con exito"))
+    })
+  }
+  if(nameTable === "stock"){
+    const {id_articulo, id_centro_costo, id_bodega, cantidad} = req.body
+    const arrayData = [id_articulo, id_centro_costo, id_bodega, cantidad]
+    conec.execute(`insert into ${nameTable} (id_articulo, id_centro_costo, id_bodega, cantidad) values (?,?,?,?)`,arrayData,(err)=>{
+      if(err){
+        throw err
+      }
+      console.log(chalk.green("Insertado con exito"))
+    })
+  }
   if(nameTable === "centro_costo"){
     const {id_centro_costo,descripcion,estado} = req.body
     const data = [id_centro_costo,descripcion,estado]
@@ -81,14 +102,15 @@ app.post("/create",(req,resp) => {
   if(nameTable === "perfil"){
     console.log(req.body)
     const {id_perfil,tipo_usuario,id_usuario} = req.body
-    conec.execute("insert into perfil (id_perfil,tipo_usuario,id_usuario) values (?,?,?)",[id_perfil,tipo_usuario,id_usuario],(err)=>{
+    const arrayData = [id_perfil,tipo_usuario,id_usuario]
+    conec.execute("insert into perfil (id_perfil,tipo_usuario,id_usuario) values (?,?,?)",arrayData,(err)=>{
       if(err){
         throw err
       }
       console.log("Insertado con exito")
     })
   }
-  
+  // Manejo de acta_asignacion
   if(nameTable === "acta_asignacion"){
     console.log(req.body)
     const {id_acta_asignacion, id_usuario_asignado, fecha_acta, id_usuario_elabora, fecha_registro, observacion} = req.body
@@ -100,7 +122,75 @@ app.post("/create",(req,resp) => {
     })
   }
 
+ if(nameTable === "categoria_articulo"){
+  const {id_categoria, descripcion, estado} = req.body
+  const  arrayData = [id_categoria,descripcion,estado]
+  conec.execute(`insert into ${nameTable}(id_categoria,descripcion,estado) values (?,?,?)`,arrayData,(err) => {
+    if(err){
+      throw err
+    }
+    console.log(chalk.green("Insertado con exito"))
+  })
+ }
+
+ if(nameTable === "orden_inventario"){
+  const {id_orden_inventario, id_tipo_movimiento, id_bodega, id_usuario_registra, fecha_registro, orden_no, id_bodega_destino, observacion} = req.body;
+
+  const arrayData = [id_orden_inventario, id_tipo_movimiento, id_bodega, id_usuario_registra, fecha_registro, orden_no, id_bodega_destino, observacion];
+
+  conec.execute(`INSERT INTO ${nameTable}(id_orden_inventario, id_tipo_movimiento, id_bodega, id_usuario_registra, fecha_registro, orden_no, id_bodega_destino, observacion) VALUES (?,?,?,?,?,?,?,?)`,arrayData, (err)=> {
+    if(err){
+      throw err
+    }
+    console.log(chalk.green("Insertado con exito"))
+  })
+}  
+
+ if(nameTable === "detalle_acta_asignacion"){
+  const {id_detalle_asignacion, id_acta_asignacion, id_activo} = req.body
+  const arrayData = [id_detalle_asignacion, id_acta_asignacion, id_activo]
+  conec.execute(`INSERT INTO ${nameTable} (id_detalle_asignacion, id_acta_asignacion, id_activo) values (?,?,?)`,arrayData,(err)=>{
+    if(err){
+      throw err
+      console.log(chalk.red("ERROrr"))
+    }
+    console.log(chalk.green("Insertado con exito"))
+  })
+ }
+
+ if(nameTable === "tipo_movimiento"){
+  const {id_tipo_movimiento, descripcion, signo} = req.body
+  const arrayData = [id_tipo_movimiento, descripcion, signo]
+  conec.execute(`insert into ${nameTable} (id_tipo_movimiento, descripcion, signo) values (?,?,?,?)`,arrayData,(err)=>{
+    if(err){
+      throw err
+    }
+    console.log(chalk.green("Insertado con exito"))
+  })
+ }
+
+ if(nameTable === "detalle_orden_inventario"){
+  const {id_detalle_orden_inventario, id_orden_inventario, id_centro_costo, id_articulo, descripcion_articulo, cantidad} = req.body
+  const arrayData = [id_detalle_orden_inventario, id_orden_inventario, id_centro_costo, id_articulo, descripcion_articulo, cantidad]
+  conec.execute(`INSERT INTO ${nameTable} (id_detalle_orden_inventario, id_orden_inventario, id_centro_costo, id_articulo, descripcion_articulo, cantidad) VALUES (?,?,?,?,?,?)`,arrayData,(err) => {
+    if(err){
+      throw err
+    }
+
+    console.log("Insertado con exito")
+  })
+ }
 })
+
+
+
+
+
+
+
+
+
+
 
 app.get("/api/datos", (req, resp) => {
   console.log(req.query);
