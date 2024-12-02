@@ -73,7 +73,7 @@ const Create = () => {
         setSelectedTable(tabla);
         popoverDiv.current.classList.toggle("hidden");
     };
-
+    
     return (
         <>
         <main className='p-10 mt-[2vh]'>
