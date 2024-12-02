@@ -8,7 +8,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Docs", href: "docs" },
   { name: "Data", href: "datos" },
-  { name: "Contact", href: "contact" },
+  // { name: "Contact", href: "contact" },
   { name: "DashBoard", href: "dash" },
   { name: "Create", href:"create"}
 ];

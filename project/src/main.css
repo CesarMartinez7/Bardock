@@ -23,7 +23,7 @@
 
 .modalPover{
   animation-name: animatetop;
-  animation-duration: 1s;
+  animation-duration: 700ms;
   animation-fill-mode: forwards;
 }
 

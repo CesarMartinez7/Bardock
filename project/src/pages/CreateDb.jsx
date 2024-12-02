@@ -77,14 +77,14 @@ const Create = () => {
     return (
         <>
         <main className='p-10 mt-[2vh]'>
-            <div className='p-24'>
+            <div className='2xl:p-24 '>
             <h1 className="font-bold text-4xl p-5 text-gray-700 2xl:text-6xl text-center text-pretty mt-36">Creacion de <span class="bg-gradient-to-r from-indigo-500 transform via-pink-400 to-red-400 text-transparent bg-clip-text ">Registros</span>🧑‍🚀</h1>
             <p className='text-center font-light text-gray-600 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, error!</p>
             </div>
             <section className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 grid-rows-3 place-content-center place-items-center p-1 xl:p-8 ">
                 {ArrayDeTablas.map((tabla, key) => (
-                    <div key={key} className="w-full h-full sm:max-w-sm shadow-gray-200 p-12 rounded-lg shadow-lg hover:scale-110 duration-150 hover:bg-white " onClick={() => handleClickPopover(tabla)}>
-                        <h1 className='text-sm  text-wrap 2xl:text-xl text-gray-500'>{tabla.name}</h1>
+                    <div key={key} className="w-full h-full sm:max-w-sm shadow-gray-200 p-12 rounded-lg shadow-lg hover:scale-110 duration-150 bg-white hover:bg-gray-100 " onClick={() => handleClickPopover(tabla)}>
+                        <h1 className='text-sm  text-wrap 2xl:text-xl text-gray-500 font-semibold text-center'>{tabla.name}</h1>
                     </div>
                 ))}
                 <div className={`z-[999] w-[90vw] 2xl:w-3/12 h-fit bg-white shadow-xl rounded-md border-gray-100 border-[1px] p-9 fixed top-1/2 left-1/2 transform modalPover -translate-x-1/2 -translate-y-1/2  ${!selectedTable ? 'hidden' : ''}`} ref={popoverDiv}>
@@ -99,7 +99,7 @@ const Create = () => {
                         <input type="text" value={selectedTable.name} name='tableName' className='text-gray-500'/>
                         {selectedTable && selectedTable.columns ? (
                             selectedTable.columns.map((column, index) => (
-                                <input type="text"  className="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg block w-full p-2.5 "  required key={index} placeholder={column} name={column} />
+                                <input type="text" className="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg block w-full p-2.5 "  required key={index} placeholder={column} name={column} />
                                 
                             ))
                         ) : (

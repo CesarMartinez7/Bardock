@@ -75,7 +75,7 @@ app.post("/create",(req,resp) => {
       if(err){
         throw err
       }
-      console.log("Insertado con exito")
+      console.log(chalk.green("Insertado con exito"))
     })
   }
   if(nameTable === "bodega"){
@@ -85,7 +85,7 @@ app.post("/create",(req,resp) => {
       if(err){
         throw err
       }
-      console.log("Insertado con exito")
+      console.log(chalk.green("Insertado con exito"))
     })
   }
   if(nameTable === "activo"){
@@ -107,7 +107,7 @@ app.post("/create",(req,resp) => {
       if(err){
         throw err
       }
-      console.log("Insertado con exito")
+      console.log(chalk.green("Insertado con exito"))
     })
   }
   // Manejo de acta_asignacion
@@ -118,7 +118,7 @@ app.post("/create",(req,resp) => {
       if(err){
         throw err
       }
-      console.log("Insertado con exito")
+      console.log(chalk.green("Insertado con exito"))
     })
   }
 
@@ -177,7 +177,7 @@ app.post("/create",(req,resp) => {
       throw err
     }
 
-    console.log("Insertado con exito")
+    console.log(chalk.green("Insertado con exito"))
   })
  }
 })

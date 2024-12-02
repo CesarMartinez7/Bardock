@@ -29,7 +29,6 @@ export function AppUser() {
           <Route path="contact" element={<Contact/>}></Route>
           <Route path="login" element={<LoginPage></LoginPage>}></Route>
           <Route path="account" element={<Account></Account>}></Route>
-          <Route path="create" element={<Create></Create>}></Route>
         </Routes>
       </BrowserRouter>
     </Suspense>
