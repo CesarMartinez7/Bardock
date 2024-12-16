@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node DATABASE/server.cjs"
+    "start": "node server.cjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

@@ -4,13 +4,7 @@ import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 
 
-const navigation = [
 
-  { name: 'Data', href: 'datos' },
-  { name: 'Docs', href: 'documentacion' },
-  { name: 'Home', href: '' },
-  
-]
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -41,8 +35,8 @@ export default function Example() {
             </div>
           </div>
           <div className="text-center">
-            <p className="text-balance text-5xl font-semibold tracking-tight text-gray-800 sm:text-7xl">
-              Welcome to <span className='bg-gradient-to-r from-indigo-800 via-indigo-500 font-semibold to-indigo-300 inline-block text-transparent bg-clip-text'>FastData</span>
+            <p className="text-balance text-5xl font-semibold tracking-tight text-gray-700 sm:text-7xl">
+              Welcome to <span class="bg-gradient-to-r from-indigo-500 transform via-pink-400 to-red-400 text-transparent bg-clip-text ">FastData</span>
             </p>
             <p className="mt-8 text-pretty text-md  font-medium text-gray-500 sm:text-xl/8 ">
             FastData es una innovadora aplicación web diseñada para ofrecer una lectura de datos eficiente y visualmente atractiva, construida con la potente biblioteca de JavaScript, React.
