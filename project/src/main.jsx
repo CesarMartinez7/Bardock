@@ -7,7 +7,7 @@ import { Server } from "./components/Icons/Logos.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import { useNavigation } from "react-router-dom";
 import useUserPrueba from "../hook/userPrueba.jsx";
-import { AppAdmin } from "./auth/admin.jsx";
+import { AppAdmin } from "./auth/Admin.jsx";
 import { AppUser } from "./auth/UserPublic.jsx";
 
 const root = createRoot(document.getElementById("root"));
